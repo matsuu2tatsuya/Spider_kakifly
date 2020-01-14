@@ -20,7 +20,7 @@ class SeleniumMiddleware(object):
         driver = Chrome(options=options)
 
         driver.get('https://www.spiderdex.com/assets/5d35228f74ba04002ac53d9c')
-        time.sleep(0.5)
+        time.sleep(1.0)
         input_element = driver.find_elements_by_css_selector('div.filterattributevalue > div.item')[5]
         input_element.click()
         time.sleep(0.5)
@@ -57,7 +57,7 @@ class cryspe_SeleniumMiddleware(object):
 
         for _ in range(20):
             driver.execute_script('scroll(0, document.body.scrollHeight)')
-            time.sleep(2.5)
+            time.sleep(2.0)
 
         return HtmlResponse(
             driver.current_url,

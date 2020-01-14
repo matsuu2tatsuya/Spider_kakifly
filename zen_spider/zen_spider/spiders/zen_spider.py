@@ -243,7 +243,7 @@ class DEX_Spider(scrapy.Spider):
         "ITEM_PIPELINES": {
             'zen_spider.pipelines.MySQLPipeline': 800,
         },
-        "DOWNLOAD_DELAY": 0.5,
+        "DOWNLOAD_DELAY": 1.0,
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
     }
