@@ -277,6 +277,7 @@ process.crawl(EthmarketSpider)
 process.crawl(MagiSpider)
 process.crawl(cryspe_selenium)
 process.crawl(DEX_Spider)
+
 process.start()
 
 
