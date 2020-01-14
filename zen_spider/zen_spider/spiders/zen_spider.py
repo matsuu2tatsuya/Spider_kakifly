@@ -93,7 +93,7 @@ class MagiSpiderSpider(scrapy.Spider):
             magi_items['sell_transaction_URL_ETH'] = None
             magi_items['buy_transaction_URL_JPY'] = None
 
-            magi_items['image_URL'] = res.css('img[src$="jpg"]::attr("src")').get()  # →イメージファイルURL
+            magi_items['image_URL'] = res.css('img[data-src$="jpg"]::attr("data-src")').get()  # →イメージファイルURL
 
             yield magi_items
 
