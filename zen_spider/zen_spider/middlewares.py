@@ -42,6 +42,33 @@ class SeleniumMiddleware(object):
         driver.quit()
 
 
+class cryspe_SeleniumMiddleware(object):
+
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+
+        driver.get('https://cryptospells.jp/trades')
+        time.sleep(0.5)
+        input_element = driver.find_element_by_xpath("//span[@class='checkmark']")
+        input_element.click()
+        time.sleep(0.5)
+
+        for _ in range(20):
+            driver.execute_script('scroll(0, document.body.scrollHeight)')
+            time.sleep(2.5)
+
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+
+        driver.quit()
+
+
 class ZenSpiderSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
