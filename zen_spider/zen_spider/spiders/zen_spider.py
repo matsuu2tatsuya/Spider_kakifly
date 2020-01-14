@@ -276,7 +276,8 @@ process = CrawlerProcess()
 process.crawl(EthmarketSpider)
 process.crawl(MagiSpider)
 process.crawl(cryspe_selenium)
-process.start(DEX_Spider)
+process.crawl(DEX_Spider)
+process.start()
 
 
 
