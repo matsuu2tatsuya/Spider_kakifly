@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from ..items import EthmarketItem, MagiItem, Cryptospells_Item, spider_DEX_Item
-import scrapy
 import re
 import scrapy
 from scrapy_splash import SplashRequest
 from scrapy.exceptions import DropItem
-
+from scrapy.crawler import CrawlerProcess
 
 """
 spider crawl 引数 -o {name}.json
@@ -62,6 +61,16 @@ class EthmarketSpider(scrapy.Spider):
 
 
             yield eth_items
+
+process = CrawlerProcess(settings={
+    'FEED_FORMAT': 'json',
+    'FEED_URI': 'ethmarket.json'
+})
+
+process.crawl(EthmarketSpider)
+process.start()
+
+
 
 class MagiSpiderSpider(scrapy.Spider):
     name = 'magi_spider'
