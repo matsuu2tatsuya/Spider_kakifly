@@ -1,6 +1,6 @@
-from scrapy.crawler import CrawlerProcess
-from scrapy.utils.project import get_project_settings
+#from scrapy.crawler import CrawlerProcess
+#from scrapy.utils.project import get_project_settings
 
-process = CrawlerProcess(get_project_settings())
+#process = CrawlerProcess(get_project_settings())
 
-process.crawl('ethmarket_spider', domain='ethmarket.jp')
+#process.crawl('ethmarket_spider', domain='ethmarket.jp')

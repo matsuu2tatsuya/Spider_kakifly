@@ -63,15 +63,6 @@ class EthmarketSpider(scrapy.Spider):
             yield eth_items
 
 
-process = CrawlerProcess(settings={
-    'FEED_FORMAT': 'json',
-    'FEED_URI': 'ethmarket.json'
-})
-
-process.crawl(EthmarketSpider)
-
-
-
 class MagiSpider(scrapy.Spider):
     name = 'magi_spider'
     allowed_domains = ['magi.camp']
@@ -110,13 +101,6 @@ class MagiSpider(scrapy.Spider):
         if next_page:
             url = response.urljoin(next_page[0])
             yield scrapy.Request(url, callback=self.parse)
-
-process = CrawlerProcess(settings={
-    'FEED_FORMAT': 'json',
-    'FEED_URI': 'magi.json'
-})
-
-process.crawl(MagiSpider)
 
 
 
