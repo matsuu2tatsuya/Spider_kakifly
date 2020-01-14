@@ -25,6 +25,15 @@ class EthmarketSpider(scrapy.Spider):
     allowed_domains = ['ethmarket.jp']
     start_urls = ['https://ethmarket.jp/']
 
+    custom_settings = {
+        "ITEM_PIPELINES": {
+            'zen_spider.pipelines.MySQLPipeline': 800,
+        },
+        "DOWNLOAD_DELAY": 0.5,
+        "MYSQL_USER": 'scraper',
+        "MYSQL_PASSWORD": 'password',
+    }
+
     def parse(self, response):
 
         for res in response.xpath('//table[@class="cardBlock"]'):
@@ -67,6 +76,15 @@ class MagiSpider(scrapy.Spider):
     name = 'magi_spider'
     allowed_domains = ['magi.camp']
     start_urls = ['https://magi.camp/items/search?utf8=%E2%9C%93&forms_search_items%5Bcategory_id%5D=100009&forms_search_items%5Bstatus%5D=presented&forms_search_items%5Bpage%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B']
+
+    custom_settings = {
+        "ITEM_PIPELINES": {
+            'zen_spider.pipelines.MySQLPipeline': 800,
+        },
+        "DOWNLOAD_DELAY": 0.5,
+        "MYSQL_USER": 'scraper',
+        "MYSQL_PASSWORD": 'password',
+    }
 
     def parse(self, response):
 
@@ -146,7 +164,6 @@ class CryspeSpider(scrapy.Spider):
             cryspe_items = Cryptospells_Item()
             base_URL = 'https://cryptospells.jp'
 
-            # cryspe_items['name'] = res.css('[class=mycard-header__name]').xpath('string()').get().strip()
             cryspe_items['name'] = None
 
             ID_path = res.css('[class="serial-number serial-number-user-img-wrapper"]').xpath('string()').get()
@@ -177,8 +194,14 @@ class cryspe_selenium(scrapy.Spider):
         "DOWNLOADER_MIDDLEWARES": {
             'zen_spider.middlewares.cryspe_SeleniumMiddleware': 543,
         },
+        "ITEM_PIPELINES": {
+            'zen_spider.pipelines.MySQLPipeline': 800,
+        },
         "DOWNLOAD_DELAY": 0.5,
+        "MYSQL_USER": 'scraper',
+        "MYSQL_PASSWORD": 'password',
     }
+
 
     def parse(self, response):
         for res in response.xpath('//div[@class="col-4 col-sm-2 col-sm-2--half col-card"]'):
@@ -217,7 +240,12 @@ class DEX_Spider(scrapy.Spider):
         "DOWNLOADER_MIDDLEWARES": {
             'zen_spider.middlewares.SeleniumMiddleware': 543,
         },
+        "ITEM_PIPELINES": {
+            'zen_spider.pipelines.MySQLPipeline': 800,
+        },
         "DOWNLOAD_DELAY": 0.5,
+        "MYSQL_USER": 'scraper',
+        "MYSQL_PASSWORD": 'password',
     }
 
     def parse(self, response):
@@ -242,6 +270,13 @@ class DEX_Spider(scrapy.Spider):
         dex_item['image_URL'] = response.css('img[src$="png"]::attr("src")').get()
 
         return dex_item
+
+
+process = CrawlerProcess()
+process.crawl(EthmarketSpider)
+process.crawl(MagiSpider)
+process.crawl(cryspe_selenium)
+process.start(DEX_Spider)
 
 
 
