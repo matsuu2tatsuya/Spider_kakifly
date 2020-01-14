@@ -62,17 +62,17 @@ class EthmarketSpider(scrapy.Spider):
 
             yield eth_items
 
+
 process = CrawlerProcess(settings={
     'FEED_FORMAT': 'json',
     'FEED_URI': 'ethmarket.json'
 })
 
 process.crawl(EthmarketSpider)
-process.start()
 
 
 
-class MagiSpiderSpider(scrapy.Spider):
+class MagiSpider(scrapy.Spider):
     name = 'magi_spider'
     allowed_domains = ['magi.camp']
     start_urls = ['https://magi.camp/items/search?utf8=%E2%9C%93&forms_search_items%5Bcategory_id%5D=100009&forms_search_items%5Bstatus%5D=presented&forms_search_items%5Bpage%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B']
@@ -110,6 +110,14 @@ class MagiSpiderSpider(scrapy.Spider):
         if next_page:
             url = response.urljoin(next_page[0])
             yield scrapy.Request(url, callback=self.parse)
+
+process = CrawlerProcess(settings={
+    'FEED_FORMAT': 'json',
+    'FEED_URI': 'magi.json'
+})
+
+process.crawl(MagiSpider)
+
 
 
 class CryspeSpider(scrapy.Spider):

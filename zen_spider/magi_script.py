@@ -3,5 +3,4 @@ from scrapy.utils.project import get_project_settings
 
 process = CrawlerProcess(get_project_settings())
 
-
-process.crawl('ethmarket_spider', domain='ethmarket.jp')
+process.crawl('magi_spider', domain='magi.camp')
