@@ -30,9 +30,9 @@ class MySQLPipeline:
 
         self.conn = MySQLdb.connect(**params)  # MYSQLサーバーに接続。
         self.c = self.conn.cursor()  # カーソルを取得
-        self.c.execute("""
-            DROP TABLE IF EXISTS `items`
-        """)
+        #self.c.execute("""
+        #    DROP TABLE IF EXISTS `items`
+        #""")
 
         # itemsテーブルが存在しない場合は作成。
         self.c.execute("""

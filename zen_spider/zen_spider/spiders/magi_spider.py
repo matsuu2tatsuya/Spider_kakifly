@@ -54,6 +54,6 @@ class MagiSpider(scrapy.Spider):
 
 
 process = CrawlerProcess()
-process.crawl(MagiSpider)
+#process.crawl(MagiSpider)
 
-process.start()
+#process.start()

@@ -46,7 +46,7 @@ class EthmarketSpider_JPY(scrapy.Spider):
             eth_items_jp['currency'] = 'JPY'
 
             eth_JPY_url = res.css('a[href$="JPY"]::attr("href")').get()  # JRYの買取URL
-            eth_items_jp['buy_transaction_URL_JPY'] = base_url + eth_JPY_url
+            eth_items_jp['buy_transaction_URL'] = base_url + eth_JPY_url
 
 
             eth_img_url = res.css('img[src$="png"]::attr("src")').get()  # →イメージファイルURL
