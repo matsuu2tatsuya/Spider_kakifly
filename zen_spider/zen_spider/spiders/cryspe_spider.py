@@ -41,7 +41,7 @@ class cryspe_selenium(scrapy.Spider):
             SPL_path2 = re.sub(r' SPL', '', SPL_path)
             cryspe_items['price'] = re.sub(r',', '', SPL_path2)
 
-            cryspe_items['ccurrency'] = 'SPL'
+            cryspe_items['currency'] = 'SPL'
 
             cryspe_items['buy_transaction_URL'] = base_URL + res.css('a::attr("href")').re_first(r'/trades/\d+$')
 

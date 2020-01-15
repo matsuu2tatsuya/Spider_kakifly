@@ -23,17 +23,17 @@ class SeleniumMiddleware(object):
         driver = Chrome(options=options)
 
         driver.get('https://www.spiderdex.com/assets/5d35228f74ba04002ac53d9c')
-        time.sleep(0.7)
+        time.sleep(0.5)
         input_element = driver.find_elements_by_css_selector('div.filterattributevalue > div.item')[5]
         input_element.click()
-        time.sleep(0.7)
+        time.sleep(0.5)
 
         for div in driver.find_elements_by_xpath('//div[@class="assetscontentitem"]'):
-            time.sleep(0.7)
+            time.sleep(0.5)
             div.find_element_by_css_selector('div.assetimghover').click()
             handle_array = driver.window_handles
             driver.switch_to.window(handle_array[1])
-            time.sleep(0.7)
+            time.sleep(0.5)
 
         return HtmlResponse(
             driver.current_url,
@@ -42,6 +42,7 @@ class SeleniumMiddleware(object):
             request=request,
         )
 
+        time.sleep(0.5)
         driver.quit()
 
 

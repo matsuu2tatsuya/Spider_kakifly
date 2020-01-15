@@ -61,7 +61,7 @@ class MySQLPipeline:
         Itemをitemsテーブルに挿入する。
         """
         self.c.execute("INSERT INTO `items`(`ID`,`name`,`price`,`currency`,`buy_transaction_URL`,`image_URL`) "
-                       "VALUES (%(ID)s,%(name)s,%(price)s,%(buy_transaction_URL)s,%(image_URL)s)", dict(item))
+                       "VALUES (%(ID)s,%(name)s,%(price)s,%(currency)s,%(buy_transaction_URL)s,%(image_URL)s)", dict(item))
 
         self.conn.commit()
 
