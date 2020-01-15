@@ -50,7 +50,7 @@ class cryspe_selenium(scrapy.Spider):
             yield cryspe_items
 
 
-#process = CrawlerProcess()
-#process.crawl(cryspe_selenium)
+process = CrawlerProcess()
+process.crawl(cryspe_selenium)
 
-#process.start()
+process.start()

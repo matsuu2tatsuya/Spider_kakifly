@@ -47,7 +47,7 @@ class DEX_Spider(scrapy.Spider):
         return dex_items
 
 
-#process = CrawlerProcess()
-#process.crawl(DEX_Spider)
+process = CrawlerProcess()
+process.crawl(DEX_Spider)
 
-#process.start()
+process.start()

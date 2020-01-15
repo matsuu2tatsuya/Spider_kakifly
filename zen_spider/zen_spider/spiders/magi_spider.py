@@ -53,7 +53,7 @@ class MagiSpider(scrapy.Spider):
             yield scrapy.Request(url, callback=self.parse)
 
 
-#process = CrawlerProcess()
-#process.crawl(MagiSpider)
+process = CrawlerProcess()
+process.crawl(MagiSpider)
 
-#process.start()
+process.start()
