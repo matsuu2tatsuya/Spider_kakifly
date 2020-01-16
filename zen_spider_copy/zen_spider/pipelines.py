@@ -10,12 +10,14 @@ import MySQLdb
 class MySQLPipeline:
     """
     ItemをMySQLに保存するPipeline。
+    {ID(auto),name(id or card_name),price(int),currency(ETH),purchase_URL,image_URL}の６つ。
     """
 
     def open_spider(self, spider):
         """
         Spiderの開始時にMySQLサーバーに接続する。
         itemsテーブルが存在しない場合は作成する。
+        あった場合は一度itemテーブルを削除してからまた作成。
         """
         settings = spider.settings  # settings.pyから設定を読み込む。
         params = {
@@ -35,17 +37,13 @@ class MySQLPipeline:
         # itemsテーブルが存在しない場合は作成。
         self.c.execute("""
             CREATE TABLE IF NOT EXISTS `items` (
-            `ids` INT NOT NULL AUTO_INCREMENT,
-            `ID` INTEGER ,
+            `ID` INT NOT NULL AUTO_INCREMENT,
             `name` VARCHAR(200) ,
-            `price_ETH` FLOAT ,
-            `price_SPL` INTEGER ,
-            `price_JPY` INTEGER ,
+            `price` FLOAT ,
+            `currency` VARCHAR(10),
             `buy_transaction_URL` VARCHAR(200) NOT NULL ,
-            `sell_transaction_URL_ETH` VARCHAR(200),
-            `buy_transaction_URL_JPY` VARCHAR(200),
             `image_URL` VARCHAR(200),
-            PRIMARY KEY (`ids`)
+            PRIMARY KEY (`ID`)
             )
         """)
         self.conn.commit()  # 変更をコミット
@@ -62,8 +60,8 @@ class MySQLPipeline:
         """
         Itemをitemsテーブルに挿入する。
         """
-        self.c.execute('INSERT INTO `items`(`ids`,`ID`,`name`,`price_ETH`, `price_SPL`,`price_JPY`,`buy_transaction_URL`,`sell_transaction_URL_ETH`,`buy_transaction_URL_JPY`,`image_URL`) '
-                       'VALUES (%(ids)s,%(ID)s,%(name)s,%(price_ETH)s,%(price_SPL)s,%(price_JPY)s,%(buy_transaction_URL)s,%(sell_transaction_URL_ETH)s,%(buy_transaction_URL_JPY)s,%(image_URL)s)', dict(item))
+        self.c.execute("INSERT INTO `items`(`ID`,`name`,`price`,`currency`,`buy_transaction_URL`,`image_URL`) "
+                       "VALUES (%(ID)s,%(name)s,%(price)s,%(currency)s,%(buy_transaction_URL)s,%(image_URL)s)", dict(item))
 
         self.conn.commit()
 
