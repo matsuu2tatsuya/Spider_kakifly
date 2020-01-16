@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from ..items import EthmarketItem, MagiItem, Cryptospells_Item, spider_DEX_Item
+from ..items import EthmarketItem, EthmarketItem_JPY, MagiItem, Cryptospells_Item, Spider_DEX_Item
 import re
 import scrapy
 from scrapy_splash import SplashRequest
