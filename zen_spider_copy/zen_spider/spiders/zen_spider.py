@@ -41,7 +41,6 @@ class EthmarketSpider(scrapy.Spider):
             eth_items = EthmarketItem()
             base_url = 'https://ethmarket.jp/'
 
-            eth_items['ids'] = None
             eth_items['ID'] = None
 
             card_name_path = res.css('img[src$="png"]::attr("src")').get()   # →名前
@@ -49,21 +48,14 @@ class EthmarketSpider(scrapy.Spider):
             eth_items['name'] = re.sub(r'.png', '', card_name)
 
             try:
-                eth_items['price_ETH'] = res.css('[class=buyButton] > a > font').xpath('string()').re(r'.*\d+')[0]  # →価格ETH
+                eth_items['price'] = res.css('[class=buyButton] > a > font').xpath('string()').re(r'.*\d+')[0]  # →価格ETH
             except IndexError:
                 raise DropItem('OUT OF STOCK')
 
-            eth_items['price_SPL'] = None
-            eth_items['price_JPY'] = res.css('[class=buyButton] > a > font').xpath('string()').re(r'.*\d+')[1]  # →価格JPY
+            eth_items['currency'] = 'ETH'
 
-            eth_buy_url = res.css('a::attr("href")').re(r'\d+$')[0]   # 買取URL
+            eth_buy_url = res.css('a::attr("href")').re(r'\d+$')[0]   # purchase_URL
             eth_items['buy_transaction_URL'] = base_url + '/buytransactions/create?cardId=' + eth_buy_url
-
-            eth_sell_url = res.css('a[id^=sellAction]::attr("href")').get()  # 売却URL
-            eth_items['sell_transaction_URL_ETH'] = base_url + eth_sell_url
-
-            eth_JPY_url = res.css('a[href$="JPY"]::attr("href")').get()  # JRYの買取URL
-            eth_items['buy_transaction_URL_JPY'] = base_url + eth_JPY_url
 
 
             eth_img_url = res.css('img[src$="png"]::attr("src")').get()  # →イメージファイルURL
@@ -71,6 +63,54 @@ class EthmarketSpider(scrapy.Spider):
 
 
             yield eth_items
+
+
+class EthmarketSpider_JPY(scrapy.Spider):
+    name = 'ethmarket_jp_spider'
+    allowed_domains = ['ethmarket.jp']
+    start_urls = ['https://ethmarket.jp/']
+
+    custom_settings = {
+        "ITEM_PIPELINES": {
+            'zen_spider.pipelines.MySQLPipeline': 800,
+        },
+        "DOWNLOAD_DELAY": 0.5,
+        "MYSQL_USER": 'scraper',
+        "MYSQL_PASSWORD": 'password',
+    }
+
+    def parse(self, response):
+
+        for res in response.xpath('//table[@class="cardBlock"]'):
+
+            eth_items_jp = EthmarketItem_JPY()
+            base_url = 'https://ethmarket.jp/'
+
+            eth_items_jp['ID'] = None
+
+            card_name_path = res.css('img[src$="png"]::attr("src")').get()   # →名前
+            card_name = re.sub(r'/Content/CardImage/', '', card_name_path)
+            eth_items_jp['name'] = re.sub(r'.png', '', card_name)
+
+            try:
+                res.css('[class=buyButton] > a > font').xpath('string()').re(r'.*\d+')[0]  # →売り切れがあっても続行
+            except IndexError:
+                raise DropItem('OUT OF STOCK')
+
+            eth_items_jp['price'] = res.css('[class=buyButton] > a > font').xpath('string()').re(r'.*\d+')[1]  # →価格JPY
+
+            eth_items_jp['currency'] = 'JPY'
+
+            eth_JPY_url = res.css('a[href$="JPY"]::attr("href")').get()  # JRYの買取URL
+            eth_items_jp['buy_transaction_URL'] = base_url + eth_JPY_url
+
+
+            eth_img_url = res.css('img[src$="png"]::attr("src")').get()  # →イメージファイルURL
+            eth_items_jp['image_URL'] = base_url + eth_img_url
+
+
+            yield eth_items_jp
+
 
 
 class MagiSpider(scrapy.Spider):
@@ -94,24 +134,19 @@ class MagiSpider(scrapy.Spider):
             magi_items = MagiItem()
             base_url = 'https://magi.camp/'
 
-            magi_items['ids'] = None
             magi_items['ID'] = None
 
             card_name = res.css('[class=item-list__item-name]').xpath('string()').get()      # →名前
             magi_items['name'] = re.sub(r' ', '', card_name)
 
-            magi_items['price_ETH'] = None
-            magi_items['price_SPL'] = None
-
             jpy_buy_price_path = res.css('[class=item-list__price-box--price]').xpath('string()').re_first(r'.*\d+')  # →価格JPY
             jpy_buy_price = re.sub(r'¥ ', '', jpy_buy_price_path)
-            magi_items['price_JPY'] = re.sub(r',', '', jpy_buy_price)
+            magi_items['price'] = re.sub(r',', '', jpy_buy_price)
+
+            magi_items['currency'] = 'JPY'
 
             eth_buy_url = res.css('a::attr("href")').re_first(r'/items/\d+$')   # 買取URL
             magi_items['buy_transaction_URL'] = base_url + eth_buy_url
-
-            magi_items['sell_transaction_URL_ETH'] = None
-            magi_items['buy_transaction_URL_JPY'] = None
 
             magi_items['image_URL'] = res.css('img[data-src$="jpg"]::attr("data-src")').get()  # →イメージファイルURL
 
@@ -121,7 +156,6 @@ class MagiSpider(scrapy.Spider):
         if next_page:
             url = response.urljoin(next_page[0])
             yield scrapy.Request(url, callback=self.parse)
-
 
 
 class CryspeSpider(scrapy.Spider):
@@ -189,8 +223,8 @@ class CryspeSpider(scrapy.Spider):
 
 class cryspe_selenium(scrapy.Spider):
     name = 'cryspe_Selenium'
-    allowed_domains = ['spiderdex.com/assets/5d35228f74ba04002ac53d9c']
-    start_urls = ['https://www.spiderdex.com/assets/5d35228f74ba04002ac53d9c']
+    allowed_domains = ['cryptospells.jp/trades']
+    start_urls = ['https://cryptospells.jp/trades/']
 
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {
@@ -210,29 +244,23 @@ class cryspe_selenium(scrapy.Spider):
             cryspe_items = Cryptospells_Item()
             base_URL = 'https://cryptospells.jp'
 
-            # cryspe_items['name'] = res.css('[class=mycard-header__name]').xpath('string()').get().strip()
-            cryspe_items['name'] = None
-
-            cryspe_items['ids'] = None
+            cryspe_items['ID'] = None
 
             ID_path = res.css('[class="serial-number serial-number-user-img-wrapper"]').xpath('string()').get()
             ID_path2 = re.sub(r'# ', '', ID_path)
-            cryspe_items['ID'] = re.sub(r' ', '', ID_path2)
+            cryspe_items['name'] = re.sub(r' ', '', ID_path2)
 
-            cryspe_items['price_ETH'] = None
             SPL_path = res.css('[class="price"]').xpath('string()').get()
             SPL_path2 = re.sub(r' SPL', '', SPL_path)
-            cryspe_items['price_SPL'] = re.sub(r',', '', SPL_path2)
-            cryspe_items['price_JPY'] = None
+            cryspe_items['price'] = re.sub(r',', '', SPL_path2)
+
+            cryspe_items['currency'] = 'SPL'
 
             cryspe_items['buy_transaction_URL'] = base_URL + res.css('a::attr("href")').re_first(r'/trades/\d+$')
-            cryspe_items['sell_transaction_URL_ETH'] = None
-            cryspe_items['buy_transaction_URL_JPY'] = None
 
             cryspe_items['image_URL'] = res.css('img[src$="png"]::attr("src")').get()
 
             yield cryspe_items
-
 
 
 class DEX_Spider(scrapy.Spider):
@@ -253,29 +281,25 @@ class DEX_Spider(scrapy.Spider):
     }
 
     def parse(self, response):
-        dex_items = spider_DEX_Item()
+        dex_items = Spider_DEX_Item()
 
         name_ID = response.css('span.assetdetailname').xpath('string()').get()
 
-        dex_items['ids'] = None
-        dex_items['ID'] = re.sub(r'\D+', '', name_ID)
-        dex_items['name'] = re.sub(r' #\d+', '', name_ID)
+        dex_items['ID'] = None
+        dex_items['name'] = re.sub(r'\D+', '', name_ID)
 
         price_path = response.css('div.assetdetailprice').xpath('string()').get()
         price_path2 = re.sub(r'Price:', '', price_path)
         price_path3 = re.sub(r'\xa0', '', price_path2)
-        dex_items['price_ETH'] = re.sub(r'ETH', '', price_path3)
-        dex_items['price_SPL'] = None
-        dex_items['price_JPY'] = None
+        dex_items['price'] = re.sub(r'ETH', '', price_path3)
+
+        dex_items['currency'] = 'ETH'
 
         dex_items['buy_transaction_URL'] = response.url
-        dex_items['sell_transaction_URL_ETH'] = None
-        dex_items['buy_transaction_URL_JPY'] = None
 
         dex_items['image_URL'] = response.css('img[src$="png"]::attr("src")').get()
 
         return dex_items
-
 
 process = CrawlerProcess()
 process.crawl(EthmarketSpider)

@@ -56,7 +56,7 @@ class EthmarketSpider_JPY(scrapy.Spider):
             yield eth_items_jp
 
 
-#process = CrawlerProcess()
-#process.crawl(EthmarketSpider_JPY)
+process = CrawlerProcess()
+process.crawl(EthmarketSpider_JPY)
 
-#process.start()
+process.start()
