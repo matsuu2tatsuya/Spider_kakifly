@@ -54,7 +54,7 @@ class EthmarketSpider(scrapy.Spider):
             yield eth_items
 
 
-process = CrawlerProcess()
-process.crawl(EthmarketSpider)
+#process = CrawlerProcess()
+#process.crawl(EthmarketSpider)
 
-process.start()
+#process.start()
