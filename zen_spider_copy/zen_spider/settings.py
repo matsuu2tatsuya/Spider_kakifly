@@ -48,15 +48,15 @@ DOWNLOAD_DELAY = 3
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
     'zen_spider.middlewares.ZenSpiderSpiderMiddleware': 543,
-    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
+    #'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
 }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'zen_spider.middlewares.ZenSpiderDownloaderMiddleware': 543,
-    'scrapy_splash.SplashCookiesMiddleware': 723,
-    'scrapy_splash.SplashMiddleware': 725,
+    #'scrapy_splash.SplashCookiesMiddleware': 723,
+    #'scrapy_splash.SplashMiddleware': 725,
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
 }
 
@@ -95,10 +95,11 @@ DOWNLOADER_MIDDLEWARES = {
 
 FEED_EXPORT_ENCODING = 'utf-8'  # デコードする。
 
-SPLASH_URL = 'http://localhost:8050/'
 
-DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
-HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
+#SPLASH_URL = 'http://localhost:8050/'
+
+#DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+#HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
 
 # scrapy-selenium関係
 from shutil import which
