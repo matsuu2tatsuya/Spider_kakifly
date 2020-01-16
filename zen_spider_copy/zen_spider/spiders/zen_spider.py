@@ -148,7 +148,7 @@ class MagiSpider(scrapy.Spider):
             eth_buy_url = res.css('a::attr("href")').re_first(r'/items/\d+$')   # 買取URL
             magi_items['buy_transaction_URL'] = base_url + eth_buy_url
 
-            magi_items['image_URL'] = res.css('img[data-src$="jpg"]::attr("data-src")').get()  # →イメージファイルURL
+            magi_items['image_URL'] = res.css('img::attr("data-src")').get()  # →イメージファイルURL
 
             yield magi_items
 
