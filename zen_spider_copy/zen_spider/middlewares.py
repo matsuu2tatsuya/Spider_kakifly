@@ -12,7 +12,7 @@ from scrapy.http import HtmlResponse
 import time
 
 
-class SeleniumMiddleware(object):
+class DEX_SeleniumMiddleware(object):
 
     def process_request(self, request, spider):
         options = ChromeOptions()
@@ -59,7 +59,7 @@ class cryspe_SeleniumMiddleware(object):
 
         for _ in range(20):
             driver.execute_script('scroll(0, document.body.scrollHeight)')
-            time.sleep(2.0)
+            time.sleep(1.5)
 
         return HtmlResponse(
             driver.current_url,

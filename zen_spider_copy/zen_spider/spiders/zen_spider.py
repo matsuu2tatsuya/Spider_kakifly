@@ -270,10 +270,10 @@ class DEX_Spider(scrapy.Spider):
 
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {
-            'zen_spider.middlewares.SeleniumMiddleware': 543,
+            'zen_spider.middlewares.DEX_SeleniumMiddleware': 540,
         },
         "ITEM_PIPELINES": {
-            'zen_spider.pipelines.MySQLPipeline': 800,
+            'zen_spider.pipelines.MySQLPipeline': 700,
         },
         "DOWNLOAD_DELAY": 1.0,
         "MYSQL_USER": 'scraper',
@@ -302,10 +302,11 @@ class DEX_Spider(scrapy.Spider):
         return dex_items
 
 process = CrawlerProcess()
+process.crawl(DEX_Spider)
 process.crawl(EthmarketSpider)
+process.crawl(EthmarketSpider_JPY)
 process.crawl(MagiSpider)
 process.crawl(cryspe_selenium)
-process.crawl(DEX_Spider)
 
 process.start()
 
