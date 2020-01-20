@@ -270,7 +270,7 @@ class DEX_Spider(scrapy.Spider):
 
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {
-            'zen_spider.middlewares.SeleniumMiddleware': 542,
+            'zen_spider.middlewares.SeleniumMiddleware': 543,
         },
         "ITEM_PIPELINES": {
             'zen_spider.pipelines.MySQLPipeline': 800,
