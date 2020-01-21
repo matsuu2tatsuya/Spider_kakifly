@@ -57,9 +57,9 @@ class cryspe_SeleniumMiddleware(object):
         input_element.click()
         time.sleep(0.5)
 
-        for _ in range(20):
+        for _ in range(30):
             driver.execute_script('scroll(0, document.body.scrollHeight)')
-            time.sleep(1.5)
+            time.sleep(1.0)
 
         return HtmlResponse(
             driver.current_url,
