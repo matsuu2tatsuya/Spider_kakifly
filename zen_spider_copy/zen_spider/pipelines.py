@@ -41,7 +41,7 @@ class MySQLPipeline:
             `name` VARCHAR(200) ,
             `price` FLOAT ,
             `currency` VARCHAR(10),
-            `buy_transaction_URL` VARCHAR(200) NOT NULL ,
+            `purchase_URL` VARCHAR(200) NOT NULL ,
             `image_URL` VARCHAR(200),
             PRIMARY KEY (`ID`)
             )
@@ -60,8 +60,8 @@ class MySQLPipeline:
         """
         Itemをitemsテーブルに挿入する。
         """
-        self.c.execute("INSERT INTO `items`(`ID`,`name`,`price`,`currency`,`buy_transaction_URL`,`image_URL`) "
-                       "VALUES (%(ID)s,%(name)s,%(price)s,%(currency)s,%(buy_transaction_URL)s,%(image_URL)s)", dict(item))
+        self.c.execute("INSERT INTO `items`(`ID`,`name`,`price`,`currency`,`purchase_URL`,`image_URL`) "
+                       "VALUES (%(ID)s,%(name)s,%(price)s,%(currency)s,%(purchase_URL)s,%(image_URL)s)", dict(item))
 
         self.conn.commit()
 

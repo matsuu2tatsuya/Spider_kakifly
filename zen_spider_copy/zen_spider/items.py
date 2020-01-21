@@ -21,7 +21,7 @@ class EthmarketItem(scrapy.Item):
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
-    buy_transaction_URL = scrapy.Field()
+    purchase_URL = scrapy.Field()
     image_URL = scrapy.Field()
 
 
@@ -33,7 +33,7 @@ class EthmarketItem_JPY(scrapy.Item):
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
-    buy_transaction_URL = scrapy.Field()
+    purchase_URL = scrapy.Field()
     image_URL = scrapy.Field()
 
 
@@ -45,7 +45,7 @@ class MagiItem(scrapy.Item):
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
-    buy_transaction_URL = scrapy.Field()
+    purchase_URL = scrapy.Field()
     image_URL = scrapy.Field()
 
 
@@ -57,7 +57,7 @@ class Cryptospells_Item(scrapy.Item):
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
-    buy_transaction_URL = scrapy.Field()
+    purchase_URL = scrapy.Field()
     image_URL = scrapy.Field()
 
 
@@ -69,5 +69,5 @@ class Spider_DEX_Item(scrapy.Item):
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
-    buy_transaction_URL = scrapy.Field()
+    purchase_URL = scrapy.Field()
     image_URL = scrapy.Field()

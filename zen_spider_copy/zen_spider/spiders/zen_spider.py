@@ -11,14 +11,6 @@ spider crawl 引数 -o {name}.json
 実行時の引数。:ethmarket_spider, :magi_spider, :cryspe_splash, :DEX_spider
 """
 
-"""
-MYSQL -> items テーブルに入れるデータ。
-`ID`,`name`,`price_ETH`, `price_SPL`,`price_JPY`,`buy_transaction_URL`,
-`sell_transaction_URL_ETH`,`buy_transaction_URL_JPY`,`image_URL
-
-計９個 primary_key は buy_transaction_URL
-"""
-
 
 class EthmarketSpider(scrapy.Spider):
     name = 'ethmarket_spider'
@@ -55,7 +47,7 @@ class EthmarketSpider(scrapy.Spider):
             eth_items['currency'] = 'ETH'
 
             eth_buy_url = res.css('a::attr("href")').re(r'\d+$')[0]   # purchase_URL
-            eth_items['buy_transaction_URL'] = base_url + '/buytransactions/create?cardId=' + eth_buy_url
+            eth_items['purchase_URL'] = base_url + '/buytransactions/create?cardId=' + eth_buy_url
 
 
             eth_img_url = res.css('img[src$="png"]::attr("src")').get()  # →イメージファイルURL
@@ -102,7 +94,7 @@ class EthmarketSpider_JPY(scrapy.Spider):
             eth_items_jp['currency'] = 'JPY'
 
             eth_JPY_url = res.css('a[href$="JPY"]::attr("href")').get()  # JRYの買取URL
-            eth_items_jp['buy_transaction_URL'] = base_url + eth_JPY_url
+            eth_items_jp['purchase_URL'] = base_url + eth_JPY_url
 
 
             eth_img_url = res.css('img[src$="png"]::attr("src")').get()  # →イメージファイルURL
@@ -146,7 +138,7 @@ class MagiSpider(scrapy.Spider):
             magi_items['currency'] = 'JPY'
 
             eth_buy_url = res.css('a::attr("href")').re_first(r'/items/\d+$')   # 買取URL
-            magi_items['buy_transaction_URL'] = base_url + eth_buy_url
+            magi_items['purchase_URL'] = base_url + eth_buy_url
 
             magi_items['image_URL'] = res.css('img::attr("data-src")').get()  # →イメージファイルURL
 
@@ -256,7 +248,7 @@ class cryspe_selenium(scrapy.Spider):
 
             cryspe_items['currency'] = 'SPL'
 
-            cryspe_items['buy_transaction_URL'] = base_URL + res.css('a::attr("href")').re_first(r'/trades/\d+$')
+            cryspe_items['purchase_URL'] = base_URL + res.css('a::attr("href")').re_first(r'/trades/\d+$')
 
             cryspe_items['image_URL'] = res.css('img[src$="png"]::attr("src")').get()
 
@@ -295,7 +287,7 @@ class DEX_Spider(scrapy.Spider):
 
         dex_items['currency'] = 'ETH'
 
-        dex_items['buy_transaction_URL'] = response.url
+        dex_items['purchase_URL'] = response.url
 
         dex_items['image_URL'] = response.css('img[src$="png"]::attr("src")').get()
 
