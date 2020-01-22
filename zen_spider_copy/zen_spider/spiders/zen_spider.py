@@ -33,8 +33,6 @@ class EthmarketSpider(scrapy.Spider):
             eth_items = EthmarketItem()
             base_url = 'https://ethmarket.jp/'
 
-            eth_items['ID'] = None
-
             card_name_path = res.css('img[src$="png"]::attr("src")').get()   # →名前
             card_name = re.sub(r'/Content/CardImage/', '', card_name_path)
             eth_items['name'] = re.sub(r'.png', '', card_name)
@@ -77,8 +75,6 @@ class EthmarketSpider_JPY(scrapy.Spider):
 
             eth_items_jp = EthmarketItem_JPY()
             base_url = 'https://ethmarket.jp/'
-
-            eth_items_jp['ID'] = None
 
             card_name_path = res.css('img[src$="png"]::attr("src")').get()   # →名前
             card_name = re.sub(r'/Content/CardImage/', '', card_name_path)
@@ -125,8 +121,6 @@ class MagiSpider(scrapy.Spider):
 
             magi_items = MagiItem()
             base_url = 'https://magi.camp/'
-
-            magi_items['ID'] = None
 
             card_name = res.css('[class=item-list__item-name]').xpath('string()').get()      # →名前
             magi_items['name'] = re.sub(r' ', '', card_name)
@@ -236,8 +230,6 @@ class cryspe_selenium(scrapy.Spider):
             cryspe_items = Cryptospells_Item()
             base_URL = 'https://cryptospells.jp'
 
-            cryspe_items['ID'] = None
-
             ID_path = res.css('[class="serial-number serial-number-user-img-wrapper"]').xpath('string()').get()
             ID_path2 = re.sub(r'# ', '', ID_path)
             cryspe_items['name'] = re.sub(r' ', '', ID_path2)
@@ -277,7 +269,6 @@ class DEX_Spider(scrapy.Spider):
 
         name_ID = response.css('span.assetdetailname').xpath('string()').get()
 
-        dex_items['ID'] = None
         dex_items['name'] = re.sub(r'\D+', '', name_ID)
 
         price_path = response.css('div.assetdetailprice').xpath('string()').get()

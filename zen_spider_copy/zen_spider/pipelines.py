@@ -37,13 +37,12 @@ class MySQLPipeline:
         # itemsテーブルが存在しない場合は作成。
         self.c.execute("""
             CREATE TABLE IF NOT EXISTS `items` (
-            `ID` INT NOT NULL AUTO_INCREMENT,
             `name` VARCHAR(200) ,
             `price` FLOAT ,
             `currency` VARCHAR(10),
             `purchase_URL` VARCHAR(200) NOT NULL ,
             `image_URL` VARCHAR(200),
-            PRIMARY KEY (`ID`)
+            PRIMARY KEY (`purchase_URL`)
             )
         """)
         self.conn.commit()  # 変更をコミット
@@ -60,8 +59,8 @@ class MySQLPipeline:
         """
         Itemをitemsテーブルに挿入する。
         """
-        self.c.execute("INSERT INTO `items`(`ID`,`name`,`price`,`currency`,`purchase_URL`,`image_URL`) "
-                       "VALUES (%(ID)s,%(name)s,%(price)s,%(currency)s,%(purchase_URL)s,%(image_URL)s)", dict(item))
+        self.c.execute("INSERT INTO `items`(`name`,`price`,`currency`,`purchase_URL`,`image_URL`) "
+                       "VALUES (%(name)s,%(price)s,%(currency)s,%(purchase_URL)s,%(image_URL)s)", dict(item))
 
         self.conn.commit()
 

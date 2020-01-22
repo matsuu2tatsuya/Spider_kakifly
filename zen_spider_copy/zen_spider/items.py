@@ -17,7 +17,6 @@ class EthmarketItem(scrapy.Item):
     """
     イーサマーケット：ETH
     """
-    ID = scrapy.Field()
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
@@ -29,7 +28,6 @@ class EthmarketItem_JPY(scrapy.Item):
     """
     イーサマーケット：JPY
     """
-    ID = scrapy.Field()
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
@@ -41,7 +39,6 @@ class MagiItem(scrapy.Item):
     """
     magi:ETH
     """
-    ID = scrapy.Field()
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
@@ -53,7 +50,6 @@ class Cryptospells_Item(scrapy.Item):
     """
     クリプトスペルズ内マーケット:SPL
     """
-    ID = scrapy.Field()
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
@@ -65,7 +61,6 @@ class Spider_DEX_Item(scrapy.Item):
     """
     spider_DEX :ETH
     """
-    ID = scrapy.Field()
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
