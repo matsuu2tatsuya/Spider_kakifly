@@ -33,15 +33,17 @@ class DEX_SeleniumMiddleware(object):
             time.sleep(0.5)
 
         time.sleep(0.5)
-        return HtmlResponse(
+
+        f = HtmlResponse(
             driver.current_url,
             body=driver.page_source,
             encoding='utf-8',
             request=request,
         )
-        time.sleep(0.5)
-
-        driver.quit()
+        if f:
+            return f
+            time.sleep(0.5)
+            driver.quit()
 
 
 class cryspe_SeleniumMiddleware(object):
