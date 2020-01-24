@@ -3,14 +3,6 @@ from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 import os
 
-from scrapy.settings import Settings
-
-from zen_spider import settings as my_settings
-
-crawler_settings = Settings()
-crawler_settings.setmodule(my_settings)
-process = CrawlerProcess(settings=crawler_settings)
-
 
 class Scraper:
     def __init__(self):
