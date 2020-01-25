@@ -21,9 +21,12 @@ class EthmarketSpider(scrapy.Spider):
         "ITEM_PIPELINES": {
             'zen_spider.pipelines.MySQLPipeline': 800,
         },
-        "DOWNLOAD_DELAY": 0.5,
+        "DOWNLOAD_DELAY": 1.0,
+        "CONCURRENT_REQUESTS": 32,
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
+        "FEED_EXPORT_ENCODING": 'utf-8',
+        'FEED_URI': 'eth_market.json'
     }
 
     def parse(self, response):
@@ -64,9 +67,12 @@ class EthmarketSpider_JPY(scrapy.Spider):
         "ITEM_PIPELINES": {
             'zen_spider.pipelines.MySQLPipeline': 800,
         },
-        "DOWNLOAD_DELAY": 0.5,
+        "DOWNLOAD_DELAY": 1.0,
+        "CONCURRENT_REQUESTS": 32,
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
+        "FEED_EXPORT_ENCODING": 'utf-8',
+        'FEED_URI': 'eth_market_jp.json'
     }
 
     def parse(self, response):
@@ -110,9 +116,12 @@ class MagiSpider(scrapy.Spider):
         "ITEM_PIPELINES": {
             'zen_spider.pipelines.MySQLPipeline': 800,
         },
-        "DOWNLOAD_DELAY": 0.5,
+        "DOWNLOAD_DELAY": 1.0,
+        "CONCURRENT_REQUESTS": 32,
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
+        "FEED_EXPORT_ENCODING": 'utf-8',
+        'FEED_URI': 'magi.json'
     }
 
     def parse(self, response):
@@ -219,9 +228,12 @@ class cryspe_selenium(scrapy.Spider):
         "ITEM_PIPELINES": {
             'zen_spider.pipelines.MySQLPipeline': 800,
         },
-        "DOWNLOAD_DELAY": 0.5,
+        "DOWNLOAD_DELAY": 1.0,
+        "CONCURRENT_REQUESTS": 32,
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
+        "FEED_EXPORT_ENCODING": 'utf-8',
+        'FEED_URI': 'cryspe.json'
     }
 
 
@@ -260,8 +272,11 @@ class DEX_Spider(scrapy.Spider):
             'zen_spider.pipelines.MySQLPipeline': 700,
         },
         "DOWNLOAD_DELAY": 1.0,
+        "CONCURRENT_REQUESTS": 32,
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
+        "FEED_EXPORT_ENCODING": 'utf-8',
+        'FEED_URI': 'DEX.json'
     }
 
     def parse(self, response):
