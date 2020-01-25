@@ -6,8 +6,8 @@ import os
 
 class Scraper:
     def __init__(self):
-        settings_file_path = 'zen_spider.settings'  # The path seen from root, ie. from main.py
-        os.environ.setdefault('SCRAPY_SETTINGS_MODULE', settings_file_path)
+        settings = zen_spider.settings
+        os.environ.setdefault('SCRAPY_SETTINGS_MODULE', settings)
         self.process = CrawlerProcess(get_project_settings())
         self.spider = zen_spider  # The spider you want to crawl
 
