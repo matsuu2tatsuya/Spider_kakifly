@@ -277,6 +277,7 @@ class DEX_Spider(scrapy.Spider):
         },
         "DOWNLOAD_DELAY": 1.0,
         "CONCURRENT_REQUESTS": 32,
+        "DNS_TIMEOUT": 10.0,
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
         "FEED_EXPORT_ENCODING": 'utf-8',
