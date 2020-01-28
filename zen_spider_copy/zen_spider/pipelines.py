@@ -9,15 +9,14 @@ import MySQLdb
 
 class MySQLPipeline:
     """
-    ItemをMySQLに保存するPipeline。
-    {ID(auto),name(id or card_name),price(int),currency(ETH),purchase_URL,image_URL}の６つ。
+    ItemをMySQLに保存するPipeline。→Zenで用いるDjango-modelsに従うよ。
+    Tableは Auction, Set_auction, Asset, imageの四つ。
     """
 
     def open_spider(self, spider):
         """
         Spiderの開始時にMySQLサーバーに接続する。
-        itemsテーブルが存在しない場合は作成する。
-        あった場合は一度itemテーブルを削除してからまた作成。
+        テーブルが存在しない場合は作成する。あった場合は一度テーブルを削除してからまた作成。
         """
         settings = spider.settings  # settings.pyから設定を読み込む。
         params = {
@@ -31,18 +30,54 @@ class MySQLPipeline:
         self.conn = MySQLdb.connect(**params)  # MYSQLサーバーに接続。
         self.c = self.conn.cursor()  # カーソルを取得
         self.c.execute("""
-            DROP TABLE IF EXISTS `items`
+            DROP TABLE IF EXISTS `price_shower_image`;
+            DROP TABLE IF EXISTS `price_shower_asset`;
+            DROP TABLE IF EXISTS `price_shower_setauction`;
+            DROP TABLE IF EXISTS `price_shower_auction`;
         """)
 
-        # itemsテーブルが存在しない場合は作成。
+
+    # auction table 作成。
         self.c.execute("""
-            CREATE TABLE IF NOT EXISTS `items` (
+            CREATE TABLE IF NOT EXISTS `price_shower_auction` (
+            `id` INTEGER NOT NULL AUTO_INCREMENT,
+            `update_at` datetime ,
+            `purchase_URL` varchar(200) NOT NULL,
+            `is_active` BOOL NOT NULL,
+            PRIMARY KEY (`id`)
+            )
+        """)
+
+    # asset table 作成。
+        self.c.execute("""
+            CREATE TABLE IF NOT EXISTS `price_shower_asset` (
+            `id` INTEGER NOT NULL AUTO_INCREMENT,
             `name` VARCHAR(200) ,
-            `price` FLOAT ,
-            `currency` VARCHAR(10),
-            `purchase_URL` VARCHAR(200) NOT NULL ,
-            `image_URL` VARCHAR(200),
-            PRIMARY KEY (`purchase_URL`)
+            CONSTRAINT `assets` FOREIGN KEY `price_shower_asset` (`id`)
+            REFERENCES `price_shower_auction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE ,
+            PRIMARY KEY (`id`)
+            )
+        """)
+
+    # setauction table 作成。
+        self.c.execute("""
+            CREATE TABLE IF NOT EXISTS `price_shower_setauction` (
+            `id` INTEGER NOT NULL AUTO_INCREMENT,
+            `price` FLOAT NOT NULL ,
+            `currency` CHAR(3),
+            CONSTRAINT `set_auction` FOREIGN KEY `price_shower_setauction` (`id`)
+            REFERENCES `price_shower_auction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE ,
+            PRIMARY KEY (`id`)
+            )
+        """)
+    # image table 作成。
+        self.c.execute("""
+            CREATE TABLE IF NOT EXISTS `price_shower_image` (
+            `id` INTEGER NOT NULL AUTO_INCREMENT,
+            `url` varchar(200) NOT NULL ,
+            CONSTRAINT `image` FOREIGN KEY `price_shower_image` (`id`)
+            REFERENCES `price_shower_asset` (`id`) ON DELETE CASCADE ON UPDATE CASCADE ,
+            PRIMARY KEY (`id`)
             )
         """)
         self.conn.commit()  # 変更をコミット
@@ -57,10 +92,20 @@ class MySQLPipeline:
 
     def process_item(self, item, spider):
         """
-        Itemをitemsテーブルに挿入する。
+        Itemをそれぞれのテーブルに挿入する。
         """
-        self.c.execute("INSERT INTO `items`(`name`,`price`,`currency`,`purchase_URL`,`image_URL`) "
-                       "VALUES (%(name)s,%(price)s,%(currency)s,%(purchase_URL)s,%(image_URL)s)", dict(item))
+
+        self.c.execute("INSERT INTO `price_shower_auction`(`update_at`,`purchase_URL`, `is_active`) "
+                       "VALUES (cast( now() as datetime), %(purchase_URL)s, TRUE )", dict(item))
+
+        self.c.execute("INSERT INTO `price_shower_asset`(`name`) "
+                       "VALUES (%(name)s)", dict(item))
+
+        self.c.execute("INSERT INTO `price_shower_setauction`(`price`, `currency`) "
+                       "VALUES (%(price)s, %(currency)s)", dict(item))
+
+        self.c.execute("INSERT INTO `price_shower_image`(`url`) "
+                       "VALUES (%(image_URL)s)", dict(item))
 
         self.conn.commit()
 

@@ -26,8 +26,6 @@ class EthmarketSpider(scrapy.Spider):
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
         "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": "json",
-        'FEED_URI': 'eth_market.json'
     }
 
     def parse(self, response):
@@ -73,8 +71,6 @@ class EthmarketSpider_JPY(scrapy.Spider):
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
         "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": "json",
-        'FEED_URI': 'eth_market_jp.json'
     }
 
     def parse(self, response):
@@ -123,8 +119,6 @@ class MagiSpider(scrapy.Spider):
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
         "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": "json",
-        'FEED_URI': 'magi.json'
     }
 
     def parse(self, response):
@@ -236,8 +230,6 @@ class cryspe_selenium(scrapy.Spider):
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
         "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": "json",
-        'FEED_URI': 'cryspe.json'
     }
 
 
@@ -281,8 +273,6 @@ class DEX_Spider(scrapy.Spider):
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
         "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": "json",
-        'FEED_URI': 'DEX.json'
     }
 
     def parse(self, response):
