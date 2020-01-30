@@ -20,7 +20,6 @@ class DEX_SeleniumMiddleware(object):
         driver = Chrome(options=options)
 
         driver.get('https://www.spiderdex.com/assets/5d35228f74ba04002ac53d9c')
-        time.sleep(0.5)
         input_element = driver.find_elements_by_css_selector('div.filterattributevalue > div.item')[5]
         input_element.click()
         time.sleep(0.5)
