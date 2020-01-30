@@ -19,7 +19,7 @@ class EthmarketSpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            'zen_spider.pipelines.MySQL_ethmarket_Pipeline': 500,
+            'zen_spider.pipelines.MySQL_ethmarket_Pipeline': 700,
         },
         "DOWNLOAD_DELAY": 1.0,
         "CONCURRENT_REQUESTS": 32,
@@ -202,7 +202,7 @@ class DEX_Spider(scrapy.Spider):
             'zen_spider.middlewares.DEX_SeleniumMiddleware': 540,
         },
         "ITEM_PIPELINES": {
-            'zen_spider.pipelines.MySQL_DEX_Pipeline': 700,
+            'zen_spider.pipelines.MySQL_DEX_Pipeline': 600,
         },
         "DOWNLOAD_DELAY": 1.0,
         "CONCURRENT_REQUESTS": 32,
