@@ -230,7 +230,7 @@ class DEX_Spider(scrapy.Spider):
 
         dex_items['image_URL'] = response.css('img[src$="png"]::attr("src")').get()
 
-        return dex_items
+        yield dex_items
 
 process = CrawlerProcess()
 process.crawl(DEX_Spider)
