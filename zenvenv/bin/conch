@@ -1,4 +1,4 @@
-#!/Users/matsuutatsuya/Zen_spider/zenvenv/bin/python3
+#!/Users/matsuutatsuya/development/Zen_spider/zenvenv/bin/python3
 # EASY-INSTALL-ENTRY-SCRIPT: 'Twisted==19.10.0','console_scripts','conch'
 __requires__ = 'Twisted==19.10.0'
 import re

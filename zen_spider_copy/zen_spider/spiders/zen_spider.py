@@ -232,6 +232,7 @@ class DEX_Spider(scrapy.Spider):
 
         yield dex_items
 
+
 process = CrawlerProcess()
 process.crawl(DEX_Spider)
 process.crawl(EthmarketSpider)
