@@ -57,10 +57,18 @@ class cryspe_SeleniumMiddleware(object):
         input_element = driver.find_element_by_xpath("//span[@class='checkmark']")
         input_element.click()
         time.sleep(0.5)
+        h = 'while Loop 用'
+        r = []
 
-        for _ in range(35):
+        while h:
             driver.execute_script('scroll(0, document.body.scrollHeight)')
-            time.sleep(1.0)
+            r.append(len(driver.find_elements_by_css_selector('div.col-card')))
+            if len(r) > 2:
+                time.sleep(0.3)
+                if r[-1] - r[-2] != 0 and r[-1] - r[-2] < 20:
+                    print(r)
+                    print(f'{r}枚あったよ。')
+                    break
 
         return HtmlResponse(
             driver.current_url,
