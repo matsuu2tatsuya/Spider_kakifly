@@ -74,6 +74,13 @@ class cryspe_SeleniumMiddleware(object):
                 if r[-1] - r[-2] != 0 and r[-1] - r[-2] < 20:
                     break
 
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+
         driver.quit()
 
 

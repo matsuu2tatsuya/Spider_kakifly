@@ -6,7 +6,7 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
-from selenium.webdriver import Chrome, ChromeOptions, Remote
+from selenium.webdriver import Chrome, ChromeOptions
 from scrapy.http import HtmlResponse
 
 import time
@@ -18,28 +18,34 @@ class gaudiySelenium_Middleware(object):
         options.headless = True
         driver = Chrome(options=options)
 
-        driver.get('https://cryptospells.jp/trades')
+        driver.get('https://miime.io/assets/2')
         time.sleep(0.5)
-        input_element = driver.find_element_by_xpath("//span[@class='checkmark']")
+        input_element = driver.find_elements_by_css_selector(
+            '#__layout > div > main > div.filterButtonBar > div > div:nth-child(5) > a')[0]
         input_element.click()
-        time.sleep(0.5)
-        h = 0
-        r = []
-
-        while h < 100:
-            driver.execute_script('scroll(0, document.body.scrollHeight)')
-            r.append(len(driver.find_elements_by_css_selector('div.col-card')))
-            # print(r)
-            h = h + 1
-            # print(h)
-            if h == 100:
-                # print('BREEK')
+        time.sleep(0.7)
+        driver.execute_script('scroll(0, document.body.scrollHeight)')
+        more_elements = driver.find_elements_by_css_selector(
+            '#__layout > div > main > div.assetCardList > div.loadMoreButton__Container > div > button.loadMoreButton')[
+            0]
+        while more_elements:
+            try:
+                more_elements = driver.find_elements_by_css_selector(
+                    '#__layout > div > main > div.assetCardList > div.loadMoreButton__Container > div > button.loadMoreButton')[
+                    0]
+            except IndexError:
+                print('全部表示完了しました。')
                 break
-            if len(r) > 2:
-                time.sleep(0.3)
-                if r[-1] - r[-2] != 0 and r[-1] - r[-2] < 20:
-                    break
+            more_elements.click()
+            time.sleep(0.5)
 
+        print('DEKETA')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
         driver.quit()
 
 
