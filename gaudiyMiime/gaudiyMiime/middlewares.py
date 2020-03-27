@@ -11,41 +11,7 @@ from scrapy.http import HtmlResponse
 
 import time
 
-
-class DEX_SeleniumMiddleware(object):
-
-    def process_request(self, request, spider):
-        options = ChromeOptions()
-        options.headless = True
-        driver = Chrome(options=options)
-
-        driver.get('https://www.spiderdex.com/assets/5d35228f74ba04002ac53d9c')
-        input_element = driver.find_elements_by_css_selector('div.filterattributevalue > div.item')[5]
-        input_element.click()
-        time.sleep(0.5)
-
-        for div in driver.find_elements_by_xpath('//div[@class="assetscontentitem"]'):
-            time.sleep(0.5)
-            div.find_element_by_css_selector('div.assetimghover').click()
-            handle_array = driver.window_handles
-            driver.switch_to.window(handle_array[1])
-            time.sleep(0.5)
-
-        time.sleep(0.5)
-
-        f = HtmlResponse(
-            driver.current_url,
-            body=driver.page_source,
-            encoding='utf-8',
-            request=request,
-        )
-        if f:
-            return f
-            time.sleep(0.5)
-            driver.quit()
-
-
-class cryspe_SeleniumMiddleware(object):
+class gaudiySelenium_Middleware(object):
 
     def process_request(self, request, spider):
         options = ChromeOptions()
@@ -77,7 +43,8 @@ class cryspe_SeleniumMiddleware(object):
         driver.quit()
 
 
-class ZenSpiderSpiderMiddleware(object):
+
+class GaudiymiimeSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -125,7 +92,7 @@ class ZenSpiderSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class ZenSpiderDownloaderMiddleware(object):
+class GaudiymiimeDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
