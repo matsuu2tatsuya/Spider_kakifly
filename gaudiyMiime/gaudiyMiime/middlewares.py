@@ -9,7 +9,6 @@ from scrapy import signals
 from selenium.webdriver import Chrome, ChromeOptions
 from scrapy.http import HtmlResponse
 
-import time
 
 class gaudiySelenium_Middleware(object):
 
@@ -17,13 +16,39 @@ class gaudiySelenium_Middleware(object):
         options = ChromeOptions()
         options.headless = True
         driver = Chrome(options=options)
+        driver.implicitly_wait(10)
+
+        driver.get('https://gaudiy.com/community_details/avJEInz3EXlxNXKMSWxR')
+        input_element = driver.find_element_by_css_selector('div > button > div > svg')
+        input_element.click()
+        source_element = driver.find_element_by_css_selector('label.MuiFormControlLabel-root')
+        if source_element:
+            source_element.click()
+        print('DEKETA')
+        driver.quit()
+
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+
+
+class miimeSelenium_Middleware(object):
+
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(10)
 
         driver.get('https://miime.io/assets/2')
-        time.sleep(0.5)
         input_element = driver.find_elements_by_css_selector(
             '#__layout > div > main > div.filterButtonBar > div > div:nth-child(5) > a')[0]
         input_element.click()
-        time.sleep(0.7)
         driver.execute_script('scroll(0, document.body.scrollHeight)')
         more_elements = driver.find_elements_by_css_selector(
             '#__layout > div > main > div.assetCardList > div.loadMoreButton__Container > div > button.loadMoreButton')[
@@ -37,7 +62,6 @@ class gaudiySelenium_Middleware(object):
                 print('全部表示完了しました。')
                 break
             more_elements.click()
-            time.sleep(0.5)
 
         print('DEKETA')
         return HtmlResponse(
