@@ -8,7 +8,6 @@
 from scrapy import signals
 from selenium.webdriver import Chrome, ChromeOptions, Remote
 from scrapy.http import HtmlResponse
-
 import time
 
 
@@ -18,20 +17,16 @@ class DEX_SeleniumMiddleware(object):
         options = ChromeOptions()
         options.headless = True
         driver = Chrome(options=options)
+        driver.implicitly_wait(10)
 
         driver.get('https://www.spiderdex.com/assets/5d35228f74ba04002ac53d9c')
         input_element = driver.find_elements_by_css_selector('div.filterattributevalue > div.item')[5]
         input_element.click()
-        time.sleep(0.5)
 
         for div in driver.find_elements_by_xpath('//div[@class="assetscontentitem"]'):
-            time.sleep(0.5)
             div.find_element_by_css_selector('div.assetimghover').click()
             handle_array = driver.window_handles
             driver.switch_to.window(handle_array[1])
-            time.sleep(0.5)
-
-        time.sleep(0.5)
 
         f = HtmlResponse(
             driver.current_url,
@@ -41,7 +36,6 @@ class DEX_SeleniumMiddleware(object):
         )
         if f:
             return f
-            time.sleep(0.5)
             driver.quit()
 
 
@@ -53,24 +47,22 @@ class cryspe_SeleniumMiddleware(object):
         driver = Chrome(options=options)
 
         driver.get('https://cryptospells.jp/trades')
-        time.sleep(0.5)
         input_element = driver.find_element_by_xpath("//span[@class='checkmark']")
         input_element.click()
-        time.sleep(0.5)
         h = 0
         r = []
 
-        while h < 100:
+        while h < 500:
             driver.execute_script('scroll(0, document.body.scrollHeight)')
+            time.sleep(0.5)
             r.append(len(driver.find_elements_by_css_selector('div.col-card')))
             # print(r)
             h = h + 1
             # print(h)
-            if h == 100:
+            if h == 500:
                 # print('BREEK')
                 break
             if len(r) > 2:
-                time.sleep(0.3)
                 if r[-1] - r[-2] != 0 and r[-1] - r[-2] < 20:
                     break
 
