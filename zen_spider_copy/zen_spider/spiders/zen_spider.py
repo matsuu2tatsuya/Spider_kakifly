@@ -235,8 +235,8 @@ class DEX_Spider(scrapy.Spider):
 
 process = CrawlerProcess()
 # process.crawl(DEX_Spider)
-# process.crawl(EthmarketSpider)
-# process.crawl(EthmarketSpider_JPY)
+process.crawl(EthmarketSpider)
+process.crawl(EthmarketSpider_JPY)
 process.crawl(MagiSpider)
 process.crawl(cryspe_selenium)
 

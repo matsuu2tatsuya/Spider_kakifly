@@ -8,6 +8,7 @@
 from scrapy import signals
 from selenium.webdriver import Chrome, ChromeOptions
 from scrapy.http import HtmlResponse
+import time
 
 
 class gaudiySelenium_Middleware(object):
@@ -16,16 +17,24 @@ class gaudiySelenium_Middleware(object):
         options = ChromeOptions()
         options.headless = True
         driver = Chrome(options=options)
-        driver.implicitly_wait(10)
+        driver.implicitly_wait(30)
 
         driver.get('https://gaudiy.com/community_details/avJEInz3EXlxNXKMSWxR')
-        input_element = driver.find_element_by_css_selector('div > button > div > svg')
-        input_element.click()
+        time.sleep(0.5)
+        input_element = driver.find_element_by_css_selector('button:nth-child(5) > span > span > p')
+        if input_element:
+            input_element.click()
+        time.sleep(0.5)
         source_element = driver.find_element_by_css_selector('label.MuiFormControlLabel-root')
-        if source_element:
-            source_element.click()
+        while source_element:
+            try:
+                source_element.click()
+                break
+            except Exception:
+                break
+
         print('DEKETA')
-        driver.quit()
+        print('全て表示されているはず。')
 
         return HtmlResponse(
             driver.current_url,
@@ -43,27 +52,29 @@ class miimeSelenium_Middleware(object):
         options = ChromeOptions()
         options.headless = True
         driver = Chrome(options=options)
-        driver.implicitly_wait(10)
+        driver.implicitly_wait(30)
 
         driver.get('https://miime.io/assets/2')
         input_element = driver.find_elements_by_css_selector(
             '#__layout > div > main > div.filterButtonBar > div > div:nth-child(5) > a')[0]
         input_element.click()
+        time.sleep(0.5)
         driver.execute_script('scroll(0, document.body.scrollHeight)')
-        more_elements = driver.find_elements_by_css_selector(
-            '#__layout > div > main > div.assetCardList > div.loadMoreButton__Container > div > button.loadMoreButton')[
-            0]
-        while more_elements:
-            try:
-                more_elements = driver.find_elements_by_css_selector(
-                    '#__layout > div > main > div.assetCardList > div.loadMoreButton__Container > div > button.loadMoreButton')[
-                    0]
-            except IndexError:
-                print('全部表示完了しました。')
+        more_element = driver.find_element_by_css_selector(
+            '#__layout > div > main > div.assetCardList > div.loadMoreButton__Container > div > button.loadMoreButton')
+        while more_element:
+            more_element = driver.find_element_by_css_selector(
+                '#__layout > div > main > div.assetCardList > div.loadMoreButton__Container > div > button.loadMoreButton')
+            time.sleep(0.5)
+            if more_element:
+                try:
+                    more_element.click()
+                except Exception:
+                    break
+            else:
                 break
-            more_elements.click()
 
-        print('DEKETA')
+        print('全て表示されているはず。')
         return HtmlResponse(
             driver.current_url,
             body=driver.page_source,
