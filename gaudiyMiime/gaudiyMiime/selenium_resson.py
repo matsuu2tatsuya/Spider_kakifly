@@ -4,7 +4,7 @@ import time
 options = ChromeOptions()
 # options.headless = True
 driver = Chrome(options=options)
-driver.implicitly_wait(30)
+driver.implicitly_wait(20)
 
 driver.get('https://gaudiy.com/community_details/avJEInz3EXlxNXKMSWxR')
 time.sleep(0.5)
@@ -21,6 +21,5 @@ while source_element:
         break
 
 print('DEKETA')
-
 print('全て表示されているはず。')
 # driver.quit()

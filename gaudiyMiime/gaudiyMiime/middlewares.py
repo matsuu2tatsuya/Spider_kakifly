@@ -17,7 +17,7 @@ class gaudiySelenium_Middleware(object):
         options = ChromeOptions()
         options.headless = True
         driver = Chrome(options=options)
-        driver.implicitly_wait(30)
+        driver.implicitly_wait(20)
 
         driver.get('https://gaudiy.com/community_details/avJEInz3EXlxNXKMSWxR')
         time.sleep(0.5)
@@ -52,7 +52,7 @@ class miimeSelenium_Middleware(object):
         options = ChromeOptions()
         options.headless = True
         driver = Chrome(options=options)
-        driver.implicitly_wait(30)
+        driver.implicitly_wait(20)
 
         driver.get('https://miime.io/assets/2')
         input_element = driver.find_elements_by_css_selector(
@@ -60,11 +60,13 @@ class miimeSelenium_Middleware(object):
         input_element.click()
         time.sleep(0.5)
         driver.execute_script('scroll(0, document.body.scrollHeight)')
-        more_element = driver.find_element_by_css_selector(
-            '#__layout > div > main > div.assetCardList > div.loadMoreButton__Container > div > button.loadMoreButton')
+        more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
+                                                           'div.loadMoreButton__Container > div > '
+                                                           'button.loadMoreButton')
         while more_element:
-            more_element = driver.find_element_by_css_selector(
-                '#__layout > div > main > div.assetCardList > div.loadMoreButton__Container > div > button.loadMoreButton')
+            more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
+                                                               'div.loadMoreButton__Container > div > '
+                                                               'button.loadMoreButton')
             time.sleep(0.5)
             if more_element:
                 try:
