@@ -11,6 +11,7 @@ import scrapy
 class GaudiymiimeItem(scrapy.Item):
     """
     cryspeは全て同じitem使用。
+    miimeのダッチオークション価格は名前の後に（ダッチオークション）と入れる。
     """
     name = scrapy.Field()
     price = scrapy.Field()
