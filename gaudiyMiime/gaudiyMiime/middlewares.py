@@ -37,7 +37,6 @@ class gaudiySelenium_Middleware(object):
                 driver.execute_script("arguments[0].scrollIntoView(true);", link)
                 time.sleep(0.3)
 
-        time.sleep(1.0)
         return HtmlResponse(
             driver.current_url,
             body=driver.page_source,

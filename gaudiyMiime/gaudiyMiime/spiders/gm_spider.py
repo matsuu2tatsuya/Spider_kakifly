@@ -22,7 +22,9 @@ class gaudiySpider(scrapy.Spider):
         # 'HTTPCACHE_EXPIRATION_SECS': 60000,
         'NEWSPIDER_MODULE': 'gaudiyMiime.spiders',
         # 'ROBOTSTXT_OBEY': True,
-        'SPIDER_MODULES': ['gaudiyMiime.spiders']
+        'SPIDER_MODULES': ['gaudiyMiime.spiders'],
+        'FEED_FORMAT': 'json',
+        'FEED_URI': 'gaudiy.json',
     }
 
     def parse(self, response):
@@ -60,7 +62,9 @@ class miimeSpider(scrapy.Spider):
         # 'HTTPCACHE_EXPIRATION_SECS': 60000,
         'NEWSPIDER_MODULE': 'gaudiyMiime.spiders',
         # 'ROBOTSTXT_OBEY': True,
-        'SPIDER_MODULES': ['gaudiyMiime.spiders']
+        'SPIDER_MODULES': ['gaudiyMiime.spiders'],
+        'FEED_FORMAT': 'json',
+        'FEED_URI': 'miime.json',
     }
 
     def parse(self, response):
