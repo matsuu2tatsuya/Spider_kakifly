@@ -14,3 +14,4 @@ class Scraper:
     def run_spiders(self):
         self.process.crawl(self.spider)
         self.process.start()
+        print('Spider SUCCESS !!!')

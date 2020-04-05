@@ -111,9 +111,9 @@ class MagiSpider(scrapy.Spider):
     start_urls = ['https://magi.camp/items/search?utf8=%E2%9C%93&forms_search_items%5Bcategory_id%5D=100009&forms_search_items%5Bstatus%5D=presented&forms_search_items%5Bpage%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B']
 
     custom_settings = {
-        "ITEM_PIPELINES": {
-            'zen_spider.pipelines.MySQL_magi_Pipeline': 800,
-        },
+        # "ITEM_PIPELINES": {
+        #     'zen_spider.pipelines.MySQL_magi_Pipeline': 800,
+        # },
         "DOWNLOAD_DELAY": 1.0,
         "CONCURRENT_REQUESTS": 32,
         "MYSQL_USER": 'scraper',
@@ -159,9 +159,9 @@ class cryspe_selenium(scrapy.Spider):
         "DOWNLOADER_MIDDLEWARES": {
             'zen_spider.middlewares.cryspe_SeleniumMiddleware': 543,
         },
-        "ITEM_PIPELINES": {
-            'zen_spider.pipelines.MySQL_cryspe_Pipeline': 800,
-        },
+        # "ITEM_PIPELINES": {
+        #     'zen_spider.pipelines.MySQL_cryspe_Pipeline': 800,
+        # },
         "DOWNLOAD_DELAY": 1.0,
         "CONCURRENT_REQUESTS": 32,
         "MYSQL_USER": 'scraper',
@@ -235,8 +235,8 @@ class DEX_Spider(scrapy.Spider):
 
 process = CrawlerProcess()
 # process.crawl(DEX_Spider)
-process.crawl(EthmarketSpider)
-process.crawl(EthmarketSpider_JPY)
+# process.crawl(EthmarketSpider)
+# process.crawl(EthmarketSpider_JPY)
 process.crawl(MagiSpider)
 process.crawl(cryspe_selenium)
 
