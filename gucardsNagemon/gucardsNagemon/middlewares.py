@@ -6,7 +6,88 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+from selenium.webdriver import Chrome, ChromeOptions
+from scrapy.http import HtmlResponse
+import time
 
+
+class gaudiySelenium_Middleware(object):
+
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(20)
+
+        driver.get('https://gaudiy.com/community_details/avJEInz3EXlxNXKMSWxR')
+        time.sleep(0.3)
+        input_element = driver.find_element_by_css_selector('button:nth-child(5) > span > span > p')
+        if input_element:
+            input_element.click()
+        time.sleep(0.3)
+        source_element = driver.find_element_by_css_selector('label.MuiFormControlLabel-root')
+        if source_element:
+            source_element.click()
+            time.sleep(1.0)
+            link = driver.find_elements_by_css_selector('button > div > p:nth-child(1)')[-2]
+            driver.execute_script("arguments[0].scrollIntoView(true);", link)
+            time.sleep(0.3)
+            while link != driver.find_elements_by_css_selector('button > div > p:nth-child(1)')[-2]:
+                link = driver.find_elements_by_css_selector('button > div > p:nth-child(1)')[-2]
+                driver.execute_script("arguments[0].scrollIntoView(true);", link)
+                time.sleep(0.3)
+
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        time.sleep(0.5)
+        driver.quit()
+
+
+
+class miimeSelenium_Middleware(object):
+
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(20)
+
+        driver.get('https://miime.io/assets/2')
+        input_element = driver.find_elements_by_css_selector(
+            '#__layout > div > main > div.filterButtonBar > div > div:nth-child(5) > a')[0]
+        input_element.click()
+        time.sleep(0.5)
+        driver.execute_script('scroll(0, document.body.scrollHeight)')
+        more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
+                                                           'div.loadMoreButton__Container > div > '
+                                                           'button.loadMoreButton')
+        while more_element:
+            more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
+                                                               'div.loadMoreButton__Container > div > '
+                                                               'button.loadMoreButton')
+            time.sleep(0.5)
+            if more_element:
+                try:
+                    more_element.click()
+                except Exception:
+                    break
+            else:
+                break
+
+        # print('全て表示されているはず。')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+
+        time.sleep(0.5)
+        driver.quit()
 
 class GucardsnagemonSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
