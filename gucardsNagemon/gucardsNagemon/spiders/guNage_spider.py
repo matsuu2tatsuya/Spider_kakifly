@@ -35,7 +35,6 @@ class guCardsSpider(scrapy.Spider):
             yield item
 
 
-
 class nagemonSpider(scrapy.Spider):
     name = 'nagemon_spider'
     allowed_domains = ['miime.io']
