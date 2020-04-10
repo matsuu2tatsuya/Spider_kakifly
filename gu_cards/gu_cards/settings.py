@@ -22,7 +22,7 @@ USER_AGENT = 'gu_cards (+http://www.yourdomain.com)'
 # ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 16
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -89,6 +89,6 @@ DOWNLOAD_DELAY = 2
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-# FEED_EXPORT_ENCODING = 'utf-8',
-# FEED_FORMAT = 'json',
-# FEED_URI = 'guCards.json'
+FEED_EXPORT_ENCODING = 'utf-8'
+FEED_FORMAT = 'json'
+FEED_URI = 'guCards.json'

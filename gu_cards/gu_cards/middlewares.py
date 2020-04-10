@@ -10,15 +10,19 @@ from selenium.webdriver import Chrome, ChromeOptions
 from scrapy.http import HtmlResponse
 import time
 
+"""
+gu_cardsのselenium処理を書いて行く。qualityで分ける。
+かなり大量になるが、変えるのはdriver.get('url')のみ
+"""
 
-class guCardsSelenium_Middleware(object):
-
+# Shadowから
+class guCardsShadow_1_Middleware(object):
     def process_request(self, request, spider):
         options = ChromeOptions()
         options.headless = True
         driver = Chrome(options=options)
         driver.implicitly_wait(5)
-        driver.get(f'https://gu.cards/?marketplace=with_listings&page=1')
+        driver.get('https://gu.cards/?marketplace=with_listings&page=1&quality_shadow=on')
         return HtmlResponse(
             driver.current_url,
             body=driver.page_source,
@@ -27,6 +31,96 @@ class guCardsSelenium_Middleware(object):
         )
         driver.quit()
 
+class guCardsShadow_2_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=2&quality_shadow=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsShadow_3_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=3&quality_shadow=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsShadow_4_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=4&quality_shadow=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsShadow_5_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=5&quality_shadow=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsShadow_6_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=6&quality_shadow=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+
+class guCardsShadow_7_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=7&quality_shadow=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
 
 class GuCardsSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
