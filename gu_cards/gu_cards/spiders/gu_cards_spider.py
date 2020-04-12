@@ -48,7 +48,7 @@ class guCardsMeteorite_1_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -72,7 +72,7 @@ class guCardsMeteorite_2_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -96,7 +96,7 @@ class guCardsMeteorite_3_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -120,7 +120,7 @@ class guCardsMeteorite_4_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -144,7 +144,7 @@ class guCardsMeteorite_5_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -168,7 +168,7 @@ class guCardsMeteorite_6_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -192,7 +192,7 @@ class guCardsMeteorite_7_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -216,7 +216,7 @@ class guCardsMeteorite_8_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -240,7 +240,7 @@ class guCardsMeteorite_9_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -264,7 +264,7 @@ class guCardsMeteorite_10_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -288,7 +288,7 @@ class guCardsMeteorite_11_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -312,7 +312,7 @@ class guCardsMeteorite_12_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -360,7 +360,7 @@ class guCardsMeteorite_14_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -384,7 +384,7 @@ class guCardsMeteorite_15_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -408,7 +408,7 @@ class guCardsMeteorite_16_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
@@ -432,7 +432,7 @@ class guCardsMeteorite_17_Spider(scrapy.Spider):
             item['quality'] = Meteorite
             item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
             card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 5)
+            item['image_URL'] = image_URL_base(card_id, 4)
 
             yield item
 
