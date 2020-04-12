@@ -32,7 +32,7 @@ class guCardsShadow_1_Spider(scrapy.Spider):
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
     custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsShadow_1_Middleware': 520},
+        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_1_Middleware': 520},
         "FEED_EXPORT_ENCODING": 'utf-8',
         "FEED_FORMAT": 'json',
         "FEED_URI": 'guCardsShadow.json',
@@ -56,7 +56,7 @@ class guCardsShadow_2_Spider(scrapy.Spider):
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
     custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsShadow_2_Middleware': 520},
+        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_2_Middleware': 520},
         "FEED_EXPORT_ENCODING": 'utf-8',
         "FEED_FORMAT": 'json',
         "FEED_URI": 'guCardsShadow.json',
@@ -80,7 +80,7 @@ class guCardsShadow_3_Spider(scrapy.Spider):
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
     custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsShadow_3_Middleware': 520},
+        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_3_Middleware': 520},
         "FEED_EXPORT_ENCODING": 'utf-8',
         "FEED_FORMAT": 'json',
         "FEED_URI": 'guCardsShadow.json',
@@ -104,7 +104,7 @@ class guCardsShadow_4_Spider(scrapy.Spider):
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
     custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsShadow_4_Middleware': 520},
+        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_4_Middleware': 520},
         "FEED_EXPORT_ENCODING": 'utf-8',
         "FEED_FORMAT": 'json',
         "FEED_URI": 'guCardsShadow.json',
@@ -128,7 +128,7 @@ class guCardsShadow_5_Spider(scrapy.Spider):
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
     custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsShadow_5_Middleware': 520},
+        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_5_Middleware': 520},
         "FEED_EXPORT_ENCODING": 'utf-8',
         "FEED_FORMAT": 'json',
         "FEED_URI": 'guCardsShadow.json',
@@ -152,7 +152,7 @@ class guCardsShadow_6_Spider(scrapy.Spider):
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
     custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsShadow_6_Middleware': 520},
+        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_6_Middleware': 520},
         "FEED_EXPORT_ENCODING": 'utf-8',
         "FEED_FORMAT": 'json',
         "FEED_URI": 'guCardsShadow.json',
@@ -176,7 +176,7 @@ class guCardsShadow_7_Spider(scrapy.Spider):
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
     custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsShadow_7_Middleware': 520},
+        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_7_Middleware': 520},
         "FEED_EXPORT_ENCODING": 'utf-8',
         "FEED_FORMAT": 'json',
         "FEED_URI": 'guCardsShadow.json',

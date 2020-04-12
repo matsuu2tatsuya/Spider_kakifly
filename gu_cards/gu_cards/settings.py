@@ -9,14 +9,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'gu_cards_meteorite'
+BOT_NAME = 'gu_cards'
 
-SPIDER_MODULES = ['gu_cards_meteorite.spiders']
-NEWSPIDER_MODULE = 'gu_cards_meteorite.spiders'
+SPIDER_MODULES = ['gu_cards.spiders']
+NEWSPIDER_MODULE = 'gu_cards.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'gu_cards_meteorite (+http://www.yourdomain.com)'
+USER_AGENT = 'gu_cards (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 # ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ DOWNLOAD_DELAY = 2
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'gu_cards_meteorite.middlewares.GuCardsSpiderMiddleware': 543,
+#    'gu_cards.middlewares.GuCardsSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'gu_cards_meteorite.middlewares.GuCardsDownloaderMiddleware': 543,
+#    'gu_cards.middlewares.GuCardsDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ DOWNLOAD_DELAY = 2
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'gu_cards_meteorite.pipelines.GuCardsPipeline': 300,
+#    'gu_cards.pipelines.GuCardsPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
