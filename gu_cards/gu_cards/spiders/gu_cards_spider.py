@@ -21,6 +21,21 @@ Diamond = 'Diamond'      # quality_id = 1
 base_url = 'https://gu.cards/'
 purchase_URL_base = 'a.js-card-link::attr("href")'
 
+def custom_settings(quality, pages):
+    return {
+        "DOWNLOADER_MIDDLEWARES": {f'gu_cards.middlewares.guCards{quality}_{pages}_Middleware': 520},
+        'BOT_NAME': 'gu_cards',
+        'NEWSPIDER_MODULE': 'gu_cards.spiders',
+        # 'ROBOTSTXT_OBEY': True,
+        'SPIDER_MODULES': ['gu_cards.spiders'],
+        'USER_AGENT': 'gu_cards (+http://www.yourdomain.com)',
+        'CONCURRENT_REQUESTS': 16,
+        'DOWNLOAD_DELAY': 1,
+        "FEED_EXPORT_ENCODING": 'utf-8',
+        "FEED_FORMAT": 'json',
+        "FEED_URI": 'guCardsShadow.json',
+    }
+
 def image_URL_base(card_id, quality_id):
     return f'https://card.godsunchained.com/?id={card_id}&q={quality_id}&w=256&png=true'
 
@@ -31,12 +46,7 @@ class guCardsShadow_1_Spider(scrapy.Spider):
     name = 'guCardsShadow_1_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_1_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsShadow.json',
-    }
+    custom_settings = custom_settings(Shadow, 1)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -55,12 +65,7 @@ class guCardsShadow_2_Spider(scrapy.Spider):
     name = 'guCardsShadow_2_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_2_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsShadow.json',
-    }
+    custom_settings = custom_settings(Shadow, 2)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -79,12 +84,7 @@ class guCardsShadow_3_Spider(scrapy.Spider):
     name = 'guCardsShadow_3_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_3_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsShadow.json',
-    }
+    custom_settings = custom_settings(Shadow, 3)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -103,12 +103,7 @@ class guCardsShadow_4_Spider(scrapy.Spider):
     name = 'guCardsShadow_4_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_4_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsShadow.json',
-    }
+    custom_settings = custom_settings(Shadow, 4)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -127,12 +122,7 @@ class guCardsShadow_5_Spider(scrapy.Spider):
     name = 'guCardsShadow_5_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_5_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsShadow.json',
-    }
+    custom_settings = custom_settings(Shadow, 5)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -151,12 +141,7 @@ class guCardsShadow_6_Spider(scrapy.Spider):
     name = 'guCardsShadow_6_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_6_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsShadow.json',
-    }
+    custom_settings = custom_settings(Shadow, 6)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -175,12 +160,7 @@ class guCardsShadow_7_Spider(scrapy.Spider):
     name = 'guCardsShadow_7_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards.middlewares.guCardsShadow_7_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsShadow.json',
-    }
+    custom_settings = custom_settings(Shadow, 7)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -194,6 +174,8 @@ class guCardsShadow_7_Spider(scrapy.Spider):
             item['image_URL'] = image_URL_base(card_id, 3)
 
             yield item
+
+# Gold
 
 def handler():
     process = CrawlerProcess()

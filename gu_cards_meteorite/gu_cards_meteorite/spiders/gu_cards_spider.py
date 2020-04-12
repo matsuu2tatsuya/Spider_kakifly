@@ -19,6 +19,21 @@ Meteorite = 'Meteorite'  # quality_id = 4
 base_url = 'https://gu.cards/'
 purchase_URL_base = 'a.js-card-link::attr("href")'
 
+def custom_settings(quality, pages):
+    return {
+        "DOWNLOADER_MIDDLEWARES": {f'gu_cards_meteorite.middlewares.guCards{quality}_{pages}_Middleware': 520},
+        'BOT_NAME': 'gu_cards_meteorite',
+        'NEWSPIDER_MODULE': 'gu_cards_meteorite.spiders',
+        # 'ROBOTSTXT_OBEY': True,
+        'SPIDER_MODULES': ['gu_cards_meteorite.spiders'],
+        'USER_AGENT': 'gu_cards_meteorite (+http://www.yourdomain.com)',
+        'CONCURRENT_REQUESTS': 16,
+        'DOWNLOAD_DELAY': 1,
+        "FEED_EXPORT_ENCODING": 'utf-8',
+        "FEED_FORMAT": 'json',
+        "FEED_URI": 'guCardsMeteorite.json',
+    }
+
 def image_URL_base(card_id, quality_id):
     return f'https://card.godsunchained.com/?id={card_id}&q={quality_id}&w=256&png=true'
 
@@ -29,12 +44,7 @@ class guCardsMeteorite_1_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_1_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_1_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 1)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -53,12 +63,7 @@ class guCardsMeteorite_2_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_2_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_2_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 2)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -77,12 +82,7 @@ class guCardsMeteorite_3_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_3_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_3_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 3)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -101,12 +101,7 @@ class guCardsMeteorite_4_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_4_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_4_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 4)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -125,12 +120,7 @@ class guCardsMeteorite_5_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_5_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_5_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 5)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -149,12 +139,7 @@ class guCardsMeteorite_6_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_6_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_6_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 6)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -173,12 +158,7 @@ class guCardsMeteorite_7_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_7_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_7_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 7)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -197,12 +177,7 @@ class guCardsMeteorite_8_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_8_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_8_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 8)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -221,12 +196,7 @@ class guCardsMeteorite_9_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_9_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_9_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 9)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -245,12 +215,7 @@ class guCardsMeteorite_10_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_10_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_10_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 10)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -269,12 +234,7 @@ class guCardsMeteorite_11_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_11_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_11_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 11)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -293,12 +253,7 @@ class guCardsMeteorite_12_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_12_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_12_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 12)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -317,12 +272,7 @@ class guCardsMeteorite_13_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_13_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_13_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 13)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -341,12 +291,7 @@ class guCardsMeteorite_14_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_14_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_14_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 14)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -365,12 +310,7 @@ class guCardsMeteorite_15_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_15_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_15_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 15)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -389,12 +329,7 @@ class guCardsMeteorite_16_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_16_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_16_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 16)
 
     def parse(self, response):
         for res in response.css(all_cards):
@@ -413,12 +348,7 @@ class guCardsMeteorite_17_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_17_spider'
     allowed_domains = ['gu.cards']
     start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES": {'gu_cards_meteorite.middlewares.guCardsMeteorite_17_Middleware': 520},
-        "FEED_EXPORT_ENCODING": 'utf-8',
-        "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsMeteorite.json',
-    }
+    custom_settings = custom_settings(Meteorite, 17)
 
     def parse(self, response):
         for res in response.css(all_cards):
