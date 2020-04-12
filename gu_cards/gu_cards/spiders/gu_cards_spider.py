@@ -33,7 +33,7 @@ def custom_settings(quality, pages):
         'DOWNLOAD_DELAY': 1,
         "FEED_EXPORT_ENCODING": 'utf-8',
         "FEED_FORMAT": 'json',
-        "FEED_URI": 'guCardsShadow.json',
+        "FEED_URI": f'guCards{quality}.json',
     }
 
 def image_URL_base(card_id, quality_id):
@@ -175,7 +175,106 @@ class guCardsShadow_7_Spider(scrapy.Spider):
 
             yield item
 
+
 # Gold
+class guCardsGold_1_Spider(scrapy.Spider):
+    name = 'guCardsGold_1_spider'
+    allowed_domains = ['gu.cards']
+    start_urls = ['https://gu.cards/?marketplace=with_listings']
+    custom_settings = custom_settings(Gold, 1)
+
+    def parse(self, response):
+        for res in response.css(all_cards):
+            item = GuCardsItem()
+            item['name'] = res.css(name_base).xpath('string()').get()
+            item['price'] = res.css(price_base).xpath('string()').get()
+            item['currency'] = ETH
+            item['quality'] = Shadow
+            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+            item['image_URL'] = image_URL_base(card_id, 2)
+
+            yield item
+
+class guCardsGold_2_Spider(scrapy.Spider):
+    name = 'guCardsGold_2_spider'
+    allowed_domains = ['gu.cards']
+    start_urls = ['https://gu.cards/?marketplace=with_listings']
+    custom_settings = custom_settings(Gold, 2)
+
+    def parse(self, response):
+        for res in response.css(all_cards):
+            item = GuCardsItem()
+            item['name'] = res.css(name_base).xpath('string()').get()
+            item['price'] = res.css(price_base).xpath('string()').get()
+            item['currency'] = ETH
+            item['quality'] = Shadow
+            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+            item['image_URL'] = image_URL_base(card_id, 2)
+
+            yield item
+
+class guCardsGold_3_Spider(scrapy.Spider):
+    name = 'guCardsGold_3_spider'
+    allowed_domains = ['gu.cards']
+    start_urls = ['https://gu.cards/?marketplace=with_listings']
+    custom_settings = custom_settings(Gold, 3)
+
+    def parse(self, response):
+        for res in response.css(all_cards):
+            item = GuCardsItem()
+            item['name'] = res.css(name_base).xpath('string()').get()
+            item['price'] = res.css(price_base).xpath('string()').get()
+            item['currency'] = ETH
+            item['quality'] = Shadow
+            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+            item['image_URL'] = image_URL_base(card_id, 2)
+
+            yield item
+
+
+# Diamond
+class guCardsDiamond_1_Spider(scrapy.Spider):
+    name = 'guCardsDiamond_1_spider'
+    allowed_domains = ['gu.cards']
+    start_urls = ['https://gu.cards/?marketplace=with_listings']
+    custom_settings = custom_settings(Diamond, 1)
+
+    def parse(self, response):
+        for res in response.css(all_cards):
+            item = GuCardsItem()
+            item['name'] = res.css(name_base).xpath('string()').get()
+            item['price'] = res.css(price_base).xpath('string()').get()
+            item['currency'] = ETH
+            item['quality'] = Shadow
+            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+            item['image_URL'] = image_URL_base(card_id, 1)
+
+            yield item
+
+class guCardsDiamond_2_Spider(scrapy.Spider):
+    name = 'guCardsDiamond_2_spider'
+    allowed_domains = ['gu.cards']
+    start_urls = ['https://gu.cards/?marketplace=with_listings']
+    custom_settings = custom_settings(Diamond, 2)
+
+    def parse(self, response):
+        for res in response.css(all_cards):
+            item = GuCardsItem()
+            item['name'] = res.css(name_base).xpath('string()').get()
+            item['price'] = res.css(price_base).xpath('string()').get()
+            item['currency'] = ETH
+            item['quality'] = Shadow
+            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+            item['image_URL'] = image_URL_base(card_id, 1)
+
+            yield item
+
+
 
 def handler():
     process = CrawlerProcess()
@@ -187,6 +286,13 @@ def handler():
     process.crawl(guCardsShadow_5_Spider)
     process.crawl(guCardsShadow_6_Spider)
     process.crawl(guCardsShadow_7_Spider)
+
+    process.crawl(guCardsGold_1_Spider)
+    process.crawl(guCardsGold_2_Spider)
+    process.crawl(guCardsGold_3_Spider)
+
+    process.crawl(guCardsDiamond_1_Spider)
+    process.crawl(guCardsDiamond_2_Spider)
 
     process.start()
 

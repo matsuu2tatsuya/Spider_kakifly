@@ -122,6 +122,101 @@ class guCardsShadow_7_Middleware(object):
         )
         driver.quit()
 
+
+# Gold
+class guCardsGold_1_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=1&quality_gold=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsGold_2_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=2&quality_gold=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsGold_3_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=3&quality_gold=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+
+# Diamond
+class guCardsDiamond_1_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=1&quality_diamond=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsDiamond_2_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=2&quality_diamond=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsDiamond_3_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=3&quality_diamond=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+
 class GuCardsSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
