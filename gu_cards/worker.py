@@ -1,3 +1,3 @@
-from gu_cards.spiders.gu_cards_spider import Shadow_handler
+from gu_cards.spiders.gu_cards_spider import handler
 
-Shadow_handler()
+handler()

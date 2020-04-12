@@ -14,8 +14,263 @@ import time
 gu_cardsのselenium処理を書いて行く。qualityで分ける。
 かなり大量になるが、変えるのはdriver.get('url')のみ
 """
+# Meteorite
+class guCardsMeteorite_1_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=1&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
 
-# Shadowから
+class guCardsMeteorite_2_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=2&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_3_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=3&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_4_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=4&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_5_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=5&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_6_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=6&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_7_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=7&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_8_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=8&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_9_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=9&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_10_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=10&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_11_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=11&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_12_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=12&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_13_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=13&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_14_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=14&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_15_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=15&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_16_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=16&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+class guCardsMeteorite_17_Middleware(object):
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(5)
+        driver.get('https://gu.cards/?marketplace=with_listings&page=17&quality_meteorite=on')
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+        driver.quit()
+
+# Shadow
 class guCardsShadow_1_Middleware(object):
     def process_request(self, request, spider):
         options = ChromeOptions()
