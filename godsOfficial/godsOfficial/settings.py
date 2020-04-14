@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for godsToken project
+# Scrapy settings for godsOfficial project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,25 +9,25 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'godsToken'
+BOT_NAME = 'godsOfficial'
 
-SPIDER_MODULES = ['godsToken.spiders']
-NEWSPIDER_MODULE = 'godsToken.spiders'
+SPIDER_MODULES = ['godsOfficial.spiders']
+NEWSPIDER_MODULE = 'godsOfficial.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'godsToken (+http://www.yourdomain.com)'
+#USER_AGENT = 'godsOfficial (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'godsToken.middlewares.GodstokenSpiderMiddleware': 543,
+#    'godsOfficial.middlewares.GodsofficialSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'godsToken.middlewares.GodstokenDownloaderMiddleware': 543,
+#    'godsOfficial.middlewares.GodsofficialDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'godsToken.pipelines.GodstokenPipeline': 300,
+#    'godsOfficial.pipelines.GodsofficialPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
