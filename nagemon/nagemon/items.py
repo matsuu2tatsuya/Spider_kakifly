@@ -8,10 +8,11 @@
 import scrapy
 
 
-class GucardsnagemonItem(scrapy.Item):
+class NagemonItem(scrapy.Item):
 
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
+    quality = scrapy.Field()
     purchase_URL = scrapy.Field()
     image_URL = scrapy.Field()

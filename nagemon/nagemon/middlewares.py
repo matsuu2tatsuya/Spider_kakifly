@@ -11,25 +11,7 @@ from scrapy.http import HtmlResponse
 import time
 
 
-class guCardsSelenium_Middleware(object):
-
-    def process_request(self, request, spider):
-        options = ChromeOptions()
-        options.headless = True
-        driver = Chrome(options=options)
-        driver.implicitly_wait(5)
-        driver.get(f'https://gu.cards/?marketplace=with_listings&page=1')
-        return HtmlResponse(
-            driver.current_url,
-            body=driver.page_source,
-            encoding='utf-8',
-            request=request,
-        )
-        driver.quit()
-
-
-
-class miimeSelenium_Middleware(object):
+class nagemonSelenium_Middleware(object):
 
     def process_request(self, request, spider):
         options = ChromeOptions()
@@ -37,40 +19,23 @@ class miimeSelenium_Middleware(object):
         driver = Chrome(options=options)
         driver.implicitly_wait(20)
 
-        driver.get('https://miime.io/assets/2')
-        input_element = driver.find_elements_by_css_selector(
-            '#__layout > div > main > div.filterButtonBar > div > div:nth-child(5) > a')[0]
+        driver.get('https://www.nagemon.com/assets/sell')
+        input_element = driver.find_elements_by_css_selector('li > div.item')[14]
         input_element.click()
-        time.sleep(0.5)
-        driver.execute_script('scroll(0, document.body.scrollHeight)')
-        more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
-                                                           'div.loadMoreButton__Container > div > '
-                                                           'button.loadMoreButton')
-        while more_element:
-            more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
-                                                               'div.loadMoreButton__Container > div > '
-                                                               'button.loadMoreButton')
+        for _ in range(10):
+            driver.execute_script('scroll(0, document.body.scrollHeight)')
             time.sleep(0.5)
-            if more_element:
-                try:
-                    more_element.click()
-                except Exception:
-                    break
-            else:
-                break
 
-        # print('全て表示されているはず。')
         return HtmlResponse(
             driver.current_url,
             body=driver.page_source,
             encoding='utf-8',
             request=request,
         )
-
         time.sleep(0.5)
         driver.quit()
 
-class GucardsnagemonSpiderMiddleware(object):
+class NagemonSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -118,7 +83,7 @@ class GucardsnagemonSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class GucardsnagemonDownloaderMiddleware(object):
+class NagemonDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
