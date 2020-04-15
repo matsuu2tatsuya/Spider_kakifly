@@ -6,6 +6,31 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+from selenium.webdriver import Chrome, ChromeOptions
+from scrapy.http import HtmlResponse
+import time
+
+
+class godsOfficial_Selenium_Middleware(object):
+
+    def process_request(self, request, spider):
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(20)
+
+        driver.get('https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=1800')
+        driver.execute_script('scroll(0, document.body.scrollHeight)')
+        driver.find_elements_by_css_selector('div.assets__cardItem')
+
+        return HtmlResponse(
+            driver.current_url,
+            body=driver.page_source,
+            encoding='utf-8',
+            request=request,
+        )
+
+        driver.quit()
 
 
 class TokentroveSpiderMiddleware(object):

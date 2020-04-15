@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from ..items import GodsofficialItem
 import re
-import requests
-import json
 import scrapy
 from scrapy.crawler import CrawlerProcess
 
