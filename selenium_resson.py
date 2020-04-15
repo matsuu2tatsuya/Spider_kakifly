@@ -3,13 +3,9 @@ import time
 
 options = ChromeOptions()
 driver = Chrome(options=options)
-driver.implicitly_wait(20)
 
-driver.get('https://www.nagemon.com/assets/sell')
-input_element = driver.find_elements_by_css_selector('img.cardImagery__img')[14]
-input_element.click()
-for _ in range(10):
-    driver.execute_script('scroll(0, document.body.scrollHeight)')
-    time.sleep(0.5)
+driver.get(f'https://tokentrove.com/GodsUnchainedCards?page=1&perPage=120')
+driver.execute_script('scroll(0, document.body.scrollHeight)')
+driver.find_elements_by_css_selector('div.listing-wrapper')
 
 driver.quit()
