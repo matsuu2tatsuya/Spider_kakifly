@@ -2,7 +2,6 @@
 from ..items import TokentroveItem
 import re
 from selenium.webdriver import Chrome, ChromeOptions
-import time
 import scrapy
 from scrapy.crawler import CrawlerProcess
 
