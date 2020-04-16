@@ -1,14 +1,9 @@
 from ..items import GuCardsItem
 import re
+from selenium.webdriver import Chrome, ChromeOptions
 import scrapy
 from scrapy.crawler import CrawlerProcess
 
-"""
-gu_cardsのみでspiderを作る。
-selenium以外で(200)レスポンスを受け取る方法がわからない、他だと403エラーが帰ってくる。
-かつページがNextボタンで次のページに行く仕様のため、selenium_middlewareを大量に用意して、scrapyを走らせることにする。
-//WARN::(別の方法を考えた方が全てにおいていいが、現状解決策がないため、質問できる人に聞くべき。)
-"""
 
 # 下記の変数は保守性を考えた上です。
 all_cards = 'div.js-card-with-trading-buttons'
@@ -21,9 +16,8 @@ Diamond = 'Diamond'      # quality_id = 1
 base_url = 'https://gu.cards/'
 purchase_URL_base = 'a.js-card-link::attr("href")'
 
-def custom_settings(quality, pages):
+def custom_settings(quality):
     return {
-        "DOWNLOADER_MIDDLEWARES": {f'gu_cards.middlewares.guCards{quality}_{pages}_Middleware': 520},
         'BOT_NAME': 'gu_cards',
         'NEWSPIDER_MODULE': 'gu_cards.spiders',
         # 'ROBOTSTXT_OBEY': True,
@@ -42,257 +36,128 @@ def image_URL_base(card_id, quality_id):
 # ここまでが変数ゾーンです。 ここから下は大量のspider作っていきます。
 
 # Shadow
-class guCardsShadow_1_Spider(scrapy.Spider):
-    name = 'guCardsShadow_1_spider'
+class guCardsShadow_Spider(scrapy.Spider):
+    name = 'guCardsShadow_spider'
     allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Shadow, 1)
+    start_urls = ['http://example.com/']
+    custom_settings = custom_settings(Shadow)
 
     def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 3)
+        item = GuCardsItem()
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(20)
 
-            yield item
+        for page in range(1, 10):
+            driver.get(f'https://gu.cards/?marketplace=with_listings&page={page}&quality_shadow=on')
+            driver.find_elements_by_css_selector('div.js-card-with-trading-buttons')
+            response_pages = response.replace(body=driver.page_source)
 
-class guCardsShadow_2_Spider(scrapy.Spider):
-    name = 'guCardsShadow_2_spider'
-    allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Shadow, 2)
+            for res in response_pages.css(all_cards):
+                item['name'] = res.css(name_base).xpath('string()').get()
+                item['price'] = res.css(price_base).xpath('string()').get()
+                item['currency'] = ETH
+                item['quality'] = Shadow
+                item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+                card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+                item['image_URL'] = image_URL_base(card_id, 3)
 
-    def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 3)
+                yield item
 
-            yield item
+            try:
+                driver.implicitly_wait(3)
+                driver.find_element_by_css_selector('i.fa-caret-right')
+            except Exception:
+                return
 
-class guCardsShadow_3_Spider(scrapy.Spider):
-    name = 'guCardsShadow_3_spider'
-    allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Shadow, 3)
-
-    def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 3)
-
-            yield item
-
-class guCardsShadow_4_Spider(scrapy.Spider):
-    name = 'guCardsShadow_4_spider'
-    allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Shadow, 4)
-
-    def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 3)
-
-            yield item
-
-class guCardsShadow_5_Spider(scrapy.Spider):
-    name = 'guCardsShadow_5_spider'
-    allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Shadow, 5)
-
-    def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 3)
-
-            yield item
-
-class guCardsShadow_6_Spider(scrapy.Spider):
-    name = 'guCardsShadow_6_spider'
-    allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Shadow, 6)
-
-    def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 3)
-
-            yield item
-
-class guCardsShadow_7_Spider(scrapy.Spider):
-    name = 'guCardsShadow_7_spider'
-    allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Shadow, 7)
-
-    def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 3)
-
-            yield item
-
+        driver.quit()
 
 # Gold
-class guCardsGold_1_Spider(scrapy.Spider):
-    name = 'guCardsGold_1_spider'
+class guCardsGold_Spider(scrapy.Spider):
+    name = 'guCardsGold_spider'
     allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Gold, 1)
+    start_urls = ['http://example.com/']
+    custom_settings = custom_settings(Gold)
 
     def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 2)
+        item = GuCardsItem()
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(20)
 
-            yield item
+        for page in range(1, 5):
+            driver.get(f'https://gu.cards/?marketplace=with_listings&page={page}&quality_gold=on')
+            driver.find_elements_by_css_selector('div.js-card-with-trading-buttons')
+            response_pages = response.replace(body=driver.page_source)
 
-class guCardsGold_2_Spider(scrapy.Spider):
-    name = 'guCardsGold_2_spider'
-    allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Gold, 2)
+            for res in response_pages.css(all_cards):
+                item['name'] = res.css(name_base).xpath('string()').get()
+                item['price'] = res.css(price_base).xpath('string()').get()
+                item['currency'] = ETH
+                item['quality'] = Gold
+                item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+                card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+                item['image_URL'] = image_URL_base(card_id, 2)
 
-    def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 2)
+                yield item
 
-            yield item
+            try:
+                driver.implicitly_wait(3)
+                driver.find_element_by_css_selector('i.fa-caret-right')
+            except Exception:
+                return
 
-class guCardsGold_3_Spider(scrapy.Spider):
-    name = 'guCardsGold_3_spider'
-    allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Gold, 3)
-
-    def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 2)
-
-            yield item
+        driver.quit()
 
 
 # Diamond
-class guCardsDiamond_1_Spider(scrapy.Spider):
-    name = 'guCardsDiamond_1_spider'
+class guCardsDiamond_Spider(scrapy.Spider):
+    name = 'guCardsDiamond_spider'
     allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Diamond, 1)
+    start_urls = ['http://example.com/']
+    custom_settings = custom_settings(Diamond)
 
     def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 1)
+        item = GuCardsItem()
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(20)
 
-            yield item
+        for page in range(1, 5):
+            driver.get(f'https://gu.cards/?marketplace=with_listings&page={page}&quality_diamond=on')
+            driver.find_elements_by_css_selector('div.js-card-with-trading-buttons')
+            response_pages = response.replace(body=driver.page_source)
 
-class guCardsDiamond_2_Spider(scrapy.Spider):
-    name = 'guCardsDiamond_2_spider'
-    allowed_domains = ['gu.cards']
-    start_urls = ['https://gu.cards/?marketplace=with_listings']
-    custom_settings = custom_settings(Diamond, 2)
+            for res in response_pages.css(all_cards):
+                item['name'] = res.css(name_base).xpath('string()').get()
+                item['price'] = res.css(price_base).xpath('string()').get()
+                item['currency'] = ETH
+                item['quality'] = Diamond
+                item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+                card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+                item['image_URL'] = image_URL_base(card_id, 1)
 
-    def parse(self, response):
-        for res in response.css(all_cards):
-            item = GuCardsItem()
-            item['name'] = res.css(name_base).xpath('string()').get()
-            item['price'] = res.css(price_base).xpath('string()').get()
-            item['currency'] = ETH
-            item['quality'] = Shadow
-            item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
-            card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
-            item['image_URL'] = image_URL_base(card_id, 1)
+                yield item
 
-            yield item
+            try:
+                driver.implicitly_wait(3)
+                driver.find_element_by_css_selector('i.fa-caret-right')
+            except Exception:
+                return
+
+        driver.quit()
 
 
 
 def handler():
     process = CrawlerProcess()
 
-    process.crawl(guCardsShadow_1_Spider)
-    process.crawl(guCardsShadow_2_Spider)
-    process.crawl(guCardsShadow_3_Spider)
-    process.crawl(guCardsShadow_4_Spider)
-    process.crawl(guCardsShadow_5_Spider)
-    process.crawl(guCardsShadow_6_Spider)
-    process.crawl(guCardsShadow_7_Spider)
-
-    process.crawl(guCardsGold_1_Spider)
-    process.crawl(guCardsGold_2_Spider)
-    process.crawl(guCardsGold_3_Spider)
-
-    process.crawl(guCardsDiamond_1_Spider)
-    process.crawl(guCardsDiamond_2_Spider)
+    process.crawl(guCardsShadow_Spider)
+    process.crawl(guCardsGold_Spider)
+    process.crawl(guCardsDiamond_Spider)
 
     process.start()
 

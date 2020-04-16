@@ -20,7 +20,6 @@ def image_URL_base(card_id, quality_id):
 # ここまでが変数ゾーンです。
 
 
-
 class guCardsMeteorite_Spider(scrapy.Spider):
     name = 'guCardsMeteorite_spider'
     allowed_domains = ['gu.cards']
