@@ -90,5 +90,5 @@ class miimeSpider(scrapy.Spider):
 def handler():
     process = CrawlerProcess()
     process.crawl(gaudiySpider)
-    process.crawl(miimeSpider)
+    # process.crawl(miimeSpider)
     process.start()

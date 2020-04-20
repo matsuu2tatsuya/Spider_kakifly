@@ -21,7 +21,7 @@ class gaudiySelenium_Middleware(object):
 
         driver.get('https://gaudiy.com/community_details/avJEInz3EXlxNXKMSWxR')
         time.sleep(0.3)
-        input_element = driver.find_element_by_css_selector('button:nth-child(5) > span > span > p')
+        input_element = driver.find_elements_by_css_selector('span:nth-child(5) > button > span > p')[0]
         if input_element:
             input_element.click()
         time.sleep(0.3)
