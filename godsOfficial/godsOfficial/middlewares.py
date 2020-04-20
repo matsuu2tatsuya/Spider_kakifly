@@ -15,13 +15,31 @@ class godsOfficial_Selenium_Middleware(object):
 
     def process_request(self, request, spider):
         options = ChromeOptions()
-        options.headless = True
+        # options.headless = True
         driver = Chrome(options=options)
-        driver.implicitly_wait(20)
+        driver.implicitly_wait(30)
 
         driver.get('https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=1800')
-        driver.execute_script('scroll(0, document.body.scrollHeight)')
+        # ID/PASSを入力
+        id = driver.find_elements_by_css_selector("input.form-input")[0]
+        id.send_keys("ryoba666@sofia.re")
+        password = driver.find_elements_by_css_selector("input.form-input")[1]
+        password.send_keys("password")
+
+        time.sleep(1)
+
+        # ログインボタンをクリック
+        login_button = driver.find_elements_by_css_selector("gu-primary-hex-button")[0]
+        login_button.click()
+        driver.find_elements_by_css_selector("gu-icon.closeButton")[0].click()
+
+        # サイト内で他の画面に遷移させたければ
+        driver.get('https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=1800')
         driver.find_elements_by_css_selector('div.assets__cardItem')
+
+
+        driver.execute_script('scroll(0, document.body.scrollHeight)')
+        time.sleep(0.5)
 
         return HtmlResponse(
             driver.current_url,
