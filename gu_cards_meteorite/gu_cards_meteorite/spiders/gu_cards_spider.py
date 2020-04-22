@@ -71,8 +71,6 @@ class guCardsMeteorite_Spider(scrapy.Spider):
 
 def handler():
     process = CrawlerProcess()
-
     process.crawl(guCardsMeteorite_Spider)
-
     process.start()
 
