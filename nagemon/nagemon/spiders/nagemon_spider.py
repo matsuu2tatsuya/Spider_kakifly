@@ -23,8 +23,8 @@ class NagemonSpiderSpider(scrapy.Spider):
         'NEWSPIDER_MODULE': 'nagemon.spiders',
         # 'ROBOTSTXT_OBEY': True,
         'SPIDER_MODULES': ['nagemon.spiders'],
-        'FEED_FORMAT': 'json',
-        'FEED_URI': 'nagemon.json',
+        'FEED_FORMAT': 'xml',
+        'FEED_URI': 'nagemon.xml',
     }
 
     def parse(self, response):

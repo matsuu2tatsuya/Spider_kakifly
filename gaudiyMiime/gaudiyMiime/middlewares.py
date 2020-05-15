@@ -25,9 +25,12 @@ class gaudiySelenium_Middleware(object):
         if input_element:
             input_element.click()
         time.sleep(0.3)
+        nft_element = driver.find_elements_by_css_selector('span.MuiTab-wrapper')[0]
+        if nft_element:
+            nft_element.click()
         source_element = driver.find_element_by_css_selector('label.MuiFormControlLabel-root')
         if source_element:
-            source_element.click()
+            # source_element.click()
             time.sleep(1.0)
             link = driver.find_elements_by_css_selector('button > div > p:nth-child(1)')[-2]
             driver.execute_script("arguments[0].scrollIntoView(true);", link)

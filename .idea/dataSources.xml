@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/scraping</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="awssimplified" uuid="8b9692f5-e70a-4269-ac33-becca96e19ee">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://aws-simplified-lambda.czdwfjfqoov2.ap-northeast-1.rds.amazonaws.com :3306</jdbc-url>
+    </data-source>
   </component>
 </project>

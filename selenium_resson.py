@@ -1,24 +1,50 @@
-from selenium.webdriver import Chrome, ChromeOptions
-import re
-import time
+# -*- coding: utf-8 -*-
+from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.common.exceptions import TimeoutException, ElementClickInterceptedException, NoSuchElementException
 
-options = ChromeOptions()
-driver = Chrome(options=options)
+def check_coupon(driver, my_favorite_brand):
+    i = 1
+    while True:
+      try:
+          coupon_brand = driver.find_element_by_xpath(f'//*[@id="body"]/div[3]/ul/li[{i}]/a/figure/div[2]').text
+          my_favorite_brand = driver.find_elements_by_css_selector('div.shopH')[1].get_attribute("textContent")
+          if coupon_brand == my_favorite_brand:
+              return True
+          i += 1
+      except NoSuchElementException:
+          return False
 
-driver.get('https://gaudiy.com/community_details/avJEInz3EXlxNXKMSWxR')
-time.sleep(0.3)
-input_element = driver.find_element_by_css_selector('button:nth-child(5) > span > span > p')
-if input_element:
-    input_element.click()
-time.sleep(0.3)
-source_element = driver.find_element_by_css_selector('label.MuiFormControlLabel-root')
-if source_element:
-    source_element.click()
-    time.sleep(1.0)
-    link = driver.find_elements_by_css_selector('button > div > p:nth-child(1)')[-2]
-    driver.execute_script("arguments[0].scrollIntoView(true);", link)
-    time.sleep(0.3)
-    while link != driver.find_elements_by_css_selector('button > div > p:nth-child(1)')[-2]:
-        link = driver.find_elements_by_css_selector('button > div > p:nth-child(1)')[-2]
-        driver.execute_script("arguments[0].scrollIntoView(true);", link)
-        time.sleep(0.3)
+if __name__ == '__main__':
+    try:
+        # Headless Chromeの設定
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-setuid-sandbox")
+        options.add_argument('--window-size=1420,1080')
+        options.add_argument('--headless')
+        options.add_argument('--disable-gpu')
+        # Headless Chromeブラウザに接続
+        driver = webdriver.Chrome(options=options)
+        # seleniumの動作タイムアウトを15秒間に設定
+        driver.implicitly_wait(15)
+
+        # ZOZOのクーポンページに遷移
+        driver.get("https://zozo.jp/coupon/")
+        # 好きなブランド
+        my_favorite_brand = driver.find_elements_by_css_selector('div.shopH')[1].get_attribute("textContent")
+        # クーポンのチェック
+        if check_coupon(driver, my_favorite_brand):
+            print("見つけたよ！ ", my_favorite_brand)
+        else:
+            print("今日は見つけられなかった・・・")
+
+    # 例外処理
+    except ElementClickInterceptedException as ecie:
+        print(f"exception!\n{ecie}")
+    except TimeoutException as te:
+        print(f"timeout!\n{te}")
+    finally:
+        # 終了
+        driver.close()
+        driver.quit()

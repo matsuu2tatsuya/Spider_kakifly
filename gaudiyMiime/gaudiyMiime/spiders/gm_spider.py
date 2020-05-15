@@ -28,20 +28,32 @@ class gaudiySpider(scrapy.Spider):
     }
 
     def parse(self, response):
-        for res in response.css('button > div > p:nth-child(1)'):
-            item = GaudiymiimeItem()
-            name = res.xpath('string()').get()
-            name2 = re.sub(r' ', '', name)
-            item['name'] = re.sub(r'\t', '', name2)
-            yield item
+        item = GaudiymiimeItem()
+        for res in response.css('div.react-swipeable-view-container > div > div > div > div > div > div > div > button.MuiButtonBase-root'):
+            if res.xpath('string()').get() == 'アセット一覧':
+                yield
+            elif res.xpath('string()').get() == 'すべての出品':
+                yield
+            elif res.xpath('string()').get() == 'オークション':
+                yield
+            elif res.xpath('string()').get() == 'レンタル':
+                yield
+            else:
+                name = res.xpath('string()').get()
+                name2 = re.sub(r'出品\d.*', '', name)
+                name3 = re.sub(r' ', '', name2)
+                name4 = re.sub(r'\u3000', '', name3)
+                item['name'] = re.sub(r'\t', '', name4)
 
-        for res in response.css('button > div > p:nth-child(3)'):
-            item = GaudiymiimeItem()
-            price = res.xpath('string()').get()
-            item['price'] = re.sub(r'ETH~', '', price)
-            item['currency'] = 'ETH'
-            yield item
+                item['currency'] = 'ETH'
+                price = res.css('div > p:nth-child(3)').xpath('string()').get()
+                item['price'] = re.sub(r'ETH~', '', str(price))
+                if re.sub(r'ETH~', '', str(price)) == '出品待ち':
+                    break
 
+                item['image_URL'] = res.css('div > div > span > img::attr("src")').get()
+
+                yield item
 
 
 class miimeSpider(scrapy.Spider):
