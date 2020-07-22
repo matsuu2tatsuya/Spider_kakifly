@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for GodsMiime project
+# Scrapy settings for CryspeCardId project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,20 +9,20 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'GodsMiime'
+BOT_NAME = 'CryspeCardId'
 
-SPIDER_MODULES = ['GodsMiime.spiders']
-NEWSPIDER_MODULE = 'GodsMiime.spiders'
+SPIDER_MODULES = ['CryspeCardId.spiders']
+NEWSPIDER_MODULE = 'CryspeCardId.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'GodsMiime (+http://www.yourdomain.com)'
+#USER_AGENT = 'CryspeCardId (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+# ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 8
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -46,15 +46,16 @@ DOWNLOAD_DELAY = 3
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'GodsMiime.middlewares.GaudiymiimeSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+   'CryspeCardId.middlewares.CryspecardidSpiderMiddleware': 543,
+}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'GodsMiime.middlewares.GaudiymiimeDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   'CryspeCardId.middlewares.Cryspecardid_selenium_Middleware': 540,
+   'CryspeCardId.middlewares.CryspecardidDownloaderMiddleware': 543,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -65,7 +66,7 @@ DOWNLOAD_DELAY = 3
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'GodsMiime.pipelines.GaudiymiimePipeline': 300,
+#    'CryspeCardId.pipelines.CryspecardidPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -88,3 +89,7 @@ DOWNLOAD_DELAY = 3
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+FEED_EXPORT_ENCODING = 'utf-8'
+FEED_FORMAT = 'csv'
+FEED_URL = 'cryspeId.csv'

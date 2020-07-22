@@ -6,52 +6,9 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
-from selenium.webdriver import Chrome, ChromeOptions
-from scrapy.http import HtmlResponse
-import time
 
 
-class godsOfficial_Selenium_Middleware(object):
-
-    def process_request(self, request, spider):
-        options = ChromeOptions()
-        # options.headless = True
-        driver = Chrome(options=options)
-        driver.implicitly_wait(30)
-
-        driver.get('https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=1800')
-        # ID/PASSを入力
-        id = driver.find_elements_by_css_selector("input.form-input")[0]
-        id.send_keys("ryoba666@sofia.re")
-        password = driver.find_elements_by_css_selector("input.form-input")[1]
-        password.send_keys("password")
-
-        time.sleep(1)
-
-        # ログインボタンをクリック
-        login_button = driver.find_elements_by_css_selector("gu-primary-hex-button")[0]
-        login_button.click()
-        driver.find_elements_by_css_selector("gu-icon.closeButton")[0].click()
-
-        # サイト内で他の画面に遷移させたければ
-        driver.get('https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=100')
-        driver.find_elements_by_css_selector('div.assets__cardItem')
-
-
-        driver.execute_script('scroll(0, document.body.scrollHeight)')
-        time.sleep(0.5)
-
-        return HtmlResponse(
-            driver.current_url,
-            body=driver.page_source,
-            encoding='utf-8',
-            request=request,
-        )
-
-        driver.quit()
-
-
-class GodsofficialSpiderMiddleware(object):
+class GodscardidSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -99,7 +56,7 @@ class GodsofficialSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class GodsofficialDownloaderMiddleware(object):
+class GodscardidDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.

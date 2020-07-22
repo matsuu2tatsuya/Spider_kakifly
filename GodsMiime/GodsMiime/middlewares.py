@@ -10,8 +10,7 @@ from selenium.webdriver import Chrome, ChromeOptions
 from scrapy.http import HtmlResponse
 import time
 
-
-class gaudiySelenium_Middleware(object):
+class GodsMiimeSelenium_Middleware(object):
 
     def process_request(self, request, spider):
         options = ChromeOptions()
@@ -19,68 +18,26 @@ class gaudiySelenium_Middleware(object):
         driver = Chrome(options=options)
         driver.implicitly_wait(20)
 
-        driver.get('https://gaudiy.com/community_details/avJEInz3EXlxNXKMSWxR')
-        time.sleep(0.3)
-        input_element = driver.find_elements_by_css_selector('span:nth-child(5) > button > span > p')[0]
-        if input_element:
-            input_element.click()
-        time.sleep(0.3)
-        nft_element = driver.find_elements_by_css_selector('span.MuiTab-wrapper')[0]
-        if nft_element:
-            nft_element.click()
-        source_element = driver.find_element_by_css_selector('label.MuiFormControlLabel-root')
-        if source_element:
-            # source_element.click()
-            time.sleep(1.0)
-            link = driver.find_elements_by_css_selector('button > div > p:nth-child(1)')[-2]
-            driver.execute_script("arguments[0].scrollIntoView(true);", link)
-            time.sleep(0.3)
-            while link != driver.find_elements_by_css_selector('button > div > p:nth-child(1)')[-2]:
-                link = driver.find_elements_by_css_selector('button > div > p:nth-child(1)')[-2]
-                driver.execute_script("arguments[0].scrollIntoView(true);", link)
-                time.sleep(0.3)
-
-        return HtmlResponse(
-            driver.current_url,
-            body=driver.page_source,
-            encoding='utf-8',
-            request=request,
-        )
-        time.sleep(0.5)
-        driver.quit()
-
-
-
-class miimeSelenium_Middleware(object):
-
-    def process_request(self, request, spider):
-        options = ChromeOptions()
-        # options.headless = True
-        driver = Chrome(options=options)
-        driver.implicitly_wait(20)
-
-        driver.get('https://miime.io/assets/2')
+        driver.get('https://miime.io/assets/3')
         input_element = driver.find_elements_by_css_selector(
             '#__layout > div > main > div.filterButtonBar > div > div:nth-child(5) > a')[0]
         input_element.click()
         all_item = driver.find_elements_by_css_selector('#__layout > div > main > div.filterButtonBar > div > div.filterButtonBar__filterButton.filterButtonBar__filterButton--saleFilter > div > div:nth-child(2)')[0]
         all_item.click()
         time.sleep(0.5)
-        driver.execute_script('scroll(0, document.body.scrollHeight)')
         more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
                                                            'div.loadMoreButton__Container > div > '
                                                            'button.loadMoreButton')
+        scrollnum = 0
         while more_element:
-            more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
-                                                               'div.loadMoreButton__Container > div > '
-                                                               'button.loadMoreButton')
+            scrollnum += 1
+            if scrollnum == 20:
+                break
             time.sleep(0.5)
-            if more_element:
-                try:
-                    more_element.click()
-                except Exception:
-                    break
-            else:
+            try:
+                print(more_element.get_attribute("textContent"))
+                more_element.click()
+            except Exception:
                 break
 
         # print('全て表示されているはず。')

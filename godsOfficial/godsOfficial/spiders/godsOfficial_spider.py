@@ -8,7 +8,7 @@ from scrapy.crawler import CrawlerProcess
 class GodsofficialSpider(scrapy.Spider):
     name = 'godsOfficial_spider'
     allowed_domains = ['godsunchained.com']
-    start_urls = ['https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=1800']
+    start_urls = ['https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=100']
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {
             'godsOfficial.middlewares.godsOfficial_Selenium_Middleware': 540,
@@ -30,7 +30,7 @@ class GodsofficialSpider(scrapy.Spider):
     def parse(self, response):
         for res in response.css('div.assets__cardItem'):
             item = GodsofficialItem()
-            base_url = res.css('img.cardImagery__img::attr("srcset")').get()
+            base_url = str(res.css('img.assetImagery__img::attr("srcset")').get())
 
             def base_purchase_url(asset_id, quality, contract):
                 return f'https://godsunchained.com/marketplace/search/(asset:details/{asset_id}/{quality}/{contract})'
@@ -40,12 +40,11 @@ class GodsofficialSpider(scrapy.Spider):
             # gods_api_url = f'https://api.godsunchained.com/v0/proto/{name_id}'
             # api_response = requests.get(gods_api_url)
             # jsonData = api_response.json()
-            item['name'] = name_id
+            item['name'] = res.css('gu-simple-text.cardItemFooter__fromText').xpath('string()').get()
 
             # base_price = res.css('p.ethFavTxt').get()
             # base_price2 = re.sub(r'^<\D*>', '', base_price)
             item['price'] = res.css('gu-heading-text.cardItemFooter__price').xpath('string()').get()
-
             item['currency'] = 'ETH'
 
             base_quality = re.sub(r'^.*q=', '', base_url)

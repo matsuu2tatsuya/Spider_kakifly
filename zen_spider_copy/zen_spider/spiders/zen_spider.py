@@ -67,9 +67,9 @@ class cryspe_selenium(scrapy.Spider):
         "DOWNLOADER_MIDDLEWARES": {
             'zen_spider.middlewares.cryspe_SeleniumMiddleware': 543,
         },
-        "ITEM_PIPELINES": {
-            'zen_spider.pipelines.MySQL_cryspe_Pipeline': 800,
-        },
+        # "ITEM_PIPELINES": {
+        #     'zen_spider.pipelines.MySQL_cryspe_Pipeline': 800,
+        # },
         "DOWNLOAD_DELAY": 1.0,
         "CONCURRENT_REQUESTS": 32,
         "MYSQL_USER": 'scraper',
@@ -84,8 +84,8 @@ class cryspe_selenium(scrapy.Spider):
             base_URL = 'https://cryptospells.jp'
 
             ID_path = res.css('[class="serial-number serial-number-user-img-wrapper"]').xpath('string()').get()
-            ID_path2 = re.sub(r'# ', '', ID_path)
-            cryspe_items['name'] = re.sub(r' ', '', ID_path2)
+            ID_path2 = re.sub(r'# .', '', ID_path)
+            cryspe_items['name'] = re.sub(r' .*', '', ID_path2)
 
             SPL_path = res.css('[class="price"]').xpath('string()').get()
             SPL_path2 = re.sub(r' SPL', '', SPL_path)
@@ -101,7 +101,7 @@ class cryspe_selenium(scrapy.Spider):
 
 
 process = CrawlerProcess()
-process.crawl(MagiSpider)
+# process.crawl(MagiSpider)
 process.crawl(cryspe_selenium)
 
 process.start()

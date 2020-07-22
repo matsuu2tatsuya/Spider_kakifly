@@ -1,0 +1,981 @@
+AP,HP,cost,effect,gods_id,id,name_en,rarity_id,set_id,tribe_id,type_id
+0,0,3,Transform a random enemy creature into a 0/5 Overgrown Golem with frontline and regen 5.,2,217,Grass Roots,3,1,,3
+0,0,3,Pull from your deck a creature of your choice  that matches your god's domain  into your hand. Shuffle afterwards.,1,916,The Trial Begins,1,6,,3
+0,0,8,Pull a random 5-mana creature from either void to your side of the board. Repeat this for 6  7  8  and 9 mana.,4,918,Trial of the Underworld,3,6,,3
+0,0,5,Each friendly creature gains regen +1. Then  each friendly creature gains +X/+X  where X is their regen amount.,2,922,Trial of the Hydra,2,6,,3
+0,0,4,For each War creature in any void  you gain 2 favor and your opponent loses 2 favor.,3,945,Blessing of War,2,6,,3
+0,6,2,Cannot attack. Burn 2. Afterlife: Summon another random Anubian from your void.,4,267,Sarcophagus,1,1,4,1
+1,1,5,Frontline. Protected. Afterlife: Set the attack of all enemy creatures to 1.,5,279,Seraph,3,1,2,1
+2,5,5,Blitz. Twin strike.,3,1022,Orcish Elite,1,2,2,1
+0,0,4,Add 3 randomised warriors to your hand.,3,1023,Mercenary Troop,2,2,2,3
+3,2,3,Godblitz.,3,1024,Blade of Styx,1,2,2,4
+2,2,6,Roar: Pull any spells in your opponent's hand that cost 2 or less onto the bottom of their deck,7,1025,Thalia Charite Temptress,4,2,7,1
+6,8,7,Hidden. Flank. Whenever this creature attacks a god  a random enemy creature is put to sleep.,7,1026,Lokian Disciple,4,2,7,1
+1,2,5,Godblitz. Deadly. Flank.,7,1027,Slip Blade,3,2,7,4
+2,1,1,Afterlife: Deal 3 damage to each god.,4,1029,Bombfly,1,2,13,1
+2,1,1,Roar: Give a friendly Viking +2 strength.,1,1076,Battlebard,3,2,12,1
+1,3,1,Roar: Give a friendly creature +1 health.,1,1077,Trial Spirit,1,2,2,1
+0,0,1,Deal X damage to an enemy creature where X is equal to the strength of a random creature you control.,2,1143,Arrow of Rage,2,2,2,3
+2,4,6,Frontline. Roar: Summon a 4/2 Propyrean Owl with frontline.,1,1144,Athena\'s Conjurer,2,2,10,1
+2,2,3,Frontline. Gain +1/+1 when a creature with roar enters the board.,1,1145,The Nemean Lion,4,2,10,1
+4,1,3,Roar & afterlife: Both players draw a card.,4,1174,Vrock,1,2,9,1
+1,4,2,Blitz. After your god is attacked  it gains protected and this relic loses 1 durability.,3,1180,Enduring Shield,1,2,9,4
+3,4,6,Hidden for 1 turn. At the start of each player's turn  they select a card in their hand and obliterate it.,7,1183,Annoying Bureaucrat,2,2,7,1
+3,2,3,Roar: Switch the strength and health of a creature.,7,1207,Dionysian Drunk,3,2,10,1
+3,6,6,Frontline. Roar: Summon a 2/2 Netherling.,1,1208,Mammon\'s Stalwart,1,2,9,1
+6,10,8,Frontline. Regen 2. Afterlife: Add two random Nature cards to your hand.,2,842,Figure in the Streets,2,6,9,1
+0,0,5,Add a random Death card  Nature card  and War card to your hand.,2,914,Aeona\'s Defection,2,6,9,3
+0,0,2,Delve a common god power from your domain. It replaces your god power. You cannot use it this turn. Gain 5 favor.,1,915,Council of the Gods,1,6,9,3
+0,0,2,Pick one — • Draw a card. • Gain 7 favor. • Deal 2 damage. • Heal your god for 4.,1,917,Vow of Champions,1,6,9,3
+0,0,7,Fill your side of the board with Shadow of Lethenons.,7,919,Trial of the Shadows,2,6,9,3
+0,0,6,All creatures have their strength and health set to 2. Summon a 2/5 Pillar with frontline and can't attack.,5,920,Trial of the First Pillar,2,6,9,3
+0,0,7,"Summon a copy of target creature. The copy has ""At the start of your turn  summon a copy of this creature.""",6,921,Trial of the False Reflection,2,6,9,3
+0,0,7,"At the end of your turn  double each friendly creature's strength and give them ""Afterlife: Deal damage equal to this creature's strength  split randomly among all enemy creatures.""",3,923,Trial of the Innocents,2,6,9,3
+0,0,1,Give your relic +4 strength for its next attack.,3,303,Whetstone,1,1,9,3
+1,3,5,Deadly. Roar: Select a creature from your void and trigger its afterlife.,4,1030,Sand Scorpion,1,2,9,1
+1,3,2,Blitz. Whenever you attack  give a random friendly creature +1 strength.,1,100058,Glamoured Gladius,1,1,9,4
+0,0,2,At the end of your turn  if this card is in your hand  deal 1 damage to your god for every 2 cards in your hand.,7,100062,Mind Probe,1,1,9,3
+0,0,1,Heal your god for 7. If this puts your god at full health  add a random Nature card to your hand.,2,1017,Revivification,1,2,9,3
+0,0,3,Add a mana lock to your opponent's mana gems.,3,1019,Antimagic Wards,1,2,9,3
+4,4,4,Whenever a creature dies  its owner draws a card.,4,1028,Famished Ghoul,1,2,9,1
+0,0,8,Summon up to six 2/2 Acolytes and give them protected. For each Acolyte not summoned  heal your god for 4.,5,1020,Zealous March,2,2,9,3
+0,0,8,Soulless. Draw two cards. Set each god's health to 20. Destroy a random enemy creature with cost 5 or more. Change your god power to Blight.,4,83,Death Unborn,4,1,9,3
+0,0,2,Create a base copy of the lowest cost spell in your hand.,6,91,Magic Inks,2,1,9,3
+2,1,2,Whenever you cast a spell  this creature gets +1/+1.,6,92,Runic Familiar,1,1,9,1
+1,1,2,Afterlife: Summon a 3/2 Experimental Outcome.,4,800,Nether\'s Advocate,1,6,4,1
+3,4,3,"Roar: If you control at least two other creatures  select two. Randomly  one gains twin strike  the other gains ""can't attack"".",1,90,Synergy Golem,3,1,5,1
+0,2,1,Cannot attack. Roar: Hide a friendly creature for 1 turn. Afterlife: Draw a card.,7,126,A Real Man,1,1,5,1
+0,1,1,After a friendly creature dies  deal 1 damage to the opponent's god.,4,806,Skull Scepter,2,6,5,4
+0,1,9,Ward. When this creature is summoned  it gains the combined strength and health of each creature in your void.,4,811,Hippacria\'s Monster,4,6,5,1
+3,3,4,Backline. Ward. Roar: Each friendly creature is no longer confused. Ability: Deal 2 damage to an enemy  and then a random enemy creature becomes confused.,2,826,Selena Champion of Nature,4,6,3,1
+0,4,3,After you play a Nature card  add 1 durability to this relic. Ability: Deal 2 damage to a random enemy creature  then remove 2 durability from this relic.,2,832,Selena\'s Bow,4,6,3,4
+0,0,4,Deal 12 damage to a random enemy creature and to a random friendly creature. Add a random Nature card to your hand.,2,836,Frenzied Ritual,2,6,3,3
+3,3,5,Roar: This creature gains +1/+1 for each friendly creature.,1,216,Ruthless Caipora,1,1,3,1
+3,3,6,Roar: Add a rune to your hand. For each rune in your hand  deal 1 damage to a random enemy creature and give this creature +1/+1.,1,224,Ocular Fiend,3,1,13,1
+0,0,4,Two random enemy creatures go to sleep. Two random friendly creatures go to sleep and they each get +3 strength.,7,265,False Peace,2,1,13,3
+3,2,4,Roar: Destroy two other random friendly creatures. This creature gains +2/+3 for each creature destroyed.,4,276,Vile Mantis,1,1,13,1
+5,6,5,Frontline. Roar: Pick one – · Deal 6 damage to your god  or · Obliterate a card in your hand.,1,294,Cavern Arachne,2,1,9,1
+4,4,7,Deadly. Flank. Frontline. Protected. Ward. Roar: Give burn +1 to a creature.,1,402,Blessed Chimera,3,4,9,1
+0,8,2,Frontline. Can't attack. At the end of each turn  set Portable Fortress' strength to 0.,1,1209,The Portable Fortress,1,2,5,1
+4,1,3,At the end of each turn  this creature gets +1 health.,7,1210,Jinxblade Duelist,1,2,7,1
+2,1,1,Soulless.,4,100150,Reanimated Ghoul,1,2,7,1
+0,5,3,Frontline. Regen 5.,2,100160,Overgrown Golem,1,2,5,1
+2,3,6,Roar: Transform a creature with strength 2 or less into a 2/2 Acolyte. Gain control of the Acolyte.,5,401,Light\'s Bidding,1,4,5,1
+0,0,4,Both players unlock one mana lock for each  3 points of health their god is missing.,4,807,Ataraxia,3,6,5,3
+3,4,3,At the end of your turn  if your god has 15 health or less  summon a 1/1 Impling.,4,810,Cruel Overseer,2,6,9,1
+8,8,9,Frontline. Twin strike. Overkill.  Roar: Deal damage equal to  this creature's strength to each enemy creature. Afterlife: Give +3/+3 to each friendly Viking in your hand  deck  and board.,3,827,Valka Champion of War,4,6,12,1
+1,2,2,Roar: Delve an anim  and put it into your hand.,2,40,Ruins Explorer,2,1,12,1
+1,5,2,"Roar: Replace your hand with copies of ""Voyage to the Farlands.""",1,52,Farsight Explorer,3,1,12,1
+2,2,2,Whenever a friendly creature dies  this creature gets +1 strength.,1,77,Enraged Ally,2,1,12,1
+3,6,5,Frontline.,1,78,Annoying Combatant,1,1,12,1
+3,3,3,Roar: Destroy a friendly creature and this creature gains its strength and health.,4,79,Hunger Daemon,2,1,9,1
+0,0,1,Give a friendly creature twin strike and +1 strength. At the end of this turn  it goes to sleep.,7,80,Overclock,1,1,9,3
+2,4,1,Burn 1.,1,81,Inflammable Imbecile,1,1,8,1
+0,0,6,Soulless. Give each friendly creature +2 health. Your god power becomes Shine.,5,82,Light Ascended,4,1,8,3
+0,0,2,Foresee 2. Draw a card.,6,86,Read The Leaves,3,1,8,3
+2,2,2,Afterlife: Summon a 2/2 Reanimated Ghoul.,4,100151,Reanimated Corpse,1,2,8,1
+1,5,1,,1,100153,Tough Malfunctioning Artifice,1,2,8,1
+5,1,1,,1,100156,Strong Malfunctioning Artifice,1,2,8,1
+2,2,5,Roar: Draw two cards.,6,112,Rift Scholar,1,1,8,1
+4,5,5,Twin strike. At the start of your turn  this creature destroys a random other friendly Atlantean to get +3/+3.,1,116,Devouring Golem,2,1,5,1
+4,5,6,Roar: Give a random other creature with the lowest attack +4/+4.,1,120,Astraea\'s Envoy,4,1,5,1
+2,1,2,Blitz. Roar: Give a friendly damaged creature twin strike and +1 strength.,3,15,Respected Jarl,3,1,12,1
+1,1,2,Confused. Whenever a friendly creature dies  this creature gets +1/+1.,2,108,Carcass Vulture,1,1,13,1
+3,3,5,Frontline. Roar: Delve a creature with frontline  and put it into your hand.,1,109,Aegis Commander,2,1,10,1
+0,0,1,Remove frontline and backline from target creature. Draw a card.,6,18,Levitate,1,1,10,3
+5,5,5,After an Aether attacks  draw a card.,1,98,The Sky Reaver,4,1,2,1
+0,0,1,Each player moves the top two cards in their deck to their void  and draws a card.,4,127,Corrupt Ceremony,2,1,2,3
+6,6,6,This creature gets +1 strength for each point of damage your god takes. Afterlife: Deal 6 damage to a random enemy creature.,4,129,Avatar of Death,4,1,2,1
+0,6,7,At the end of your turn  summon a copy of another random friendly creature.,2,135,Fertility Idol,1,1,3,1
+0,0,2,Deal 1 damage to each creature.,3,100004,Ruin,3,1,3,5
+0,0,2,Give burn +12 to a creature.,4,100005,Blight,3,1,3,5
+0,0,2,Add a copy of a random card from your opponent's god to your hand. Summon a 1/1 Rogue Skulker.,7,100006,Larceny,3,1,3,5
+0,0,2,Summon two Will O' Wisps.,5,100007,Shine,3,1,3,5
+4,8,6,Frontline.,1,1090,Minotaur Phalanx,1,2,13,1
+15,15,9,At the start of the game  add 10 Blue Whales to both players' decks.,1,65003,Tethys,5,5,13,1
+0,0,2,Destroy a friendly creature to summon a 3/2 Experimental Outcome.,4,802,Forbidden Experiment,1,6,13,3
+0,0,1,Add two mana locks. Heal your god for 12.,4,803,Return to the Cave,3,6,13,3
+1,2,2,Afterlife: Add a random Nature card to your hand.,2,839,Dryad Seer,1,6,3,1
+2,3,3,Confused. At the start of your turn  deal 2 damage to a random enemy creature.,2,841,Ornery Goat,1,6,13,1
+0,3,3,Cannot attack. Burn 1. Afterlife: Summon two 2/2 Anubians.,1,111,Soul Jar,2,1,4,1
+5,2,6,Godblitz. Whenever you attack  give +2 strength to a random friendly creature.,3,118,Penitent Spear,1,1,4,4
+3,5,4,Frontline. Regen 1.,2,121,Agrodor Protector,1,1,3,1
+1,2,3,Hidden for 1 turn. Afterlife: Add a random anim  enchanted weapon  or rune to your hand. If you control another Anubian  add two instead.,1,122,Tomb Robber,1,1,4,1
+2,2,4,Roar: Add a copy of a friendly creature to your hand.,1,123,Friendly Mimic,2,1,4,1
+3,1,1,Roar: Destroy a friendly creature. This creature gains health equal to that creature's strength.,4,124,Fusing Fleshspawn,3,1,9,1
+2,2,1,Afterlife: Heal your god for 4.,5,128,Cudgel of Atonement,2,1,9,4
+1,1,1,Hidden for 1 turn. Backline. Whenever a spell is cast  give a copy of it to the other player.,1,131,Lara Grim Spellthief,4,1,8,1
+0,0,6,Deal 3 damage to four random creatures. Add a random Nature card to your hand.,2,837,Enchanted Vines,1,6,8,3
+3,7,6,Confused. Regen 4. Frontline.,2,840,Dionysian Bull,1,6,13,1
+0,0,2,Heal your god for 10. If you have eight cards in your void  add a random Nature card into your hand.,2,134,Compost Charm,3,1,13,3
+1,2,1,Roar: Foresee 2.,6,101,Heka\'s Enchantress,1,1,4,1
+0,0,1,Shuffle three copies of a creature into your opponent's deck.,7,102,Me Two Three,1,1,4,3
+1,2,2,Protected. Roar: Give the Chosen One protected and move it one card closer to the top of your deck.,5,105,Pilgrim of the Cause,2,1,12,1
+3,3,2,Confused. At the end of the turn Underbrush Boar is summoned  attack a random enemy creature.,2,106,Underbrush Boar,2,1,13,1
+0,0,2,Summon a copy of a random creature from your opponent's void.,6,107,Erratic Summons,2,1,13,3
+1,5,4,At the end of each turn  summon a 1/1 Skeleton with soulless for every friendly creature put into your void that turn.,1,114,Tutankhamun,4,1,4,1
+0,0,1,Deal 2 damage to your god. During your opponent's next turn  creatures that attack your god are given burn +2. Draw a card.,4,125,Enflame Self,2,1,4,3
+0,0,2,Foresee 2. Draw a card.,6,100008,Seer,3,1,4,5
+0,4,3,At the start of your turn  remove 1 durability from this relic  destroy the enemy creature with the lowest health  and deal that much damage to your god.,4,1034,Dreaming Sceptre,2,2,4,4
+2,4,5,Blitz. After your god attacks  summon a Black Jaguar.,2,838,Jaguar Staff,1,6,4,4
+7,2,3,Blitz. Roar: Summon a 3/3 Iron Anim for your opponent.,1,97,Glass Cannon,4,1,5,1
+3,3,3,Roar: Delve a legendary creature 3 times  and add them to your deck.,1,155,Jason Medea\'s Muse,4,1,10,1
+0,0,2,Deal 4 damage to each god. Draw a card.,4,160,Dangerous Ritual,1,1,10,3
+6,7,7,At the end of your turn  another friendly creature with the highest health becomes protected.,5,169,Horus The Protector,4,1,4,1
+7,7,7,At the end of your turn  deal 1 damage to each other creature.,1,170,Blind Cyclops,1,1,13,1
+4,4,6,Roar: Deal 1 damage to each other creature. Add an enchanted weapon to your hand.,3,173,Blade Trial Valkyrie,2,1,12,1
+3,3,3,Roar: If your god  has 15 health or less   draw two cards.,4,801,Diones Spectral Sceptic,4,6,12,1
+1,4,3,After your god is attacked  deal 2 damage to the attacker and remove 1 durability from this relic.,2,174,Vine Armour,1,1,12,4
+0,0,4,"Give a friendly creature ward and ""At the end of your turn  add a copy of a random card from your opponent's hand.""",6,175,Endow Wings,1,1,12,3
+4,5,6,After an enemy creature is summoned  deal 1 damage to it.,6,177,Exoscout,2,1,5,1
+0,0,1,Deal 5 damage to your god and refresh 5 mana.,4,804,Necronomics,3,6,5,3
+0,0,1,Pick one — · Deal 2 damage  or · A friendly character becomes protected.,6,178,Ancient Texts,2,1,5,3
+0,2,1,Cannot attack. Burn 2. Afterlife: If this creature is destroyed by burn damage  summon a First Phoenix.,1,100037,Phoenix Egg,3,4,5,1
+6,5,5,,1,100040,Rockdrake,1,1,6,1
+3,1,1,Roar: Draw a card. Afterlife: Shuffle this creature into your deck.,1,100048,Aching Disciple,1,1,6,1
+5,9,8,Whenever another friendly creature dies  summon a random creature with the same mana cost from your void.,4,99,Hades Underworld Lord,4,1,10,1
+3,5,4,When a friendly creature dies  give burn +1 to a random enemy creature.,1,140,Death Masque,3,1,10,1
+5,5,7,Roar: Add 1 rune to your hand for every 3 Nethers in your deck.,1,148,Cambion Runelord,1,1,9,1
+6,9,9,Flank. Frontline. Twin strike. Ward. At the end of each turn  this creature gets ward. Roar: This creature gets +2/+1 for each card in your hand.,1,149,Tyet Heir To The Sky,4,1,4,1
+0,0,7,Destroy all creatures. Destroy all creatures again.,4,161,Apocalypse Now,3,1,4,3
+6,5,6,Blitz. Roar: Other friendly creatures gain leech until end of turn.,3,162,Tormentor Fiend,3,1,9,1
+1,1,2,Ward. Roar: Summon a Will O' Wisp.,5,171,Will O\' Wisp,1,1,8,1
+5,6,6,Whenever you use your god power  add a random rune to your hand.,1,172,Wild Spellsinger,2,1,7,1
+0,0,1,All enemy characters become confused. At the start of your next turn  become no longer confused.,2,176,Dense Fog,2,1,7,3
+4,1,2,Hidden. Flank.,7,179,Trapdoor Assassin,1,1,7,1
+1,2,3,Roar: Delve a Nature card  and put it into your hand.,2,270,Jungle Scout,1,1,3,1
+0,0,2,Deal 1 damage to the two highest-health enemy creatures.,6,100104,Blastwave,1,2,3,5
+2,4,3,"Ability: Give a friendly creature without an afterlife ""Afterlife: Summon a 3/2 Experimental Outcome.""",4,805,Soul Charlatan,1,6,4,1
+0,0,1,"Summon two 0/2 Mirrors with ""Frontline. Can't attack. Creatures that attack a Mirror become confused.""",7,93,Hall of Mirrors,3,1,4,3
+3,7,6,At the start of your turn  a random creature in your hand with the lowest mana cost goes to the void. Summon a random highest mana cost creature from your void.,4,145,Dread Queen Persephone,4,1,10,1
+3,7,8,Backline. At the end of your turn  summon a random creature from your void.,1,151,The Gatekeeper,4,1,9,1
+3,2,2,Afterlife: Unlock a mana lock for both players.,4,153,Fanatic of Khnum,2,1,4,1
+0,0,1,Target a creature. Obliterate cards in your deck with the same cost as that creature  and draw a card.,6,168,Lost In The Depths,3,1,4,3
+5,2,0,Godblitz. After you attack  heal your god for 5.,3,100036,Sentient Flameblades,1,1,4,4
+0,0,2,Delve a spell from your void  and put it into your hand. Give it soulless and it costs +2 mana.,6,100105,Discovery,1,2,4,5
+0,6,2,Burn 2. Cannot attack. Afterlife: If you have 6 cards or more in hand  summon a 6/5 Rockdrake.,1,188,Rockdrake Egg,2,1,6,1
+5,2,5,Blitz.,3,189,Iron Kopis,2,1,6,4
+0,0,3,Add two mana locks to both players mana gems.,2,190,Ares\' Eruption,2,1,6,3
+0,0,2,Copy the lowest-cost creature in your hand.,6,200,Clone,3,1,6,3
+1,3,1,Whenever you cast a spell that costs 3 or less  give this creature +1 strength until the start of your next turn.,6,813,Academy Familiar,1,6,2,1
+0,1,3,After you cast a spell that costs 3 or less  summon a 1/1 Rat.,6,814,Rod of Rodents,1,6,2,4
+2,3,2,Roar: If you are holding an Aether  deal 3 damage to your opponent's god.,6,815,Aether Herald,1,6,2,1
+2,4,6,Roar: If you are holding an Aether  remove two mana locks.,6,822,Mana Auditor,2,6,2,1
+0,0,7,Deal 1 damage to a character for each spell that costs 3 or less in your void  up to a maximum of 10 damage.,6,823,Arcane Burst,2,6,2,3
+0,2,6,After you play a Death card  add 1 durability to this relic. Ability: Destroy target creature. If it is friendly  add 1 durability to this relic. Otherwise  remove 2 durability.,4,834,Neferu\'s Khopesh,4,6,2,4
+1,3,3,Roar: If you control two or more other creatures  give this creature +3/+2.,2,843,Steadfast Scout,2,6,3,1
+0,0,1,Target an opponent. Delve a card belonging to that god's domain. (The domains are Death  Deception  Light  Magic  Nature  and War.),7,848,Stolen Plans,1,6,3,3
+2,1,3,Roar: Destroy all cards in your deck with cost 2 or less.,2,146,Mistress Scythia,4,1,3,1
+16,16,9,Roar: Destroy all other creatures and obliterate your hand.,1,147,Arius Augur Paroxysm,4,1,2,1
+0,0,2,Deal 4 damage to an enemy creature.,6,1012,Starshard Bolt,1,2,2,3
+0,0,2,Give a friendly creature +1/-1 permanently  and give it leech until the end of the turn.,4,100108,Blood Ritual,1,2,2,5
+0,0,3,Give a friendly creature soulless then destroy it. Summon a creature from your void with mana cost of X +1 or less  and give it soulless. X is the cost of the destroyed creature.,4,100109,Reanimate,1,2,2,5
+0,0,2,Remove six random cards from your void  if your void is empty  add a random nature card to your hand.,2,100110,Forage,1,2,2,5
+0,0,3,Soulless. Pull two random spells  that each cost 3 or less  from your void into your hand.,6,816,Recovered Knowledge,3,6,2,3
+6,3,5,Backline. Flank. Hidden.,7,852,Hooded Figure,1,6,2,1
+3,3,7,Roar: Summon two Furies. If there are six or more Olympians in your void  your Furies gain +1 strength and blitz.,3,157,Furies,3,1,10,1
+2,2,3,Ward. At the end of your turn  deal 1 damage to a random enemy.,1,158,Wizened Warlock,3,1,3,1
+6,7,7,Frontline. Afterlife: If you're holding an Aether  deal 2 damage to each enemy creature.,1,159,Bulwark of the Sky,3,1,2,1
+0,0,3,Deal 2 damage to a character for each friendly creature on the board.,6,817,Form of Unity,3,6,2,3
+2,1,5,Roar: Add a Form of Wisdom  a Form of Power  and a Form of Unity to your hand.,6,818,Majes Spectral Philosopher,4,6,2,1
+3,3,5,Ward. After you cast a spell that costs 3 or less  refresh 1 mana.,6,819,Archimea Arithmancer,4,6,2,1
+0,0,1,Deal 2 damage to an enemy creature and 1 damage to your opponent's god.,6,820,Form of Power,2,6,2,3
+2,3,2,Roar: Set the mana cost of all anims  enchanted weapons  and runes in your hand to 1.,1,186,Balance Summoner,3,1,8,1
+0,0,2,Draw a card. If it's a spell that costs 3 or less  reduce its cost to 0.,6,812,Form of Wisdom,1,6,8,3
+4,5,5,Roar: If you are holding an Aether  add a random 1-mana Magic spell to your hand.,6,821,Archvisionist,2,6,2,1
+4,9,7,Whenever this creature takes damage  double its strength.,3,19,Mountain Greatwyrm,2,1,6,1
+3,4,4,Roar: Add a copy of the last creature played to your hand.,6,23,Portal Wrangler,1,1,8,1
+5,5,8,At the end of each turn  summon a Foolhardy Beserker. Roar: Pick one — · Give +5/+3 to a friendly creature  or · Give +3/+10 to a random creature in your hand.,3,25,Odin Endless War,4,1,12,1
+3,1,1,Roar: Give a friendly Viking +1 health.,1,26,Valkyrie Heartsworn,1,1,12,1
+2,3,4,Spell boost +1. Roar: Remove 8 durability from your opponent’s relic. If this destroys a relic  your opponent draws a card.,6,941,Spellbound Gremlin,1,6,12,1
+4,5,4,Afterlife: If you are holding an Aether  gain 9 favor.,6,939,Planetar Sage,1,6,2,1
+3,3,4,Roar: If you control a Wild creature  refresh 3 mana.,2,942,Beast Speaker,1,6,8,1
+0,0,3,Summon three confused 1/1 Amazon Recruits.,2,944,Sudden Rally,1,6,8,3
+2,1,3,Roar: For every three Nethers in your deck  this creature gets +1 health and deals 1 damage to both gods.,1,4,Influential Incubus,3,1,9,1
+0,0,3,Add Mana Bind to your opponent's hand.,7,6,Ancient Curse,1,1,9,3
+1,5,1,At the start of your turn  this creature attacks a random valid target.,1,7,Broken Harvester,2,1,5,1
+1,3,3,Whenever you obliterate a card in your hand  draw a card and your god takes 2 damage.,4,8,Eternal Servant,1,1,5,1
+0,0,1,Give a friendly creature +2 health and fully heal it.,5,14,Healing Insight,1,1,5,3
+0,0,3,Draw nine cards. At the end of your turn  obliterate your hand.,4,16,Faustian Pact,3,1,5,3
+1,1,1,At the end of your turn while this creature is in your hand  transform it into a creature in your opponent's hand. It keeps this ability after the change.,7,17,Mimicus,4,1,5,1
+3,4,3,Afterlife: Shuffle this creature into your deck. It keeps all buffs.,5,21,Osiris the Eternal,4,1,4,1
+5,6,6,Backline. Whenever a friendly Anubian dies  draw a card.,1,22,Anubis Guide of Souls,4,1,4,1
+2,2,1,Flank. Roar: Give a friendly creature flank.,1,24,Midnight Cat,1,1,13,1
+6,5,7,Roar: Deal 4 damage to an enemy creature  and 4 more damage  split randomly among other enemy characters.,1,27,Ashen Drake,3,1,6,1
+1,2,2,Whenever a creature is healed  draw a card.,5,182,High Thaumaturge,2,1,8,1
+3,3,4,Frontline. Protected. Ward.,5,193,Highborn Knight,3,1,8,1
+2,1,3,Blitz. Flank. Protected.,3,258,Hyksosian Chariot,1,1,4,1
+0,0,4,Destroy all creatures with mana cost 3 or less.,4,1013,Dust to Dust,3,2,4,3
+0,0,2,Give two different random friendly creatures +1 strength until the end of the turn.,2,100111,Flourish,1,2,4,5
+0,0,3,Deal 2 damage to a random enemy creature. Heal your god for 1.,2,100112,Leech Life,1,2,4,5
+0,0,2,Give a creature +2/+1 and burn +1. If it is an enemy creature  give it an additional burn +2.,3,100113,Enrage,1,2,4,5
+0,0,1,Give a friendly creature blitz.,3,100114,Onslaught,1,2,4,5
+0,0,1,Heal a friendly character for 2.,5,100117,Heal,1,2,4,5
+0,0,2,Look at the top 2 cards of your deck. Give the Chosen One +2/+2  and move it three cards closer to the top of your deck.,5,100118,Chosen Visions,1,2,4,5
+3,7,6,Frontline. Ward.  At the start of your turn   completely heal this creature. After a friendly creature is healed  they gain +1 strength.,5,824,Lysander Champion of Light,4,6,10,1
+1,4,3,Ward. Ability: Pick one — • Delve a spell. • Deal damage to an enemy god equal to the cost of a random card in their void  then obliterate that card.,6,825,Pallas Champion of Magic,4,6,8,1
+2,2,2,At the end of your turn  a random enemy creature goes to sleep.,7,853,Satyr Hypnotist,1,6,8,1
+0,0,3,"Gain 5 favor. If you have a relic equipped  it gains: ""At the end of your turn  gain 5 favor.""",5,938,Blessing of Light,1,6,8,3
+0,0,3,Gain favor equal to three times the amount of mana you have unlocked.,6,940,Blessing of Magic,1,6,8,3
+0,0,1,Give regen +2 to target friendly creature. Gain 4 favor.,2,943,Blessing of Nature,1,6,8,3
+2,2,1,Roar: Obliterate a card in your hand. Afterlife: All enemy creatures go to sleep.,4,2,Siren of the Grave,2,1,8,1
+0,0,3,Summon a 2/2 Acolyte.,5,100115,Summon Acolyte,1,2,8,5
+0,0,1,Target a creature. If you target a friendly creature  increase its health by 1. If you target an enemy creature  reduce its strength by 1  but not to below 1.,5,100116,Heaven\'s Light,1,2,8,5
+2,2,3,Roar: Delve a Nature creature  and put it into your hand.,2,269,Mottled Ranger,1,1,8,1
+0,0,0,Your god power becomes a copy of your opponent's. Foresee the top card of your opponent's deck.,7,100125,Thievery,1,2,8,5
+1,1,3,Roar: Give +1/+1 to each creature in your hand.,3,299,Blacksmith Armourer,1,1,7,1
+0,0,3,Deal 2 damage to an enemy creature.,6,100127,Magebolt,1,2,7,5
+0,1,2,After you play a Magic card  add 1 durability to this relic. Ability: Draw a card  then remove 3 durability from this relic.,6,831,Pallas\' Wand,4,6,7,4
+2,1,1,Roar: Confuse a random enemy creature.,7,28,Apate Conspirator,2,1,7,1
+4,4,4,Roar: Equip a random enchanted weapon if you have 3 Olympians in your void.,3,29,Hephaestus The Enchanter,4,1,10,1
+5,7,7,Frontline. Roar: Set an enemy creature's health to 2.,5,30,Radiant Guardian,1,1,2,1
+0,0,7,Add four random Nature cards to your hand. Refresh six mana.,2,31,Photogenesis,3,1,2,3
+5,5,5,Whenever you target this creature with a spell  it gains +1/+1.,5,32,Spellwrought Angel,1,1,2,1
+2,2,1,Roar: If you control another Atlantean  this gets +1 strength.,1,33,Sentinel Princess,1,1,5,1
+3,2,2,After this creature deals damage  give a random other friendly Viking +2 strength.,1,34,Foolhardy Berserker,1,1,12,1
+0,3,2,At the start of each turn  this creature gets +1 strength.,1,35,Rolling Watcher,1,1,5,1
+0,0,2,Target friendly creature gains an extra attack this turn and attacks a random enemy creature. Add a random Nature card to your hand.,2,36,Natural Selection,2,1,5,3
+0,0,1,Destroy target friendly creature. Draw two cards.,4,46,Untold Greed,2,1,5,3
+5,1,3,Roar: Give a friendly Amazon protected.,1,241,Servant of Inti,2,1,3,1
+3,4,2,Protected. Cannot attack.,1,272,Venerable Gryphon,2,1,13,1
+3,2,4,Godblitz. At the end of each turn  deal 1 damage to your god. Afterlife: Deal 1 damage to each creature.,3,297,Dead Man\'s Flail,1,1,13,4
+4,1,5,Blitz. Roar: Deal 2 damage to a random enemy creature.,3,298,Runaway Trebuchet,1,1,11,1
+0,0,3,Deal 2 damage to a random enemy creature. If it survives  pull it from the board into your opponent's hand.,7,300,Guerilla Sabotage,1,1,11,3
+0,0,4,Summon a 3/2 confused creature and a 2/3 confused creature.,2,301,Druidic Summons,1,1,11,3
+0,0,2,Give a damaged friendly creature +4/+2.,3,306,Blood Rage,1,1,11,3
+0,0,1,Deal 1 damage to a friendly creature. If it dies  randomly pull a creature from your deck into your hand and give it +3/+3.,3,307,Out of Its Misery,1,1,11,3
+0,0,2,Select a friendly creature. It attacks all enemy creatures on board  in random order.,3,308,Take Them All On,2,1,11,3
+0,0,1,Deal 1 damage to each damaged creature. At the end of the turn  draw a card.,3,309,Demoralise,3,1,11,3
+0,0,3,Add a random card from your opponent's god to your hand.,7,100119,Flip,1,2,11,5
+0,0,2,Target creature goes to sleep at the start of your opponent's turn. Give it +1 strength  or +2 strength if it is an enemy creature.,7,100120,Memory Charm,1,2,11,5
+0,0,2,Randomly summon a 1/2 Badger or a 2/1 Eagle.,2,100121,Animal Bond,1,2,11,5
+0,0,2,At the end of your turn  give +1/+2 to a random creature in your hand.,3,100122,Intense Training,1,2,11,5
+0,0,3,If you have a relic equipped  give it +1 durability. If you don't  equip a 2/1 Hand Axe with blitz.,3,100123,Slayer,1,2,11,5
+0,0,2,Deal 1 damage to a creature and give it hidden until the start of its controller's turn.,7,100124,Cheat,1,2,11,5
+0,0,2,Foresee 2. Your god gets protected.,6,100126,Clear Mind,1,2,11,5
+3,5,6,When this creature is summoned  deal 3 damage to each other character. Afterlife: If your god has 15 health or less  pull this creature into your hand and permanently reduce its cost by 1.,4,828,Neferu Champion of Death,4,6,4,1
+1,1,1,Backline. Deadly. Hidden for 1 turn.  After you play a card  play this creature to the board if it's in your hand.,7,829,Orfeo Champion of Deception,4,6,7,1
+0,3,3,After you play a Light card  add 1 durability to this relic. Ability: Give +2/+2 to a creature  then remove 2 durability from this relic.,5,830,Lysander\'s Spear,4,6,7,4
+4,4,5,Spell boost +2.,6,41,Pocket Channeler,1,1,7,1
+2,2,2,Roar: Give +1/-1 to a creature.,1,42,Dread Pirate,1,1,7,1
+1,2,1,At the end of your turn  heal your god for 2.,2,43,Simple Satyr,1,1,8,1
+0,2,5,After you play a Deception card  add 1 durability to this relic. Ability: Pull target enemy creature into your opponent's hand  then remove 2 durability from this relic.,7,835,Orfeo\'s Mask,4,6,8,4
+4,6,5,Flank. Roar: Each other friendly Olympian gets +1 strength and flank.,1,49,The Black Argo,3,1,10,1
+1,6,6,Any damage taken by this creature is also applied to each enemy creature.,6,351,Archimedes Mirror,3,1,5,1
+3,3,4,At the start of your turn  you gain the ability to use your god power twice during the turn. (Mana costs still apply.),1,353,Sign of Avarice,3,1,9,1
+3,5,9,At the start of your turn  set this creature's mana cost to 9 minus the number of creatures on the board.,1,305,Raiding Kraken,2,1,13,1
+0,0,2,All creatures with both strength 2 or less and health 2 or less  gain +4 health.,5,322,Holy Writ,1,1,13,3
+0,0,1,Set a creature's strength to 1 and give it +1 health.,5,324,Reformation,1,1,13,3
+2,4,3,Roar: If this is your only creature on the board  it gets +2 health.,1,325,Mindful Orc,2,1,13,1
+2,2,1,Hidden for 1 turn. Creatures damaged by this creature get burn +1.,7,333,Needle-Fang Chameleon,2,1,13,1
+1,3,1,Roar: Give the Chosen One +1/+1 and put it one card closer to the top of your deck.,5,326,Devout Cleric,3,1,13,1
+3,2,3,"Roar: Give a random other Anubian ""Afterlife: Pull this creature from the void into your hand.""",4,335,Reborn Pharaoh,2,1,4,1
+2,5,4,Roar: Shuffle a random box into your deck.,1,337,Pandora The Curious,4,1,10,1
+0,0,6,Add a random spell  creature  and relic from your opponent's god to your hand.,7,338,Fill the Coffers,3,1,10,3
+2,4,6,Deadly. Roar: Give a creature +3/-3.,1,339,Locusta Solution Expert,4,1,7,1
+1,2,1,Roar: Replace all anims  enchanted weapons  and runes in your hand with random legendary cards.,1,340,Back-Alley Vendor,2,1,7,1
+2,4,4,Roar: Reduce the cost of all cards in your hand that did not start in your deck by 1.,7,341,Merchant Prince,2,1,7,1
+4,4,4,Hidden. Roar: A random enemy creature becomes confused and goes to sleep.,7,342,Avatar of Deception,4,1,7,1
+0,0,7,Each enemy creature goes to sleep. Change your god power to Larceny.,7,343,Deception Unshrouded,4,1,7,3
+1,2,4,Hidden. Roar: Add a Mind Probe to your opponent's hand. Whenever this creature damages your opponent  add a Mind Probe to their hand.,7,345,The Mastermind,4,1,7,1
+4,2,3,Roar: Give a creature spell boost +1.,6,352,Arcana-Daemon,1,1,9,1
+0,0,4,Destroy a random creature with the highest strength.,5,1005,Imperious Smite,1,2,9,3
+0,0,6,Deal 5 damage to a creature and 3 damage to all other creatures.,6,1011,Astric Implosion,1,2,9,3
+0,0,7,Transform an enemy creature with 4 or more attack into a 2/2 Acolyte. Gain control of the Acolyte. It gains frontline  protected and ward.,5,1021,Penitence,2,2,9,3
+0,6,3,Frontline. Can't attack. Burn 2. Afterlife: Add two random Atlantean's to each players hand.,1,394,Aether Chest,4,3,5,1
+0,0,0,When drawn  summon a random Legendary creature that costs the same or less than your available mana and obliterate this card. Draw a card.,1,100002,Atlas\' Burden,5,5,5,3
+1,2,1,After a creature dies  heal your god for 1.,1,54,Scarab Swarm,3,1,13,1
+0,0,2,Double the health of a friendly creature.,5,323,Anoint,1,1,13,3
+0,0,5,Give a creature +3/+3 and protected.,5,327,Canonize,1,1,13,3
+0,0,1,Select two creatures and evenly distribute their strength. They cannot attack gods this turn.,5,346,Scales of Justice,2,1,13,3
+0,0,4,Pick one – · Deal 4 damage to a creature  or · Deal 4 damage to your opponent and look at the top 4 cards of their deck.,6,349,Shadow Slash,1,1,13,3
+10,12,8,Overkill. Roar: Deal 3 damage to each other creature.,2,1047,Vinebound Jotun,3,2,13,1
+0,1,6,After you play a War card  add 1 durability to this relic. Ability: Deal 4 damage to each creature  then remove 3 durability from this relic.,3,833,Valka\'s Axe,4,6,13,4
+4,6,4,After this creature is healed  gain 2 favor. Roar: Deal 2 damage  to this creature.,1,898,Injured Hetairoi,1,6,7,1
+6,6,7,Leech. Roar: Give deadly to all of your creatures.,4,53,Dire Demilich,3,1,9,1
+2,4,4,Hidden. Flank. When this creature damages your opponent  add a copy of a card from your opponent's deck to your hand.,7,315,Lord of Whispers,4,1,9,1
+2,3,5,Roar: Destroy all sleeping creatures.,7,854,Dream Stalker,2,6,9,1
+6,7,7,At the end of your turn  add a random Aether from your void to your hand.,1,51,Rebirth Planetar,1,1,2,1
+3,3,3,At the end of your turn  give ward to each friendly Atlantean.,1,1085,Phase Touched Golem,3,2,5,1
+1,2,0,Confused.,2,100148,Badger,1,2,5,1
+5,5,7,Protected. Ward. Afterlife: Summon a random anim.,1,393,The Iron Horse,4,3,5,1
+2,3,2,Afterlife: Heal your god for 4.,5,390,Golden Sabre,3,3,5,4
+0,0,1,Draw a card and reduce its mana cost by 1 if it costs less than your unlocked mana gems.,6,362,Dimension Door,1,1,5,3
+1,1,1,Afterlife: Deal 1-2 damage randomly to either Pyroclastic Alchemist or your god.,1,100044,Pyroclast,1,1,5,1
+5,1,5,Afterlife: Summon a Phoenix Egg.,2,400,First Phoenix,3,4,13,1
+4,1,1,At the end of each player's turn  swap this creature's strength and health.,7,1158,Switch Duelist,2,2,7,1
+0,4,1,At the start of your turn  give burn +4 to the creature with the highest health and this relic loses 1 durability.,4,382,Pyrocannon,1,3,7,4
+3,2,4,Blitz. Afterlife: Deal 2 damage to two random creatures. Heal your god for 4.,3,384,Magic Missile Launcher,1,3,7,4
+0,6,4,Whenever you cast a spell  summon a Banished Shadow and this relic loses 1 durability.,6,386,Shadow Banisher,2,3,7,4
+6,6,6,Hidden for 1 turn.,7,388,Nethersaur,2,3,9,1
+1,4,2,Frontline. Can't attack.,1,87002,Barricade,1,3,11,1
+2,1,2,Roar: Trigger the afterlife of a friendly Anubian.,5,56,Pharaoh\'s Body-Double,1,1,4,1
+3,4,6,Whenever you play an anim  add a random anim to your hand. Roar: Add an anim to your hand.,1,76,Set Oshi,4,1,4,1
+2,2,1,Roar: Shuffle two random Nethers into your deck.,1,104,Raze Imp,1,1,9,1
+9,4,6,,1,380,Atlantean Rex,1,3,5,1
+1,2,1,Creatures damaged by this creature get burn +4.,1,381,Arcane Sphere,1,3,5,1
+0,0,4,Destroy a friendly Atlantean. Summon two random Atlanteans from among all voids.,4,383,Aetherrust,2,3,5,3
+1,5,4,Cannot attack. Frontline. Creatures damaged by this creature get burn +2.,1,385,Firewall,1,3,5,1
+5,2,5,Protected.,1,387,Protected Deamonbot,2,3,9,1
+1,3,3,Blitz. Leech. After your god attacks  this relic gets +1 strength.,2,389,Cryodyne Trident,2,3,9,4
+7,7,5,Golden Golem cannot attack unless you cast a spell this turn.,1,395,Golden Golem,4,3,5,1
+2,2,1,Regen 1.,1,87001,Springbloom Hunter,1,3,3,1
+2,2,1,Hidden for one turn.,1,87003,Dockside Prowler,1,3,7,1
+2,3,1,Confused. (When a confused creature attacks  there is a 50% chance that it attacks a valid random character instead.),1,87004,Wild Hog,1,3,13,1
+1,1,2,Roar: This creature gains +2 strength if you have an Olympian in your void. If you have three or more  it also gains protected.,1,228,Empire\'s Footman,2,1,10,1
+7,7,7,Roar: Summon two 1/1 Pyroclasts.,1,320,Pyroclastic Alchemist,2,1,10,1
+0,0,2,"Draw a card. Give two friendly creatures ""Afterlife: Shuffle this creature into your deck.""",5,321,Forty Days,1,1,10,3
+1,6,6,Deadly. After Kidnapper attacks a creature  pull the attacked creature into your hand.,7,336,Kidnapper,3,1,7,1
+2,3,2,Blitz. (Creatures with blitz can attack enemy creatures  but not gods  the turn they are summoned.),1,87005,Vanguard Axewoman,1,1,12,1
+2,1,1,Afterlife: Deal 1 damage a random enemy character.,1,87006,Volatile Imp,1,1,9,1
+2,3,2,Roar: Heal another friendly creature for 1.,1,87007,Panacean Messenger,1,1,2,1
+2,2,1,Ward.,1,1000,Dryder Sailweaver,2,2,2,1
+0,0,8,Transform each enemy creature into 1/1 Rats. Change your god power to Seer.,6,364,Magic Unburdened,4,1,2,3
+0,0,1,Give a friendly creature +3 strength. If it is hidden  give it flank.,7,1141,Dark Knives,2,2,2,3
+4,3,2,Afterlife: Deal 4 damage to your god and pull the top card of your deck into your void.,4,1229,Void Banshee,2,2,9,1
+3,4,4,Roar: Deal 1 damage. If you're holding an Aether  deal 3 damage instead.,6,20,Dimension Looper,1,1,8,1
+4,4,4,Burn 1. Roar: Give another Atlantean twin strike and +2/+2.,1,55,Boost Walker,3,1,5,1
+4,5,6,Roar: If a god is below 16 health  it heals for 4. If they are above 16  it is dealt 4 damage instead.,1,66,Balance Ethereals,2,1,2,1
+3,3,3,Roar: Delve an enchanted weapon. Put it into your hand and a copy of it into your opponent's hand.,1,96,Blade Trader Drosis,4,1,7,1
+0,0,3,Randomly pull two creatures from your deck  each with a mana cost of 2 or less  into your hand.,3,110,Reinforcements,1,1,7,3
+2,2,1,Roar: Move the Chosen One three cards closer to the top of your deck.,5,1062,Illuminated Warrior,1,2,7,1
+2,3,3,Roar: This creature gets +1 strength for every two Olympians in your void.,1,1150,Spartan,3,2,10,1
+2,1,0,Blitz.,3,100090,Hand Axe,1,2,10,4
+3,3,4,,4,100103,Netherbeast,1,2,9,1
+0,0,5,"Give a creature: ""At the end of your turn  gain +5  split randomly across strength and health.""",2,57,Swelling Boon,1,1,9,3
+5,5,6,"Regen 3. Roar: Give each friendly creature ""After this creature attacks a creature  deal 2 damage to a random enemy creature.""",2,844,Caller of the Hunt,3,6,3,1
+0,0,5,Draw three cards.,6,1035,Rune Viper Tincture,2,2,3,3
+0,0,7,Deal 15 damage to  each enemy creature. Your opponent summons a 1/1 Walking Plant for each creature damaged by this effect.,2,845,Seasonal Rebirth,3,6,3,3
+1,4,1,Regen 1.,2,1045,Marsh Walker,2,2,13,1
+1,4,2,Twin strike. Blitz. Roar: Target creature becomes confused.,2,1046,Faeflame Blade,3,2,13,4
+4,2,3,Roar & Afterlife: Give regen +1 to each other friendly creature.,2,1049,Gersemi Freyja\'s Spear,4,2,13,1
+4,3,3,Confused. Whenever this creature attacks  refresh two mana gems.,2,1050,Managarmr Moon Hound,4,2,13,1
+6,6,8,Blitz. Twin strike. After this creature attacks another creature  this creature becomes protected.,3,1051,Grendel Night Terror,4,2,13,1
+8,8,9,Roar: Add nine random Nature cards to your hand and set their costs to 1. Deal 6 damage to each enemy character.,2,846,Dionysus the Bountiful,4,6,13,1
+3,2,3,Afterlife: Summon a 1/1 Impling.,1,87010,Jailbeast,1,6,9,1
+1,4,2,Roar: Give your relic +2 strength for its next attack.,3,1052,Warmonger Smith,3,2,9,1
+7,6,5,Whenever this creature takes damage  deal 2 damage to your god.,1,58,Nullmaw,3,1,9,1
+0,0,2,Give all friendly creatures +2 strength.,2,100009,Cultivate,3,1,9,5
+5,6,7,At the end of each turn  destroy three other random creatures with health 3 or less.,4,1033,Cerberus Styx Hound,4,2,9,1
+2,1,10,At the start of your turn  set this creature's mana cost to 10 minus the number of cards in your hand. Roar: Deal 6 damage.,6,1036,Leyhoard Hatchling,2,2,6,1
+3,2,4,Blitz. Afterlife: Destroy a random creature.,3,1053,Devouring Blade,3,2,6,4
+0,4,2,Backline. Ability: Set a creature's strength to 2.,5,1054,Chalice Priest,3,2,8,1
+2,2,4,Roar: Pull a card from your void to your hand.,5,1055,Radiant Embalmer,2,2,8,1
+2,6,4,Frontline. Afterlife: Give +2 health to a random creature with strength 2 or less.,5,1056,Helios Guardian,1,2,8,1
+2,2,5,Backline. At the end of your turn  summon a 2/2 Acolyte.,5,1057,Battle Cleric,2,2,8,1
+2,4,3,Roar: Heal a friendly character for 2.,5,1058,Bright Mage,1,2,8,1
+2,4,4,Roar: Give +2 health to each other friendly creature.,5,1059,Holy Enchanter,1,2,8,1
+3,3,5,Roar: Deal 3 damage to an enemy creature.,1,1151,Ogre Archer,1,2,8,1
+1,1,1,Protected.,1,1164,Tomb Torchbearer,1,2,4,1
+1,1,1,,1,100128,Amazon Recruit,1,2,3,1
+1,1,1,Confused. Roar: Summon a Chicken Egg.,1,59,Expectant Chicken,3,1,13,1
+0,0,6,Deal damage to each enemy creature equal to the number of enemy creatures on the board.,7,1008,Rapture Dance,1,2,13,3
+0,0,7,Deal 5 damage to each enemy creature.,6,1016,Inferno,1,2,13,3
+3,4,4,Regen 1. Roar: Remove 4 durability from your opponent's relic.,2,1043,Nefarious Briar,1,2,13,1
+1,3,2,Twin strike. Blitz. Afterlife: Summon a 1/1 Walking Plant.,2,1044,Staff of Roots,1,2,13,4
+1,3,4,Whenever you summon a friendly creature  give it +1 health and frontline.,5,1060,Patience Priestess,2,2,8,1
+0,2,1,Frontline. Afterlife: Give +2 health to each other friendly creature.,5,1061,Blind Martyr,3,2,8,1
+3,3,2,Confused. Regen 1.,2,1018,Black Jaguar,1,2,13,1
+4,5,7,At the end of each turn  pull a random creature from each god's void onto the board.,1,403,Blessed Ibis,2,4,13,1
+3,4,3,,1,87009,Hunt Warden,1,4,3,1
+5,5,5,Afterlife: Heal your god for 7. If this completely heals your god  add a random Nature card to your hand.,2,1048,Valewarden Minotaur,3,2,3,1
+1,4,3,Frontline. (If a player has a frontline creature on the board  only their frontline creatures may be attacked.),1,87011,Hoplite Initiate,1,2,10,1
+3,4,4,At the end of your turn  a random friendly injured character is healed for 2.,5,87012,Radiant Spirit,1,2,2,1
+4,3,4,Afterlife: Pull a random Anubian of 3 mana or less from your void into your hand.,1,1103,Tomb Priest,3,2,4,1
+10,10,8,Roar: Give burn +3 to all enemy creatures. If you have at least six cards in hand  deal 2 damage to each enemy creature.,1,1108,Ladon Uclid Dragon,4,2,6,1
+4,3,3,,1,1094,Viking Outrider,1,2,12,1
+2,2,2,Roar: Heal your god for 4.,1,1096,Duergar Priest,1,2,8,1
+2,4,2,,1,1084,Skeleton Heavy,1,2,4,1
+6,12,9,Blitz. Protected. Regen 6. Twin strike. Ward. Overkill.,1,1110,Echophon Atlantean Hydra,4,2,5,1
+0,3,3,Ability: Target creature goes to sleep. Remove 1 durability from this relic.,7,850,Obsidian Dagger,1,6,5,4
+1,3,4,Deadly. (Any amount of deadly damage will destroy a creature.),1,87013,Poison Peddler,1,6,7,1
+5,3,4,Regen 1.,1,87014,Underbridge Assailant,1,6,3,1
+6,10,7,Frontline.,1,1088,Cyclops Defender,1,2,13,1
+1,3,2,Hidden. Flank.  When this creature attacks a god  steal 3 of their favor. (You also gain favor for attacking.),7,851,Larcenous Pan,1,6,9,1
+4,5,6,Roar: Deal 1 damage to each enemy creature.,1,1089,Stormstress,2,2,8,1
+2,2,1,Frontline.,1,1098,Felid Protector,1,2,10,1
+0,0,3,Deal 8 damage to a random enemy creature  and give it burn +2.,2,1100,Lightning Strike,2,2,10,3
+0,5,5,Backline. Ability: Deal 3 damage.,1,1104,Catapult,3,2,11,1
+4,7,6,Twin strike.,1,1106,Cyclops Marksman,2,2,11,1
+4,2,4,Afterlife: Summon a 2/1 Skeletal Guard.,1,1107,Pharaoh\'s Guard,1,2,4,1
+1,3,3,At the end of your turn  summon a 1/1 Nimble Pixie.,1,143,Pixielock,2,1,3,1
+5,9,7,Blitz. After this takes damage  it gets +5 strength.,3,144,Tyr The Just,4,1,12,1
+2,3,1,,5,1064,Ritual Rod,3,2,12,4
+5,6,5,,1,1068,Helios Battlesworn,1,2,8,1
+2,2,4,Roar: Pull the highest-cost Nether from your deck to your hand. (Ties decided randomly.),1,1070,Eldritch Demonologist,3,2,9,1
+0,2,2,Frontline. Cannot attack. Afterlife: Draw a card.,1,1079,Sentient Amphora,2,2,5,1
+1,3,1,Roar: Give a friendly Amazon strength +1.,1,1081,Arkmonian Anteater,1,2,5,1
+12,10,8,Roar: Give +2 health to each other friendly creature. If they have frontline  give them +4 health instead.,1,1091,Blackguard,3,2,5,1
+5,2,4,Roar: Give a friendly creature +2 strength  until end of turn.,1,1092,Vanir Lion,1,2,5,1
+3,4,4,Roar: Remove sleep from target friendly creature. Remove 1 durability from your opponent's relic.,1,1093,Svart Basilisk,1,2,5,1
+3,4,3,,1,1095,Dune Cavalry,1,2,5,1
+1,1,1,Roar: Give +1/+1 to a friendly creature.,1,1097,Shieldbearer,1,2,10,1
+3,4,6,Backline. Leech. Roar & ability: Deal 1 damage to each creature.,3,1102,Auric Mage,1,2,8,1
+2,2,6,Flank. Roar: Summon two Amazon Flankers.,1,1105,Amazon Flanker,2,2,3,1
+0,0,3,Target creature goes to sleep. Draw a card for each sleeping enemy creature.,7,849,Fevered Dreams,1,6,3,3
+1,2,5,Backline. At the start of your turn  deal 1 damage to each enemy character.,1,87015,Flamecaller,1,6,8,1
+6,5,5,Confused.,1,87016,Riled Ursine,1,6,13,1
+5,4,5,Frontline.,1,1067,Atlant Phalanx,1,2,5,1
+2,2,1,Roar: Add a 1 mana  4/4 Young Manaborn to your deck.,1,1078,Deuteria Manashard Mage,4,2,9,1
+3,2,2,At the start of your turn  deal 1 damage to your god and reduce the cost of your god power by 1 until the end of the turn.,1,1080,Balthazar Blood Magus,4,2,9,1
+7,7,7,Frontline. Roar: If you have another Aether in hand  delve an Aether and put it into your hand.,1,1083,Planetar Centurion,3,2,2,1
+1,5,5,The first time you summon a creature each turn  deal 2 damage to your opponent.,1,87017,Summoner\'s Guide,1,2,2,1
+0,0,1,Destroy your relic and deal its damage +3 to target creature.,3,38,Hurl Weapon,1,1,2,3
+1,3,1,At the end of each turn  if your god power is active  change it to a random common one.,1,132,Namebinder Zal\'zie,4,1,9,1
+5,5,6,Roar: Transform each enemy creature into a random creature with the same mana cost.,1,133,Nemris the Unstable,4,1,9,1
+10,10,7,,1,1087,Burnished Bull,1,2,13,1
+0,6,1,Frontline. Can't attack. At the end of each turn  set this creature's strength to 0.,1,1099,Rampart,1,2,11,1
+3,2,2,Roar: If your god is protected  Time-Bomb gets +1 strength and protected. Otherwise  your god gains protected.,6,1153,Time-Bomb,3,2,5,1
+1,1,2,Whenever you summon a creature  give it +1 strength.,1,1156,Inspirator,2,2,5,1
+0,0,1,Pick one – · Deal 1 damage to each creature  or · Deal 2 damage to a creature.,3,1157,Auric Rush,1,2,5,3
+5,2,8,Godblitz. Whenever you attack  deal 2 damage to each creature  and heal your god for the damage done.,3,1142,Ares\' Runeblade,2,2,5,4
+1,3,3,Hidden for 1 turn. At the start of your turn  add a random enchanted weapon to your hand.,7,88,Shady Merchant,1,1,7,1
+6,5,6,Roar: Choose a creature. This creature becomes a copy of it  and gains hidden for 1 turn.,1,187,Hooded Doppelganger,3,1,7,1
+0,0,2,Target an enemy creature. Summon three 1/1 Rogue Skulkers to attack the target.,7,201,Mugging,2,1,7,3
+2,2,1,Roar: Remove confused from a friendly creature.,2,1161,Amazon Conscript,1,2,3,1
+6,7,7,Whenever you summon a creature  give it +1/+2.,1,1146,Judge Envoy,3,2,2,1
+3,3,3,Frontline.,1,1148,Battle Aurochs,1,2,2,1
+3,3,4,Roar: Deal 2 damage to an enemy creature.,1,1155,Carthaginian Marine,1,2,2,1
+2,3,4,Roar: Give each other friendly creature +1 strength.,1,1162,Singsong Satyr,2,2,8,1
+10,12,8,Protected. Frontline.,1,1086,Helian Elite,2,2,8,1
+0,0,6,Each creature gets +3/-3.,7,857,Elixir of the Snake,3,6,8,3
+7,7,9,Hidden. Deadly. When this creature attacks a god  obliterate the top ten cards of your opponent's deck.,7,858,Eris Queen of Chaos,4,6,8,1
+3,1,5,"Roar: Give each other friendly creature ""Whenever this creature damages your opponent  copy a random card in your opponent's deck and add it to your hand.""",7,859,Hierophant Silenus,4,6,8,1
+2,1,1,Godblitz.,3,860,Bloodthirsty Spear,1,6,8,4
+5,5,6,Afterlife: Summon a 1/1 Impling.,1,87018,Rotting Mount,1,6,9,1
+6,5,6,Frontline.,1,87019,Hired Muscle,1,6,7,1
+5,1,2,Flank.,1,45,Felid Tracker,1,1,13,1
+2,1,1,Roar: Give a random creature in your hand +2 strength.,3,1126,Tartessian Improviser,3,2,13,1
+0,0,8,Destroy all creatures. Summon a 9/9 Demonic Skull with -1/-1 for each enemy creature destroyed and +1/+1 for each friendly.,4,1129,End Times,3,2,13,3
+0,0,1,Deal 2 damage to each god. Draw a card.,4,1130,Brimstone,1,2,13,3
+0,0,1,Destroy a creature with health 3 or less.,4,1131,Blight Bomb,1,2,13,3
+0,0,4,Transform a friendly creature into a 6/6 Netherspawn.,4,1132,The Old Ritual,1,2,13,3
+0,0,5,Destroy a creature. Deal 2 damage to your god.,4,1133,Ray of Disintegration,1,2,13,3
+0,0,1,Randomly pull a relic from your deck to your hand.,3,1137,Reckoning,1,2,13,3
+3,4,4,Blitz. Flank. Roar: Give each other friendly creature flank.,3,1138,Viking Longship,2,2,12,1
+3,1,3,Twin strike. Protected.,3,1139,Trojan Battlemage,1,2,12,1
+2,2,3,Afterlife: Summon two 1/1 Battlethralls.,1,1140,Viking Bloodguard,2,2,12,1
+2,1,2,Roar: Give +1/+1 to a friendly creature.,1,1147,Felid Janissary,1,2,12,1
+6,6,7,Roar: If any creatures in your void have blitz  flank  frontline  leech  protected  twin strike  or ward  this creature gains those abilities.,3,1149,Hector Prince of Troy,4,2,10,1
+3,5,4,After a friendly creature takes damage and survives  this creatures gets +1 strength.,3,1152,Tamed Mammoth,1,2,10,1
+0,4,6,At the start of your turn  pull the creature with the lowest health from your void onto the board  and this relic loses 1 durability.,4,1159,Phylactery,1,2,10,4
+1,1,3,Afterlife: Summon another random creature with afterlife from your void.,4,60,Pallbearer,2,1,4,1
+1,1,1,Roar: Summon a 1/1 Bodyguard with frontline.,1,1127,Cardshark,2,2,7,1
+3,1,1,Flank. Roar: Remove 1 durability from your opponent's relic.,1,1128,Wiccan Trapper,2,2,8,1
+0,0,4,Select a friendly creature and an enemy creature. Destroy both of them.,4,1134,Void Flash,3,2,8,3
+0,0,1,Give a creature +2/+1.,3,1136,Deadly Arsenal,2,2,8,3
+1,2,1,Roar: Deal 1 damage to an enemy creature.,1,1160,Athenian Archer,2,2,10,1
+0,0,1,Target two creatures. They go to sleep.,7,61,Spellbound,1,1,10,3
+1,5,1,Godblitz. Flank.,7,1119,Makeshift Shiv,1,2,10,4
+3,2,2,Whenever a creature dies  heal its god for 2.,4,1202,Raving Necromancer,1,2,8,1
+0,0,2,Pick one – · Deal 4 damage to a random enemy creature  or · Deal 3 damage and heal your god for 3.,2,1117,Canopy Barrage,1,2,8,3
+0,0,3,Obliterate a random card in hand. Add three random Atlanteans to your hand.,7,392,Hasty Trade,3,3,8,3
+4,6,6,When this creature attacks & Roar: Reduce by 1 the cost of each non-Deception  non-Neutral card  in your hand.,7,856,Pan Marauder,3,6,9,1
+2,2,1,This creature gets +1 health after it attacks a creature.,3,1193,Bladecaster,1,2,10,1
+1,2,2,Backline. Ability: Deal 1 damage.,1,1198,Sentry Post,3,2,11,1
+1,2,5,Protected. Frontline. Deadly.,1,1200,Cursed Caipora,2,2,3,1
+3,1,1,Hidden. Flank.,7,1194,Felid Assassin,1,2,9,1
+2,3,4,Roar: Deal 1 damage to two enemy creatures. You may select the same creature twice.,1,1175,Veteran Archer,2,2,9,1
+3,2,2,Creatures damaged by this creature get -2 strength.,5,1195,Devoted Follower,1,2,8,1
+1,2,3,Roar: Give the Chosen One +1/+1  frontline  and ward. Move it to the top of your deck.,5,1196,Triumvirate Prophet,4,2,8,1
+0,0,2,Remove sleep from all friendly creatures. Each creature with strength 4 or more has their strength set to 2.,5,1199,Pacifism,1,2,8,3
+2,3,2,Frontline.,1,1201,Shield Maiden,1,2,12,1
+4,2,2,,1,1176,Amazon Spearsoul,1,2,3,1
+2,3,4,Roar: Foresee 3. Draw a card.,6,1178,Soothsayer,2,2,8,1
+3,3,3,Roar: Heal your god for 2.,1,1181,Combat Medic,1,2,10,1
+3,3,3,Twin strike. Leech.,3,863,Nokkvi Pillager,1,6,12,1
+2,2,1,Roar: Foresee 1.,6,1182,Spellsight Seer,1,2,8,1
+3,4,7,Frontline. Afterlife: Summon two 3/2 Ancient Executioners with frontline.,1,1184,Tomb Blademaster,3,2,4,1
+2,5,4,Twin strike.,1,1185,Strix Hunter,1,2,4,1
+4,4,6,Ward. Roar: Pull a random spell from your void into your hand.,1,87020,Echocaster,1,2,8,1
+6,7,7,Blitz. Confused.,1,87021,Juggernewt,1,2,13,1
+0,0,2,Deal 8 damage to a random enemy creature. Summon a 2/2 Walking Tree for your opponent.,2,63,Uproot,1,1,13,3
+3,2,3,Afterlife: Deal 2 damage to a random enemy creature.,1,68,"Petard ""Elder""",2,1,13,1
+3,3,3,Roar: Transform another random creature into a 1/5 or 5/1 Malfunctioning Artifice.,1,69,Malfunctioning Servitor,2,1,5,1
+0,0,1,Deal 3 damage to each god  and give burn +3 to each creature.,4,71,Ragnarok,2,1,5,3
+3,7,5,Frontline. Roar: Summon three 1/1 Injured Soldiers with frontline  and Odysseus  Tried Victor takes 6 damage.,1,152,Odysseus Tried Victor,4,1,10,1
+0,0,1,Draw a card  add two copies of it to your opponent's deck.,7,154,Mirror Mirror,1,1,10,3
+0,0,5,Deal 6 damage randomly split among all enemy creatures.,2,1186,The Hunt,1,2,10,3
+0,0,3,Draw a card for each injured creature.,3,1187,Signal Scouts,2,2,10,3
+0,0,1,Give target friendly creature +1 health. Draw a card.,5,1188,Thaeric Blessing,1,2,10,3
+2,2,2,After this creature attacks a creature  draw a card.,3,1189,Belligerent Warlock,2,2,10,1
+0,0,2,Pull an enemy creature from the board into its owner's hand.,7,1191,Trapdoor,1,2,10,3
+1,2,2,Roar: Give a friendly creature +2 health.,1,1192,Aging Veteran,1,2,10,1
+2,2,1,Blitz.,3,1197,Tavern Brawler,1,2,10,1
+1,2,2,Godblitz. Roar: Give +1/+1 to a random creature in your hand.,3,862,Commander\'s Gladius,1,6,10,4
+2,1,4,Roar: Summon a copy of this creature. (A copy includes buffs and debuffs.),3,864,Mountain Raider,2,6,10,1
+7,7,7,Frontline. Protected. Roar: Fully heal all other friendly creatures.,5,64,Avatar of Light,4,1,10,1
+0,0,4,Copy the last spell and the last creature your opponent played  and put them into your hand.,7,65,Pickpocket,1,1,10,3
+5,7,7,Afterlife: Summon a random legendary creature.,1,67,Golem Centurion,2,1,5,1
+4,4,3,Roar: Deal 3 damage to your god.,4,70,Greed Banestrider,2,1,9,1
+0,7,4,At the start of your turn  destroy all creatures.,4,203,Ares Peacemaker,2,1,9,1
+2,1,4,Roar: Summon two Bladeflys.,2,1166,Bladefly,1,2,13,1
+4,3,5,Frontline. Roar: Summon two 1/1 Hyenas.,1,1167,Jungle Princess,1,2,3,1
+2,2,1,Hidden for 1 turn.,1,1169,Wiccan Warrior,1,2,3,1
+3,1,3,Roar: Give a friendly creature twin strike.,3,1170,Tartessian Skirmisher,1,2,3,1
+3,2,4,Roar: Give another random friendly creature +2/+1.,1,1172,Traveling Bard,1,2,7,1
+1,1,2,Roar: Deal 1 damage to a creature  and summon a 1/1 Impling.,1,1173,Wicked Fae,2,2,9,1
+4,3,5,Afterlife: Deal 1 damage to each enemy creature.,1,1177,Hardened Channeler,2,2,9,1
+6,3,5,Roar: Give each other friendly Amazon +2/+2.,1,1179,Penthesilean Warrior,3,2,3,1
+0,0,4,Give each creature in your hand +2/+2 and leech.,3,861,Might Makes Right,1,6,3,3
+3,2,4,Roar: Give a friendly creature deadly.,7,1224,Uncanny Rogue,1,2,7,1
+0,0,1,Destroy target friendly creature. Heal your god for its strength plus health. Draw a card.,4,1225,Fleshbind,1,2,7,3
+6,6,7,Roar: Give a friendly creature +3/+3.,1,1227,Veteran Cataphract,1,2,7,1
+10,10,1,At the start of the game  both players use your deck. All cards cost 1 mana. All creatures are 10/10 and gain frontline.,1,65000,Hyperion,5,5,7,1
+10,10,6,Burn 3. At the start of the game  shuffle 15 Promethean Flames into each player's deck. Give your god burn +3.,1,65001,Prometheus,5,5,7,1
+10,10,7,At the start of the game  shuffle 15 Atlas' Burdens into both players decks.,1,65002,Atlas,5,5,7,1
+0,0,1,When drawn  deal 3 damage randomly and obliterate this card. Draw a card.,1,100000,Promethean Flame,5,5,7,3
+1,1,9,At the end of your turn & Roar: Summon a copy of this creature.,3,866,Howling Berserker,2,6,12,1
+3,1,5,Roar: Remove one of your mana locks and add one to your opponent's mana gems. Afterlife: Remove one of your opponent's mana locks add one to your mana gems.,7,130,Mana Thief,2,1,8,1
+3,7,6,Roar: This creature gets +1 strength for every two creatures in your void.,1,138,Hallowed Keeper,1,1,2,1
+4,3,4,Hidden. At the end of your turn  this creature gets +1 strength.,7,202,Shade Walker,2,1,5,1
+0,0,8,Add four random War creatures to your hand  and give them +2/+2.,3,867,Strength In Numbers,2,6,5,3
+3,3,4,Roar: If you have a relic equipped  give godblitz to this creature.,3,868,Bladesworn Warrior,3,6,12,1
+6,6,7,When this creature attacks  a god  pull a random  creature from your void  into your hand.,1,87022,Anubian Usher,1,6,4,1
+6,7,8,Blitz. Protected. Ward.,1,87024,Achillean Dedicant,1,6,10,1
+5,5,8,Roar: Deal 5 damage to each other creature (including your own).,1,87025,Reckless Flamebreather,1,6,6,1
+2,2,4,At the end of the turn  pull this card from the void into your hand.,1,204,Enduring Lemure,1,1,9,1
+2,2,2,Roar: Deal 1 damage to an enemy creature.,1,1221,Ranger Firstbow,1,2,10,1
+0,0,1,Target friendly creature becomes hidden for 1 turn. Draw a card.,7,1222,Assassin\'s Aim,1,2,10,3
+0,0,5,Target opponent reveals their hand. Pull one of their cards into your hand.,7,1223,Cutthroat Insight,1,2,10,3
+6,6,8,Frontline. Afterlife: Each of your creatures gain deadly.,1,87026,Apep\'s Doomcaller,1,2,4,1
+2,2,1,This creature gets +1 strength after it attacks a creature.,3,87027,Boil-Blood Outlaw,1,2,12,1
+2,2,3,Roar: Each creature in your hand gets +1 strength.,3,87028,Raid Reveller,1,2,12,1
+4,6,7,Twin strike. Blitz.,3,87030,Twinhorn Rider,1,2,12,1
+0,0,2,Deal 3 damage to a damaged creature.,3,87032,Vicious Rend,1,2,12,3
+0,0,3,Give each creature in your deck +1 strength.,3,87033,Call to Arms,1,2,12,3
+0,0,6,Pick One: · Your creatures get +2 strength and take 2 damage  or · Enemy creatures get +2 strength and take 2 damage.,3,87034,Over-proof Brew,1,2,12,3
+3,1,2,Godblitz. (Godblitz allows you to attack any opposing character when you play it.),3,87035,Ramshackle Hatchet,1,2,12,4
+2,1,2,Roar: Give +1 health to each other friendly creature.,5,87036,Battlement Luminary,1,2,8,1
+2,4,3,Frontline. Can't attack.,1,87037,Barbed Portcullis,1,2,11,1
+4,7,8,Frontline. Roar: Set each enemy creature's strength and health to 2.,5,87039,Peacebringer,1,2,2,1
+0,0,2,Give frontline to a creature and fully heal it.,5,87040,Brilliant Intervention,1,2,2,3
+0,0,3,Draw a card. Give each creature in your hand +1 health.,5,87041,Commune With The Light,1,2,2,3
+0,0,4,Transform a creature with cost 5 or less into  a 2/2 Acolyte  and give it protected.,5,87042,Conversion,1,2,2,3
+0,0,3,Pull a random creature from each void into your hand.,5,87043,Pluck From Fate,1,2,2,3
+1,2,2,Afterlife: Pull the highest mana cost creature from your void into your hand (ties decided randomly).,5,87044,Crook of Shepherding,1,2,2,4
+5,4,5,Roar: Deal 1 damage to a random enemy character.,2,87047,Escaped Silverback,1,2,13,1
+6,7,7,After your opponent plays a spell  summon a random anim.,1,73,Golem Excavator,2,1,5,1
+0,0,2,Add two copies of a random spell from your opponents void to your hand.,6,74,Recursion,1,1,5,3
+3,1,1,Afterlife: A random enemy creature gets +3/-1 and this afterlife effect.,1,75,Possessive Toupee,4,1,5,1
+4,4,5,Twin strike. Roar: If you have a relic equipped  give +1 strength to this creature and to your relic.,3,865,Valknir Weaponsmith,1,6,12,1
+0,0,1,Give blitz and +1 strength to a creature.,3,87031,Fury,1,6,12,3
+1,1,1,,1,100130,Impling,1,2,9,1
+0,0,1,Summon a confused 2/1 Eagle. Then  if you have three or more creatures on the board  summon a confused  1/2 Badger.,2,87051,Best Friends,1,2,9,3
+1,1,3,Backline. Whenever you summon a friendly creature with strength 2 or less  add a random Anim to your hand. The Anim costs 1 extra mana.,5,356,Jungle Shepherd,2,1,3,1
+1,1,1,,1,100134,Rogue Skulker,1,2,3,1
+1,1,2,Deadly.,1,100143,Destructive Dagger,1,2,3,4
+2,2,1,,5,100144,Acolyte,1,2,3,1
+2,1,0,Confused.,2,100145,Eagle,1,2,3,1
+4,3,3,Confused.,2,100147,Crocodile,1,2,3,1
+2,2,5,Blitz. Roar: Pick one – · This creature gets +2/+2  or · Another random friendly Amazon gets +4/+3.,2,357,Myrto\'s Daughter,2,1,3,1
+9,9,9,Protected. Ward.  Spell boost +2. Whenever you cast a spell  add a copy of Beam to your hand that costs 1 mana.,6,358,Avatar of Magic,4,1,3,1
+4,3,5,Blitz. Confused. When this creature attacks  each enemy creature becomes confused until the start of your next turn.,2,359,Bucking Bronco,3,1,13,1
+5,5,6,Confused. Roar: Pick one. This creature gets – · +2 strength and twin strike  or · +3 health and frontline.,2,360,Black Rhino,1,1,13,1
+4,5,6,Roar: Pick one. This creature gets – · +1/+4 and Olympian  or · blitz  protected  and Amazon.,2,365,Hippolyta Divided,4,1,13,1
+1,1,1,Afterlife: Add a random rune to your hand.,1,374,Backstreet Bouncer,1,1,7,1
+6,3,4,Flank.,1,375,Jaguar Rider,1,1,3,1
+2,2,1,Confused.,1,100039,Brash Chicken,3,1,3,1
+1,1,1,Afterlife: Heal your god for 4.,2,100042,Walking Plant,1,1,3,1
+2,1,1,,1,100065,Skeletal Guard,1,2,4,1
+2,2,2,Roar: This creature randomly gains flank  twin strike  or leach. It also randomly gains +1 strength or +1 health.,3,100066,Warrior,1,2,4,1
+2,3,2,Confused.,2,100067,Giant Elk,1,2,4,1
+4,4,1,Roar: Add a 1 mana  6/6 Manashard Fiend to your deck.,1,100068,Tetria Young Manaborn,4,2,9,1
+6,6,1,Roar: Add a 1 mana  8/8 Manashard Queen to your deck.,1,100069,Heptaria Manashard Fiend,4,2,9,1
+1,1,0,,1,100071,Rat,1,2,9,1
+0,0,0,Casts when drawn. Deal 3 damage to yourself and draw a card.,7,100072,Bomb,1,2,9,3
+0,0,3,If you have a relic equipped  set the strength of each friendly creature equal to the relic’s strength. Otherwise  draw a card.,3,869,Lead the Charge,3,6,9,3
+3,6,6,At the end of your turn  if this creature is in your hand it gains +1 strength. Roar: This creature deals damage equal to its strength to an enemy creature.,3,870,Hyrtacus Brazen Hero,4,6,10,1
+7,7,7,Roar: This creature attacks a random valid character. (It will attack an enemy frontline creature if there are any. It can't attack a hidden creature.),2,87048,Charging Oryx,1,6,13,1
+0,0,3,Give regen +6 to target creature. (At the end of your turn  creatures with regen regain health.),2,87049,Aspect of the Axolotl,1,6,13,3
+0,0,3,Confuse all enemy creatures. Refresh four mana. (Refill up to four of your spent mana gems.),2,87050,Untamed Regrowth,1,6,13,3
+2,3,2,Whenever your opponent casts a spell  this creature gains +2 strength.,1,355,Eager Gryphon,1,1,13,1
+2,2,2,,2,100129,Walking Tree,1,2,13,1
+3,2,1,Confused.,2,100146,Panther,1,2,13,1
+0,0,4,Give a creature +3 strength and overkill. (When this attacks and destroys an enemy creature  the remaining damage is dealt to enemy characters randomly.),2,87052,Jump On!,1,2,13,3
+1,2,5,After you attack with this relic  give +1/+1 to each of your creatures.,2,87053,Wildroot Staff,1,2,13,4
+6,4,4,Afterlife: Obliterate a random card in your hand. (Obliterated cards are removed from the game.),4,87055,Stygian Collector,1,2,9,1
+1,1,1,Flank. Roar: Summon a Nimble Pixie.,1,219,Nimble Pixie,1,1,3,1
+0,0,1,Target creature goes to sleep. Add two random runes  anims  or enchanted weapons to each god's hand.,7,283,Hypnos Puzzle Box,2,1,3,3
+4,4,7,At the end of your turn  each other friendly creature gains +2/+2 and becomes confused.,2,354,Sucella,4,1,3,1
+8,8,1,,1,100070,Octavia Manashard Queen,4,2,9,1
+0,0,1,Give target friendly creature soulless. Draw a card.  (When a card with soulless would go to the void  obliterate it instead.),4,87058,Soul Bargain,1,2,9,3
+0,0,1,"Each creature gets burn +2 and ""Afterlife: Draw a card.""",4,167,Sulphuric Rain,3,1,9,3
+0,0,2,Target creature goes to sleep. It gains burn +3.,7,252,Sleep Dart,1,1,9,3
+2,2,2,Roar: Remove 3 durability from your opponent's relic.,1,376,Iron-tooth Goblin,1,1,7,1
+5,6,6,Frontline. Afterlife: A random friendly Anubian becomes protected and gets +1/+1.,1,150,Nephthys Guardian,1,1,4,1
+6,5,5,Frontline. Roar: Give an enemy creature frontline.,3,163,Mercenary Daemon,1,1,9,1
+6,4,7,Roar: Add a random anim  an enchanted weapon  and a rune to your hand.,1,164,Azure Djinni,1,1,4,1
+5,6,6,Roar: If you're holding an Aether  select a creature from your opponent's void and add a copy to your hand.,6,180,Planetar Envoy,2,1,2,1
+4,4,11,When Leyline Djinn is in your hand and you cast a spell  reduce Leyline Djinn's cost by the spell's base mana cost.,1,183,Leyline Djinn,3,1,2,1
+7,8,7,Roar: If you have six cards or more in hand after this enters the board  this creature gains blitz.,1,184,Quicksilver Dragon,1,1,6,1
+4,6,5,Creatures damaged by this creature get burn +1.,1,89,Lupine Elemental,1,1,6,1
+1,2,1,Roar: Obliterate a card in your hand. Afterlife: Draw a card.,4,10,Catacomb Curator,2,1,4,1
+2,2,2,Roar: This creature gets +1 strength for each creature that died this turn.,1,377,Jackal,1,1,13,1
+1,1,1,,1,100043,Broken Warrior,1,1,13,1
+0,0,1,Replace your hand and deck with random legendary creatures. Draw a card.,1,100045,Box,4,1,13,3
+0,2,1,Frontline. Can't Attack. Creatures that attack this creature become confused.,7,100046,Mirror,1,1,13,1
+4,6,7,Leech. At the end of your turn  deal 3 damage to a random sleeping enemy creature. Roar: All other creatures go to sleep.,1,94,Demogorgon,3,1,9,1
+3,7,6,"After you play a card  summon a 3/1 Aching Disciple with ""Roar: Draw a card. Afterlife: Shuffle this creature into your deck.""",1,95,That Which Aches,4,1,9,1
+3,3,2,,1,100049,Iron Anim,1,1,9,1
+2,2,2,Protected.,1,100050,Protected Anim,1,1,9,1
+2,2,2,Roar: Your confused creatures get +2 strength.,2,11,Gloam Druid,3,1,8,1
+0,0,3,Deal 1 damage to your god. Add three random runes to your hand.,4,47,Sacred Lore,2,1,8,3
+0,0,1,Draw three cards  then pull two random cards from your hand onto the bottom of your deck.,7,48,Ignean Roulette,1,1,8,3
+2,4,5,Backline. When a friendly creature dies  add a random Rune to your hand.,1,50,Anputian Magus,2,1,4,1
+3,3,3,Roar: Choose a spell that costs no more than your total unlocked mana gems. Reduce its cost by 2.,6,84,Arcane Transcendent,1,1,8,1
+6,7,7,Frontline  protected. Roar: Your other Olympians each get +2/+2.,1,100,Hercules Son of Zeus,4,1,10,1
+0,0,5,Add one of each rune to your hand.,6,117,Runestorm,1,1,10,3
+0,0,2,Each friendly creature gets regen +2.,2,136,Cyrene\'s Blessing,1,1,10,3
+1,4,7,Deadly. Frontline. Roar: Summon a Wrath Zealot.,1,137,Wrath Zealot,3,1,9,1
+1,2,3,Hidden for 1 turn. When this creature damages your opponent  replace a random card in their hand with an anim  enchanted weapon  or rune.,7,141,Underhand Thug,1,1,9,1
+0,0,4,Target two creatures. Friendly creatures get +2/+1  enemy creatures take 2 damage.,3,165,Incoming Raid,1,1,9,3
+3,3,6,Roar: Pick one – · Give a friendly creature +4/+2  or · Give a friendly creature +2/+4.,3,209,Paragon of Fortune,1,1,10,1
+0,3,1,Cannot attack. Burn 1. Afterlife: Summon a Brash Chicken.,1,100038,Chicken Egg,3,1,10,1
+1,3,1,Frontline.,1,1219,Tough Townsfolk,1,2,10,1
+1,2,1,Frontline. When this creature enters the board  it takes 1 damage.,1,100041,Injured Soldier,1,1,10,1
+3,4,3,Confused.,2,100149,Bear,1,2,10,1
+0,0,2,"Draw a card. Give a creature ""At the end of your turn  if this creature is at full health it gains +1 health. Otherwise  it heals for 1.""",5,872,Fortify,1,6,10,3
+2,6,1,Roar: Deal 4 damage to this creature.,5,873,Veteran Hoplite,1,6,10,1
+1,2,2,Frontline. At the end of your turn  if this creature has 2 strength or less  give it +1/+1.,5,874,Olympian Guard,1,6,10,1
+0,0,3,Draw a card. Give +1 health to each creature in your deck.,5,875,Parthene Democracy,1,6,10,3
+2,2,1,Afterlife: Add two Injured Soldiers to your void.,5,876,Field Medic,3,6,10,1
+4,4,4,Whenever this creature survives damage  summon a 1/1 Impling.,1,9,Nether Nanny,1,1,9,1
+0,0,2,Give ward to all creatures with strength 2 or less. Draw a card.,5,12,Sanctify,1,1,9,3
+2,3,2,Frontline.,1,100051,Heavy Anim,1,1,9,1
+6,6,6,Burn 1. Roar: Summon a random creature that costs 3 mana or less from your void.,4,1031,Vampiric Skull,2,2,9,1
+0,0,5,Give all your creatures +2 strength and overkill until end of turn.,2,1118,Firewine,2,2,9,3
+6,6,7,Roar: Give each other friendly creature +2/+1 or +1/+2 at random.,2,1168,Oliphaunt Mount,2,2,9,1
+2,1,7,Roar: Draw two cards. Two random cards in your opponent's hand are shuffled into their deck.,7,1171,Double Dealer,1,2,7,1
+2,4,3,Roar: Remove 2 durability from your opponent's relic.,1,1214,Bronze Servant,1,2,4,1
+0,0,2,Heal 3 to a friendly creature and to your god.,1,100054,Rune of Life,1,1,4,3
+2,1,2,Roar: Give a friendly creature +2 strength until end of turn.,1,1218,Eager Nobleborn,1,2,4,1
+5,5,7,Protected. Roar: Deal 2 damage to each enemy creature.,1,391,Howler Golem,3,3,5,1
+2,3,3,Ward. Roar: This creature gets  +1 strength for each enemy creature and +1 health for each other friendly creature.,5,878,Bardelys Parthene Orator,4,6,10,1
+2,2,6,Backline. At the end of your turn  summon an Olympian Guard.,5,879,Isadora Daring Patrician,4,6,10,1
+3,3,4,At the end of your turn  give this creature +1/+1 if it hasn't attacked since entering the board.  Roar: Give +1/+1 and ward to the Chosen One.,5,880,Tartessian Sentry,2,6,10,1
+0,0,2,Destroy target friendly creature. Your other creatures gain leech. (Your god is healed equal to the amount of damage dealt by a creature with leech.),4,87059,Feast on the Dead,1,6,10,3
+0,0,2,Deal 1 damage to a friendly creature and heal your god for 5.,4,87060,Just a Nibble,1,6,10,3
+2,3,2,Roar: Foresee 1. (Look at the top card of your deck. Leave it there  or put it on the bottom of your deck.),6,87063,Third Eye Seer,1,6,8,1
+2,4,5,Backline. Ability: Set a creature's health to 2.,5,318,Lightdaemon King,2,1,2,1
+6,7,7,Protected. Ward. Roar: Set the strength of all other creatures with strength 4 or more to 1.,5,319,Griffith The Chosen,4,1,2,1
+4,5,4,Burn 1. After this creature attacks  give it and another random friendly creature hidden for 1 turn.,7,330,Smoke Bomb,1,1,5,1
+1,1,2,At the end of your turn  remove 2 random cards from your void and add a random Nature card to your hand.,2,361,Loam Naturalist,2,1,8,1
+4,5,7,Whenever you play a Nature card  refresh 2 mana gems. Afterlife: Summon a Shrine of Sothek.,2,363,Sothek,4,1,4,1
+3,4,5,Roar: Unlock a mana lock.,6,372,Crystallax,2,1,8,1
+3,2,2,Hidden for 1 turn.,1,100052,Concealed Anim,1,1,8,1
+0,0,2,Deal 3 damage to an enemy character.,1,100053,Rune of Fire,1,1,8,3
+0,0,2,Give +2/+2 and frontline to a friendly creature.,1,100055,Rune of Strength,1,1,8,3
+0,0,5,Summon a creature from any void. Give it soulless.,4,1014,Raise Dead,1,2,8,3
+0,3,2,Ability: Deal 1 damage  then deal 1 to your opponent's god  and remove 1 durability from this relic.,6,1015,Staff of Shards,2,2,8,4
+4,6,6,Frontline. Roar: Friendly creatures with strength 2 or less get +1/+1.,5,1063,Asterius Glittering One,4,2,8,1
+0,0,2,Set a creature's health to 2. If you choose a friendly creature  give it +2 health instead.,5,1065,Hallowing Light,1,2,8,3
+5,2,3,Flank.,1,1072,Aether Battlescout,1,2,2,1
+0,0,2,Deal damage to a creature equal to that creature's strength.,7,1115,Hunting Trap,3,2,2,3
+0,0,5,All enemy creatures go to sleep. Draw a card.,7,1116,Exorcise,2,2,2,3
+2,1,2,"Creatures damaged by this get burn +2. Roar: Pick one - Gain ""Afterlife: Both gods unlock a mana lock."" or ""Afterlife: Both gods draw a card"".",4,1154,Runed Asp,2,2,4,1
+1,1,2,Creatures damaged by this creature get burn +1. Roar: Summon an Infernal Footsoldier.,1,1165,Infernal Footsoldier,2,2,9,1
+3,3,3,Frontline. After this creature is healed  give it +1 health. Roar: Give ward to the Chosen One.,5,877,Parthene Shieldmate,3,6,10,1
+0,0,7,Destroy target creature. Pull a random creature from any void onto your side of the board.,4,87061,Rebuild Differently,1,6,10,3
+2,2,2,Afterlife: If your god has 15 health or less  summon a 6/6 Netherspawn.,4,87062,Possessed Acolyte,1,6,8,1
+0,0,6,Pull each creature from the board into their owner's hand. Your creatures returned this way have their cost reduced by 2.,7,1135,A Toast To Peace,3,2,8,3
+1,1,1,Twin strike. Roar: Deal 1 damage.,1,296,Swashbuckler,2,1,7,1
+1,2,2,Hidden for 1 turn. Roar: Add a copy of a random spell from your opponent's deck to your hand.,7,302,Lightfoot Informant,1,1,7,1
+0,0,5,Summon Acolytes until you have as many creatures as your opponent  then give the Acolytes frontline.,5,317,Inquisitor\'s Summons,1,1,7,3
+3,3,1,Creatures damaged by this creature get burn +1. Roar: Obliterate a card in your hand.,4,1032,Writhing Spirit,2,2,9,1
+3,3,5,Roar: Delve a rune card and add it to your hand. (When you delve  you are given three choices.),6,87066,Rune Writer,1,2,8,1
+8,5,6,Hidden. At the end of your turn  each creature has a 50% chance to swap its attack and health. Roar: Swap the attack and health of each other creature.,7,115,Master of Surprises,4,1,8,1
+3,10,8,Roar: Gain control of an enemy creature until the end of turn. Give it godblitz. It goes to sleep at the end of turn.,7,1121,Anti-Magic Expert,1,2,7,1
+4,7,6,Roar: Pick one – · Attack target enemy creature  or · Gain hidden for 1 turn.,7,329,Labyrinth Minotaur,3,1,7,1
+0,0,1,Pick one:  · Foresee 1  or  · Deal 2 damage to an enemy creature.,6,87067,Illuminate,1,1,7,3
+4,4,7,Roar: Pull an enemy creature from the board and put it into your opponent's hand. Create a copy of it and put it in your hand.,7,331,Identity Thief,3,1,7,1
+0,0,1,Delve a random creature  and put it into your hand.,1,100035,Voyage To The Farlands,3,1,7,3
+5,5,4,Confused.,2,1042,Overgrown Rhino,1,2,13,1
+4,2,4,Ward. Afterlife: Create a copy of this creature and put it directly beneath the second card of your deck.,1,1069,Amplureal Sentient Shard,4,2,2,1
+6,8,7,Ward. At the end of your turn  increase the mana cost of your opponent's god power by 2 until your next turn.,1,1109,Porphyrion Dread Cyclops,4,2,2,1
+0,0,2,Randomly either both gods take 4 damage or just the opposing god takes 3 damage.,7,332,Heads or Tails,1,1,2,3
+3,3,6,Blitz. Twin strike. Protected. At the end of your turn  this creature becomes protected.,3,368,Aeneas,4,1,10,1
+0,4,4,Leech. Whenever your god is attacked  deal 2 damage to the attacker and remove 1 durability from this relic.,3,100003,Orax Shield of Pain,4,1,10,4
+0,0,2,Foresee 2. Draw a card.,1,100056,Rune of Sight,1,1,10,3
+0,0,5,Pick one:  · Deal 5 damage to a creature  or  · Draw two cards.,6,87069,Mind Jolt,1,1,10,3
+2,1,3,Whenever an enemy creature dies  add a random anim  enchanted relic  or rune to your hand.,1,227,Hollow Pillager,2,1,12,1
+2,4,4,Whenever you summon a creature with 2 strength  give it protected.,5,328,Angelic Veteran,2,1,2,1
+1,1,3,Backline. At the end of your turn  add a random rune to your hand and reduce its cost by 1.,6,1038,Choralis Rune Moth,4,2,2,1
+4,7,8,Roar: Foresee 2. Draw 2 cards and set their cost to 2.,6,1039,Frey Archmage of Selene,4,2,2,1
+6,8,6,Confused. Overkill.,2,1040,Green Giant,1,2,13,1
+4,5,6,Roar: Deal 3 damage to an enemy creature.,1,1111,Frost Giant Deadshot,1,2,13,1
+1,2,2,Roar: Destroy a creature with strength 1 or less.,1,1112,Onyx Nightblade,2,2,7,1
+5,5,6,Ward. Roar: Draw a card.,1,1113,Helian Blademaster,2,2,7,1
+0,3,2,Ability: Reduce by 1  but not to 0  the cost of each spell in your hand that costs no more than your total unlocked mana gems. This relic loses 1 durability.,6,1239,Morgana\'s Grimoire,1,2,7,4
+1,1,1,At the end of your turn  move the Chosen One two cards closer to the top of your deck. Afterlife: Give +1/+1 to the Chosen One.,5,881,Dowsing Blade,2,6,7,4
+0,0,3,Draw a card for each of your creatures with strength 2.,5,882,Burden of Proof,2,6,7,3
+0,0,3,Draw the Chosen One from your deck. Give it ward and frontline.,5,883,Fated Arrival,3,6,7,3
+0,5,3,After your opponent summons a creature  summon a 0/1  Aetheric Echo with frontline. At the start of your turn  this relic loses 1 durability.,5,884,Aetheric Alarm,3,6,7,4
+0,0,7,Deal 6 damage. Draw a card.,6,87070,Epiphany,1,6,7,3
+2,4,5,Regen 1. At the end of your turn  add a random Nature card to your hand.,2,1041,Tainted Treant,1,2,7,1
+7,5,7,Roar: Deal 2 damage to an enemy creature  and 1 damage to each other enemy creature.,1,1066,Void Drake,3,2,6,1
+0,0,3,Pick one: · Draw a card  or · Give your god protected  or · Deal 3 damage to an enemy creature.,6,87068,Versatile Conjuration,1,2,6,3
+0,3,2,At the start of your turn  deal 2 damage to the enemy god and remove 1 durability from this relic.,6,87071,Lambasting Wand,1,2,6,4
+4,4,5,Roar: Destroy a creature with 3 health or less. If you control another Amazon  heal your god for the destroyed creature's health.,4,3,Amazon Hearteater,2,1,3,1
+1,2,2,Whenever this creature damages your opponent  copy the top card of your opponent's deck and add it to your hand.,7,85,Gleeful Pillager,1,1,12,1
+0,7,3,Ability: Add a random creature with a roar to your hand.,1,87,Amplification Machine,3,1,5,1
+4,6,6,At the end of your turn  reduce by 1 the cost of spells in your hand that cost less than your total unlocked mana gems.,6,366,Merlin,4,1,8,1
+3,5,5,Roar: If you have fewer cards in your hand than your opponent  you draw a card. (Roar effects trigger when you play a card  after it leaves your hand.),7,87074,Secrets Broker,1,1,10,1
+1,4,2,Roar: Shuffle a random enchanted weapon into your deck.,1,311,Arms Trafficker,1,1,10,1
+1,3,2,Roar: Choose a card that costs no more than your total unlocked mana gems. Reduce its cost by 2.,6,314,Warp Engineer,1,1,10,1
+0,0,6,Destroy target creature. Heal your god for 4.,4,348,Reap,1,1,10,3
+2,3,2,After this creature attacks a god  pull a random card in their hand into their deck. Then  they draw a card.,7,935,Guild Siren,1,6,7,1
+6,6,7,Roar: Deal 4 damage to an enemy creature.,6,312,Salvaged Sentinel,2,1,5,1
+0,0,5,Remove a mana lock  draw a card  and give your god protected.,6,316,Well of Power,2,1,5,3
+0,0,1,Deal X damage to a creature  where X is equal to the strength of a random creature in your void.,5,350,Beyond the Grave,2,1,5,3
+5,5,5,At the end of your turn  summon a 1/1 Walking Plant.,2,367,Avatar of Nature,4,1,5,1
+3,3,7,Roar: Deal 3 damage to each enemy character. Foresee 3.,6,369,Circe Vengeful Sorceress,4,1,10,1
+0,0,5,Add three random Amazons to your hand. Your creatures are no longer confused.,2,371,Specialist Force,3,1,10,3
+0,0,8,Deal 4 damage to target enemy creature and its god. Give protected and ward to your god. Draw four cards.,6,373,O Fortuna,2,1,10,3
+3,2,3,,7,100047,Sleeper Golem,1,1,5,1
+0,0,6,Target friendly creature attacks a random enemy creature.  If your creature survives and the enemy creature dies  destroy all enemy creatures.,2,928,Selena\'s Insight,2,6,5,3
+0,0,3,Remove protected  hidden  sleep  and backline from each creature  then deal 1 damage to each creature.,3,929,Valka\'s Discovery,2,6,5,3
+2,2,1,Whenever another Anubian dies  deal 1 damage to your opponent’s god.,4,930,Priestess of Takhat,1,6,4,1
+0,0,3,Destroy target creature with cost 3 or less. Deal 2 damage to each friendly character.,4,931,Soul Shatter,1,6,4,3
+0,0,2,"Your relic gains: ""Whenever a creature without soulless dies  gain 2 favor.""",4,932,Blessing of Death,2,6,4,3
+0,0,2,"Your creatures without hidden gain ""Hidden for 1 turn."" Gain 4 favor.",7,933,Blessing of Deception,2,6,4,3
+2,4,3,Roar: Gain 2 favor for each enemy character.,5,936,Battle Priest,1,6,8,1
+6,6,7,Ward. Roar: Draw a card. Give +1/+1 to each other friendly creature  and remove sleep from them.,1,885,Helios Illuminator,3,6,8,1
+5,6,6,Protected. Roar: Give ward to your god. Remove sleep from each friendly creature.,1,886,Ironclad Minotaur,1,6,8,1
+0,0,8,Deal damage to each creature equal to its strength. For each creature destroyed  add a random card from the opposing god's domain to your hand.,7,925,Orfeo\'s Guile,2,6,8,3
+0,0,6,Transform each creature that costs 6 mana or more  into a 1/1 Rat. Obliterate each creature in all voids.,6,927,Pallas\' Incantation,2,6,8,3
+7,3,6,Roar: If you control another Guild creature  add a copy of two random cards from your opponent’s deck to your hand.,7,934,Port Authority,1,6,7,1
+2,3,2,Whenever you cast a spell  foresee 1.,6,313,Engaged Enchanter,1,1,8,1
+0,0,4,Fully heal each friendly creature  and give them +1 health. Gain 4 favor.,5,937,Healing Light,1,6,8,3
+3,2,2,Flank. (This creature can attack any character  ignoring frontline and backline  if any other character has attacked this turn.),7,87072,Glider Assailant,1,6,7,1
+2,2,2,Roar: Summon a 1/1 Skeleton.,1,266,Bonded Warrior,1,1,4,1
+3,4,6,Whenever a creature dies  deal 2 damage to both gods. When your god takes damage  heal your god for 2. When your god is healed  this creature gets +1 strength.,4,304,The Harvester,4,1,9,1
+3,3,5,Roar: Add a random spell from your opponent's god to your hand.,7,344,Spellstealer,1,1,9,1
+0,0,1,Deal 2 damage to a creature. If it is sleeping  deal 5 damage instead.,7,347,Nightmare,1,1,9,3
+2,4,3,After you summon a Mystic  deal 2 damage to a random enemy character.,1,887,Frumentarii Researcher,2,6,8,1
+0,0,3,Obliterate two cards in your hand. Pick one: · Unlock two mana locks  or · Draw two cards.,6,310,Equivalent Exchange,3,1,8,3
+0,0,7,Refresh 2 mana. Obliterate your void. Change your god power to Cultivate.,2,370,Nature Overgrown,4,1,8,3
+0,0,6,Target a friendly creature. Destroy all other friendly creatures. Give the targeted creature overkill  and +3/+3 for each creature destroyed.,4,924,Neferu\'s Will,2,6,8,3
+3,3,3,Hidden. (Hidden creatures cannot be attacked or targeted by enemy spells or abilities. They become unhidden when they attack.),7,87073,Bedeviled Shadow,1,6,9,1
+3,2,3,Roar: Reduce to 1 the cost of each Guild creature in your hand with cost 2 or 3.,1,891,Desert Mercenary,3,6,7,1
+1,2,3,Roar: Delve a Structure  add it to your hand  and give it +2 health.,1,892,Diligent Architect,1,6,7,1
+1,1,2,Frontline.  Roar: Summon a Parthene Guardian.  Afterlife: Give ward to each friendly Olympian.,1,893,Parthene Guardian,2,6,10,1
+1,3,1,Roar: Give ward to your god  and gain 1 favor.,1,894,Satyr Outcast,1,6,8,1
+2,2,2,Roar: You gain 3 favor. Your opponent gains 1 favor.,1,896,Foreign Diplomat,1,6,7,1
+2,6,5,Frontline.  Ability: Gain 7 favor.,1,899,Thebian Strategos,1,6,10,1
+2,2,2,After you draw a card  gain 3 favor.,1,900,Student of Truth,2,6,10,1
+1,2,1,After you summon a creature  gain 3 favor.,1,901,Student of Society,2,6,10,1
+0,0,2,"Give a creature: ""At the end of your turn  gain +3 strength.""",2,1123,Guerilla Training,2,2,10,3
+0,6,6,Backline. Ward. Ability: Deal X+2 damage  where X is the number of Structures you control.,1,889,Fortified Acropolis,3,6,11,1
+3,3,4,Roar: Draw a card for  each other Guild creature  on the board.,1,890,Frumentarii Instigator,2,6,7,1
+3,1,1,Roar: Steal 2 favor from your opponent.,1,895,Militant Extortionist,1,6,7,1
+3,3,3,After a friendly creature attacks  gain 3 favor.,1,902,Student of Blades,2,6,7,1
+6,6,6,Roar: If you have 20 favor or more  lose 20 favor and give +3/+3 to this creature.,1,903,Pious Giant,3,6,7,1
+2,3,3,After either player summons a creature  you gain 2 favor. Afterlife: If you have 40 favor or more  summon a Ghostly Chariot.,1,904,Ghostly Chariot,3,6,7,1
+4,6,5,At the end of your turn  if you have more favor than your opponent  deal 3 damage to the enemy creature with the least health.,1,905,Reef Raider,3,6,7,1
+13,17,8,Frontline. Roar: Deal X damage to your god where X is the number of creatures in your opponent's void.,4,906,Guardian of the Underworld,2,6,9,1
+1,1,1,At the end of your turn  this creature gains hidden. At the start of your turn  this creature deals 1 damage to the opposing god.,7,907,Shadow of Lethenon,2,6,9,1
+4,4,7,At the start of your turn  give +1 strength to each friendly creature. Roar: This creature gains one — • backline and +2 strength  or • frontline and +4 health.,5,908,Dragon of the First Pillar,2,6,6,1
+6,6,7,Confused. Roar: Summon a 3/2 Hydra Head with regen 1. After a Hydra Head dies  summon two of them.,2,910,Arkmonian Hydra,2,6,13,1
+1,1,7,Roar: Summon two copies of this creature. Afterlife: Deal damage equal to this creature's strength  split randomly among all enemy creatures.,3,911,Tartessian Mob,3,6,10,1
+0,3,4,After a friendly creature attacks  give +1/+1 to a friendly creature with the lowest strength. At the end of the turn  remove 1 durability from this relic.,3,912,Tartessian Pear,2,6,10,4
+0,0,1,Target an opponent. Look at their hand  and  shuffle one of their cards into their deck. Both players draw a card.,7,913,Ludia\'s Deception,2,6,10,3
+5,4,8,Roar: Two random enemy creatures are pulled from the board into their owner's hand.,7,87075,Wiznapper,1,6,7,1
+0,0,4,Pull an enemy creature from the board into its owner's hand. Increase its cost by 2.,7,87077,Ransom,1,6,7,3
+2,3,2,Blitz. Flank.,1,100057,Sterling Spear,1,1,7,4
+2,2,2,Blitz. Afterlife: Heal your god for 3.,1,100059,Curative Cudgel,1,1,7,4
+1,3,3,Ward. After you play a card  this creature gets +1 strength  and the friendly creature with lowest health gains ward.,6,1037,Oni Spellsword,3,2,7,1
+4,4,4,Creatures damaged by this creature get burn +1.,1,1071,Pyrrhic Adolescent,2,2,6,1
+1,5,3,Roar: Deal 1 damage to an enemy creature.,1,1073,Dwarf Atlant,1,2,5,1
+2,3,2,Creatures damaged by this creature get burn +1.,1,1074,Pyrrhic Hatchling,2,2,6,1
+2,4,4,Roar: Put an enemy to sleep.,1,1075,Solemn Lecturer,2,2,6,1
+2,2,1,Roar: If you control two other creatures  this creature gets +1 strength.,1,1082,Tribal Orc,1,2,13,1
+0,0,4,Deal 2 damage to each creature. Each creature that survives gains burn +1 or confused  chosen randomly.,2,1101,Wildfire,3,2,13,3
+0,0,5,Give a friendly creature +5/+5 and burn +1.,3,1114,Redfume Serum,3,2,13,3
+3,1,3,Afterlife: Unlock a mana lock.,6,1122,Mana Toad,1,2,13,1
+0,0,1,Give a friendly creature frontline and protected.,5,1124,Patron\'s Sacrament,1,2,13,3
+0,2,1,Afterlife: Both players draw two cards.,7,1125,Made Mark,1,2,13,1
+4,4,5,Roar: If you have no spells in your void  give this creature +3/+3.,1,888,Militant Gladiator,3,6,13,1
+2,2,2,Roar: Give a relic in your hand +1 durability.,3,156,Dwarven Smiths,3,1,12,1
+6,5,5,"Can't attack gods. Roar: If you control another Atlantean  your Atlanteans gain flank and this creature loses ""can't attack gods.""",1,185,Aquatic Torturer,1,1,5,1
+0,2,1,After you use your god power  Raving Fan gets +2 strength.,1,194,Raving Fan,2,1,5,1
+5,5,6,After Cyclops attacks a creature  deal 1 damage to each other creature.,3,195,Cyclops,2,1,13,1
+3,5,5,When this creature attacks  give a random other friendly creature +2/+1. If it is a Viking  give it +3/+1 instead.,3,197,Returned Einherjar,2,1,12,1
+1,1,1,Protected. Ward. At the start of your turn  foresee 1.,6,199,Shadow Scryer,1,1,8,1
+2,2,1,Roar: Pull the top card of your deck into your void.,4,205,Contagious Ghoul,1,1,9,1
+2,1,1,Roar: Equip a 1/1 Barbed Hook. If you control another Viking  equip a 1/2 Barbed Hook instead.,1,206,Leviathan Hunter,1,1,12,1
+2,6,1,Roar: Your opponent randomly pulls a spell from their deck. Reduce the cost of the spell to 1.,1,207,Peculiar Spellwyrm,4,1,6,1
+2,2,2,Confused. After this creature attacks a creature  deal 2 damage to a random enemy creature.,2,208,Thresher Bug,1,1,9,1
+3,2,3,Roar: Give +2/+1 to a friendly Viking.,3,211,Deathsworn Raider,1,1,12,1
+5,7,8,Roar: Summon five 2/2 Acolytes and give them frontline.,5,212,Alexis Archon\'s Sword,4,1,12,1
+2,3,3,Backline. At the end of your turn  give +1 health to another random friendly creature.,3,213,Prodigious Armourer,1,1,7,1
+0,2,3,At the end of your turn  add a random Nature card to your hand.,2,214,Shrine of Sothek,2,1,11,1
+2,2,4,Afterlife: Summon a random anim.,1,215,Millenium Matryoshka,1,1,5,1
+3,2,2,Roar: You and your opponent draw a card.,1,235,Wind-Up Roller,2,1,5,1
+4,5,4,,1,950,Manticore Hulk,1,6,9,1
+0,0,5,Both players draw three cards. Increase by 1 the cost of the cards your opponent drew.,7,87078,Stack the Deck,1,6,9,3
+0,0,6,Deal damage to target creature equal to its strength. All other enemy creatures become confused.,7,87079,Spiked Tea,1,6,9,3
+3,1,4,Blitz. Deadly. (Any amount of deadly damage will destroy a creature.),7,87080,Poisoned Dagger,1,6,9,4
+0,0,7,Summon three random creatures that cost 3 mana or less from your void. Give them +1/+1.,4,1,Nethergram,2,1,9,3
+0,3,3,At the end of your turn  summon a 1/1 Injured Soldier with frontline. At the start of your opponent's turn  this heals all friendly characters for 1 and loses 1 durability.,5,119,Golden Harpe,3,1,9,4
+2,3,4,Roar: Set an enemy creature's strength to 1.,5,139,Gentle Monk,1,1,9,1
+0,0,3,Deal 10 damage to target enemy creature. At the end of the turn  your opponent summons a random creature from their void.,6,142,Chainflip,2,1,9,3
+7,8,6,At the end of your turn  obliterate a random card in your hand then add a random rune to your hand.,1,166,The Nether Prince,4,1,9,1
+0,0,3,Destroy target friendly creature. Summon two random anims. They gain the tribe Nether.,4,181,Daemonic Offering,3,1,9,3
+2,2,4,At the end of your turn  give +1/+1 to each creature in your hand.,3,191,Roadside Outfitter,2,1,7,1
+2,3,4,Roar: Give +1/+1 to a creature in your hand for every six creatures in all players' voids.,3,192,Actuary of War,2,1,7,1
+2,2,2,Protected. Roar: All other friendly creatures gain flank until end of turn.,3,196,Master Tactician,2,1,12,1
+3,3,3,Roar: If you have an Aether in your hand  give a Nether +1/+1.,1,210,Fallen Aether,1,1,9,1
+1,3,3,Hidden. Flank. Whenever this creature attacks a god  copy the top card of your opponent's deck and add it to your hand.,7,1120,Vault Vagabond,1,2,7,1
+5,7,7,Whenever your opponent plays a spell  draw two cards.,6,103,Shadow Prince,4,1,9,1
+8,8,7,Roar: Pick a card in your hand that costs no more than your total unlocked mana gems. Take its mana cost in damage  and reduce its cost to 0 this turn.,4,113,Anhotep the Embalmer,4,1,4,1
+0,0,7,Roar: Equip Orax  Shield of Pain. Change your god power to Ruin.,3,198,War Incarnate,4,1,4,3
+0,0,2,Heal all friendly creatures for 4. Draw a card.,5,1190,Recovering Sigil,1,2,4,3
+3,3,3,At the end of your turn  give a random creature in your hand +X strength where X is equal to the number of creatures in your hand.,3,871,Xanthe of Tartessos,4,6,10,1
+7,7,7,Roar: If you have 80 favor or more  give +5/+5 to each creature in your deck.,1,948,Divine Messenger,3,6,2,1
+3,3,4,Roar: Pull a random Dragon from your deck into your hand.,1,949,Dragonkin Caller,2,6,8,1
+3,4,4,Frontline. Roar: Gain +1 health for every two Olympians in your void.,5,229,Phalanx Champion,2,1,10,1
+2,6,2,Frontline. Afterlife: Your opponent summons a random creature from their void.,1,231,Pyramid Warden,2,1,4,1
+1,4,2,After this creature takes damage  draw a card  and obliterate a random card in your hand.,1,232,Unruly Shredder,2,1,5,1
+4,5,5,Roar: Remove frontline from a creature.,1,233,Sonic Juggernaut,2,1,5,1
+1,1,3,Roar: Unlock a mana lock. Give ward to your god.,6,234,Guardian of the Gates,4,1,8,1
+4,3,4,Roar: Confuse an enemy creature.,1,236,Stun Gun Construct,2,1,5,1
+0,1,3,Roar: This creature gains +1/+1 for each other friendly creature.,1,237,Field Martyr,2,1,3,1
+2,3,3,Roar: Delve a new common god power from your god. It replaces your god power. (You can only use a god power once per turn.),1,238,Outcast Amazon,2,1,3,1
+3,3,4,Roar: Give a friendly Amazon +3 strength.,1,239,Bonepact Hunter,2,1,3,1
+2,3,4,After your opponent plays a spell  add a random Nature card to your hand.,2,240,Spelljam Shaman,2,1,3,1
+4,5,6,Spell boost +1. Roar: Draw a card.,6,242,Advocate of Brilliance,2,1,2,1
+4,5,6,Roar: Target two creatures. Deal 1 damage to enemy creatures; give friendly creatures +1/+1.,1,243,Leywraith,2,1,9,1
+4,4,6,At the end of your turn  draw a card for each spell cast this turn.,1,244,Aetherfuel Alchemist,2,1,8,1
+0,0,1,Give target creature burn +14. Deal 3 damage to your god.,4,245,Pyrrhic Incantation,1,1,8,3
+2,1,2,Frontline. Afterlife: Summon a 1/1 Injured Soldier with frontline.,1,246,Trojan Golem,2,1,10,1
+3,3,5,After this creature survives damage  summon a copy with half health (rounded down).,1,247,Dragon Tooth Warrior,2,1,10,1
+3,4,5,Ward. Roar: Transform a friendly creature into a Reflection Elementalist.,1,248,Reflection Elementalist,2,1,8,1
+2,3,1,Afterlife: Heal your opponent's god for 3.,1,249,Netherborne Binder,2,1,9,1
+0,0,6,Pull two random enemy creatures from the board into their controller's hand. Summon a 3/2 golem.,7,250,Three\'s a Crowd,3,1,9,3
+3,1,1,Roar: Pick one – · This creature gains ward  or · Foresee 1.,6,251,Flying Carpet,1,1,8,1
+3,6,2,Regen 2. At the end of your opponents turn  obliterate a random creature in your hand. Destroy Wasteful Shax if you cannot.,4,253,Wasteful Shax,1,1,9,1
+0,0,1,Deal 2 damage to a random enemy creature. If you control an Amazon  deal 3 damage instead.,2,254,Primal Guidance,1,1,9,3
+2,2,4,Roar: This creature swaps health with another creature.,5,255,Master of Indulgences,1,1,7,1
+1,1,2,Afterlife: Both players draw two cards.,4,256,Burrowing Scarab,1,1,4,1
+3,5,5,Roar: Pull all spells in your opponent's hand onto the top of their deck.  For each spell moved  give them a Rune Of Sight.,1,257,La Bolefuego,4,1,2,1
+3,12,8,Whenever your god takes damage  deal 2 damage to each other creature.,1,259,Warden of Kauket,1,1,4,1
+8,8,8,"Leech. Roar: Equip 5/2 Sentient Flameblades with godblitz and ""After you attack  heal your god for 5.""",3,260,Avatar of War,4,1,4,1
+1,1,1,Roar: Heal each other friendly creature for 4.,5,261,Blessed Jackalope,1,1,13,1
+0,0,2,"Give a creature ""At the end of your turn  randomly gain +1 strength or +1 health. Afterlife: Add a random Nature card to your hand"".",2,262,Mark of the Warden,1,1,13,3
+1,1,2,Roar: Delve a Viking  and put it into your hand.,3,264,Odin\'s Whiteraven,1,1,12,1
+8,10,6,At the start of your turn  this creature attacks a random enemy creature.,1,37,Spiral Golem,2,1,5,1
+0,0,6,Summon two 2/2 Acolytes. If your opponent has a creature with strength 4 or more  summon four Acolytes instead.,5,39,Arrest Warrant,1,1,5,3
+2,3,4,Afterlife: Summon two 1/1 Amazon Recruits.,2,218,Proud Conscriptor,3,1,3,1
+1,2,1,At the end of each turn  heal 2 to a random friendly injured creature.,5,220,Field Nurse,1,1,3,1
+3,4,6,Godblitz. Whenever you attack  give +1/+1 to a random creature in your hand.,3,222,Bast\'s Claws,2,1,3,4
+1,3,2,Whenever you summon a creature  heal your god for 1.,5,223,Tithe Collector,1,1,7,1
+4,4,16,This creature costs 1 less for each damage your god has taken.,1,225,Deathwish Thanetar,3,1,9,1
+2,4,2,Burn 1. Roar: Give burn +1 to an enemy creature.,1,226,Conniving Djinn,1,1,9,1
+0,0,1,Set a creature's strength to 0. At the start of your next turn  set it to its base value.,5,221,Sit Down,1,1,9,3
+2,1,5,Roar: Select two different creatures in your void. Trigger their afterlife abilities.,4,230,Canopic Hoarder,2,1,4,1
+6,5,4,Roar: Deal 5 damage to your god.,4,263,Crimson Oni,1,1,9,1
+3,4,4,Roar: Give a friendly creature +1/+1.,1,1216,Town Guardian,1,2,9,1
+4,5,4,,1,1217,Wetlands Ogre,1,2,13,1
+1,1,2,Roar: Draw a card.,1,1220,Ambitious Adventurer,1,2,13,1
+4,5,6,Hidden for 1 turn. Roar: Add two random Runes to your hand.,1,282,Rune Smuggler,1,1,7,1
+3,3,3,Roar: Obliterate your hand  for each obliterated card add a random rune to your hand.,1,284,Dick Puddlecote,4,1,7,1
+0,0,4,Deal 3 damage to target creature and 3 damage to your opponent.,6,285,Beam,2,1,7,3
+1,2,3,Whenever you summon a creature  give it +1/+1.,2,286,Rebel Quartermaster,2,1,3,1
+0,0,3,Set the strength and health of all creatures to their base and remove burn and sleep from them. Draw a card.,5,287,The Cleansing,2,1,3,3
+0,0,4,Double the health of each friendly Anubian.,5,288,Ra\'s Ascension,2,1,3,3
+0,0,1,Fully heal target friendly creature. Heal your god for 4.,5,289,Alms For Service,2,1,3,3
+0,0,3,Pull a random enemy creature to the top of your opponent's deck. Reduce its mana cost to 1.,7,290,Ambush,2,1,3,3
+0,0,4,Target a creature. Deal 2 damage to each other creature.,6,291,Faraday Cage,2,1,3,3
+0,0,4,Give each creature burn +1. Add a mana lock to your opponent's mana gems.,3,292,Gunpowder Plot,2,1,3,3
+2,2,1,Roar: Set an enemy creature to its base strength and health.,5,293,Lore & Order Inspector,2,1,3,1
+4,3,4,Roar: Summon a 1/1 Huscarl with frontline.,1,1203,Highland Defender,1,2,12,1
+0,3,3,Backline. Ability: Deal 2 damage.,1,1204,Ballista,3,2,11,1
+3,2,2,Frontline.,1,1205,Hoplite,1,2,10,1
+3,1,2,Roar: Summon a 1/1 Battlethrall.,1,1206,Viking Warmaiden,1,2,12,1
+1,4,3,Frontline. Creatures damaged by this creature get burn +1.,1,1211,Mire Bloodworm,2,2,13,1
+1,3,3,Deadly. Afterlife: At the start of your next turn  choose and obliterate a card in your hand  then summon this creature from the void.,4,1212,Thanakris Spell-Locusts,4,2,13,1
+2,4,6,Roar: Set a creature's strength and health to 2.,5,1213,Harp Cupid,1,2,2,1
+3,1,1,Creatures damaged by this creature get burn +1.,1,1215,Ghost Marauder,2,2,9,1
+4,4,6,Roar: Deal 2 damage to two enemy creatures. You may select the same creature twice.,1,1226,Aether Vanguard,3,2,2,1
+4,2,3,Hidden for 1 turn.,1,1228,Shadow Paladin,1,2,2,1
+2,6,4,Afterlife: Add a Bomb to your opponent's deck for each of their unused mana gems. (Bombs deal 3 damage to their god when drawn.),7,1230,Inconspicuous Carriage,2,2,11,1
+2,6,4,Frontline.,1,1231,Thebian Brawler,1,2,10,1
+3,3,3,Whenever your god gains health  this creature gets +1 health. Whenever your god loses health  this creature gets +1 strength.,4,1233,Fickle Cambion,3,2,9,1
+0,0,6,Pull a random 1-cost creature from your void into your hand. Repeat this for each other mana cost up to 9.,5,1234,Born Again,3,2,9,3
+3,4,5,Hidden for 1 turn. Roar: Deal 2 damage to an enemy creature.,1,1235,Feral Shapeshifter,2,2,9,1
+0,0,3,Transform a creature with strength 2 or less into a 2/2 Acolyte. Gain control of the Acolyte.,5,1236,Light\'s Levy,1,2,9,3
+0,0,1,"Give a creature: ""Burn +2. Whenever this creature attacks  deal 2 damage to its god.""",4,44,Unnatural Binding,2,1,9,3
+5,4,6,Roar: Destroy a creature with health 3 or less.,4,62,Deathdealt Netherine,2,1,9,1
+3,2,4,Roar: Summon two 1/1 Broken Warriors.,1,268,Sphinx Cat,1,1,4,1
+4,2,3,Confused. Roar: Refresh 2 mana.,2,271,Revenant Lynx,2,1,13,1
+8,8,6,Whenever your opponent plays a card  deal 1 damage to your god.,1,274,Crush Construct,3,1,5,1
+2,5,4,While damaged  Bearstrider has +3 strength.,3,275,Bearstrider,1,1,12,1
+2,2,3,Roar: Copy the strength and health of a random creature from your void.,4,277,Omnipresence,1,1,9,1
+1,3,2,Whenever you play a Nature card  heal your god for 3.,2,278,Wilds Lifebonder,2,1,8,1
+0,0,4,Give target friendly creature and your relic deadly until the end of the turn.,7,280,Laertes\' Vendetta,1,1,8,3
+0,0,2,Give a creature blitz and +2 strength.,3,281,Red Fume Dash,3,1,8,3
+4,4,5,Regen 2. When a friendly creature is summoned  this creature gets +1/+1. When a friendly creature dies  this creature takes 1 damage.,2,295,Ferocious Rougarou,1,1,3,1
+2,3,3,Roar: Summon a 1/1 Spirit Beast.,1,1232,Beastfury Shaman,1,2,3,1
+5,5,7,Confused. Overkill. Roar: Deal 5 damage to a random enemy creature.,2,273,Rampaging Leviathan,2,1,3,1
+4,4,5,Roar: If any creatures in your hand have deadly  flank  frontline  hidden  protected  twin strike  or ward  this creature gains those abilities.,1,1163,Zaxiom Cryptic Panther,4,2,3,1
+2,2,1,Roar: Select a card that costs no more than your total unlocked mana gems. Reduce its cost by 1.,6,1248,Assistant Alchemist,3,2,3,1
+1,3,1,Spell boost +1.,6,1250,Street Conjuror,2,2,8,1
+3,3,3,Roar: Pick one – · Look at the top three cards of your deck  or · Look at the top three cards or your opponent's deck.,6,1251,Prescient Spellbinder,1,2,8,1
+1,1,2,Soulless. Roar: Destroy a friendly creature. Afterlife: If the creature is in a void  give it +2/+2  and pull it onto the board.,4,1252,Living Container,2,2,9,1
+1,3,2,At the end of your turn  deal 1 damage to a random enemy character.,1,1253,Dart Maniac,2,2,9,1
+0,0,5,Transform a creature into a 1/1 Rat.,6,1254,Ratify,1,2,9,3
+1,3,1,Creatures damaged by this creature get burn +1.,1,1257,Pyreshell Beetle,2,2,13,1
+3,2,3,Deadly.,1,1258,Harvest Arachne,2,2,13,1
+0,0,2,Give a creature burn +2  then deal 2 damage to your opponent's god  then deal 2 damage to your god.,4,100106,Soul Burn,1,2,13,5
+0,0,2,"Give a creature without soulless ""Soulless. Afterlife: Summon a 2/1 ghoul with soulless.""",4,100107,Undying Wish,1,2,13,5
+1,1,1,Soulless.,1,100131,Skeleton,1,2,4,1
+2,2,2,,1,100132,Ancient Guardian,1,2,4,1
+3,2,3,Frontline.,1,100133,Ancient Executioner,1,2,4,1
+2,2,2,,1,100135,Netherling,1,2,9,1
+1,1,1,Frontline.,1,100136,Bodyguard,1,2,9,1
+1,1,1,,1,100137,Hyena,1,2,9,1
+6,6,6,,1,100138,Netherspawn,1,2,9,1
+9,9,10,,4,100139,Demonic Skull,1,2,9,1
+1,1,1,,1,100140,Battlethrall,1,2,12,1
+1,1,1,Frontline.,1,100141,Huscarl,1,2,12,1
+4,2,3,Frontline.,1,100142,Propyrean Owl,2,2,12,1
+4,2,4,Godblitz. Roar: Give +1 strength to a random friendly creature.,3,72,Scythes of the Harvest,3,1,12,4
+1,1,1,,1,100060,Banished Shadow,1,1,12,1
+1,1,1,,1,100061,Spirit Beast,1,1,12,1
+1,1,1,,1,100063,Malfunctioning Artifice,1,1,12,1
+0,0,5,Deal 2 damage to all creatures. If you have a relic equipped  remove 3 durability and destroy all creatures instead.,3,1001,Carnage Sweep,1,2,12,3
+0,0,2,Deal 2 damage to a creature. If you have a relic  remove 1 durability from it and deal 12 damage instead.,3,1002,Avalanche Strike,1,2,12,3
+0,0,5,Give each friendly Amazon +3/+3 and twin strike.,2,1003,Arkmonian Onslaught,1,2,12,3
+0,0,6,Obliterate four random cards in your void. Add four random nature cards to your hand. If your void is empty  heal your god for 6.,2,1004,Opalised Roots,1,2,12,3
+0,0,6,Destroy all creatures with strength 3 or more.,5,1006,Purification Filter,1,2,12,3
+0,0,3,Target a creature. If it's sleeping  destroy it. Otherwise  it goes to sleep.,7,1007,Darkdream Hex,1,2,12,3
+0,4,4,At the end of your turn  friendly creatures with both strength 2 or less and health 2 or less get +1/+1  and this relic loses 1 durability.,5,1237,Serene Blade,2,2,12,4
+0,0,2,Target creature goes to sleep. Add a copy of the top card of your opponent's deck to your hand.,7,1238,Reconnaissance,2,2,12,3
+0,0,1,Foresee 1. Draw a card.,6,1247,Seeing Stone,1,2,12,3
+0,0,2,Transform a friendly creature into a random creature with the same mana cost.,6,1240,Metamorphosis,3,2,12,3
+8,8,8,Roar: Draw four cards.,6,1241,Tome Golem,1,2,5,1
+0,0,2,Pick one – · Deal 1 damage to each creature  or · Deal 3 damage to a creature.,6,1243,Tracking Bolt,1,2,5,3
+4,4,5,After you cast a spell  this creature gains +1/+1.,6,1244,Manathirst Golem,1,2,5,1
+0,0,5,Deal 2 damage to each enemy creature. Foresee 1.,6,1245,Crystal Rain,1,2,5,3
+0,0,2,"Give a friendly creature ""Afterlife: Unlock a mana lock and draw a card.""",6,1246,Sip of Elixir,2,2,5,3
+0,0,4,Deal 5 damage.,6,1249,Wyrmbreath,1,2,5,3
+0,0,2,Gain control of an enemy creature with strength 2 or less until the end of turn. Give it godblitz.,7,1255,Umber Arrow,1,2,5,3
+0,0,1,Refresh five mana gems.,2,1256,Pack Stalk,1,2,5,3
+0,0,3,If this card is in your hand at the beginning of your turn  lose 1 mana.,7,100073,Mana Bind,1,2,5,3
+1,1,0,,1,100064,Barbed Hook,1,1,5,4
+0,0,4,Transform a creature into a 3/3 Netherbeast.,4,1009,Netherwarp,1,2,5,3
+0,0,6,Destroy all creatures. Deal 5 damage to your god.,4,1010,Blackblood Blast,1,2,5,3
+5,7,6,At the end of your turn  give each other friendly Atlantean +1 strength.,1,1242,Thaumnetic Golem,3,2,5,1
+5,5,5,Roar: This creature gains blitz  if any enemy creature has blitz. Repeat for godblitz  deadly  flank  twin strike  regen  ward  and protected.,6,909,Antemion\'s Reflection,2,6,2,1
+2,2,1,Roar: Gain 1 favor.,3,946,Valknir Zealot,1,6,12,1
+3,3,3,After this creature attacks a god  destroy their relic.,3,947,Fenris Berserker,1,6,12,1
+0,0,8,Gain control of target enemy creature for one turn. Give it godblitz. Look at your opponent's hand  select any card and pull it into your hand.,7,13,Charm,2,1,12,3
+0,0,2,Give +3 strength to your relic and to target friendly creature for their next attack.,3,334,Sharpen,1,1,12,3
+3,5,4,After this creature attacks  deal 2 damage to each god.,4,808,Undead Chimera,1,6,9,1
+5,6,5,At the end of your turn  if your god has 15 health or less  heal it for 3.,4,809,Deathwatch Curate,2,6,4,1
+1,1,1,Regen 1. Roar: Give a random other friendly creature +1/+1. Give burn 1 to a random enemy creature. Remove 1 durability from your opponent's relic.,2,847,Chiron the Teacher,4,6,4,1
+0,0,6,Pick one — • Add a copy of each enemy creature to your hand  or • Each enemy creature goes to sleep.,7,855,Elixir of the Panther,3,6,4,3
+0,0,7,Pull each creature on the board onto the bottom of their controller's deck.,5,926,Lysander\'s Mercy,2,6,4,3
+5,6,6,Whenever an enemy creature dies  you draw a card.,4,87056,Corpse Swallower,1,6,4,1
+4,4,8,Roar: Pull a random creature from each void onto your side of the board.,4,87057,Necromantic,1,6,8,1

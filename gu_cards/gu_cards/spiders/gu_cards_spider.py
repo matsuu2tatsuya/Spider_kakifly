@@ -51,7 +51,8 @@ class guCardsShadow_Spider(scrapy.Spider):
 
         for page in range(1, 10):
             driver.get(f'https://gu.cards/?marketplace=with_listings&page={page}&quality_shadow=on')
-            driver.find_elements_by_css_selector('div.js-card-with-trading-buttons')
+            if not driver.find_elements_by_css_selector('div.js-card-with-trading-buttons'):
+                break
             response_pages = response.replace(body=driver.page_source)
 
             for res in response_pages.css(all_cards):
@@ -64,6 +65,52 @@ class guCardsShadow_Spider(scrapy.Spider):
                 item['image_URL'] = image_URL_base(card_id, 3)
 
                 yield item
+
+            try:
+                driver.implicitly_wait(3)
+                driver.find_element_by_css_selector('i.fa-caret-right')
+            except Exception:
+                yield
+
+        for page in range(1, 5):
+            driver.get(f'https://gu.cards/?marketplace=with_listings&page={page}&quality_gold=on')
+            if not driver.find_elements_by_css_selector('div.js-card-with-trading-buttons'):
+                break
+            response_pages = response.replace(body=driver.page_source)
+
+            for res in response_pages.css(all_cards):
+                item['name'] = res.css(name_base).xpath('string()').get()
+                item['price'] = res.css(price_base).xpath('string()').get()
+                item['currency'] = ETH
+                item['quality'] = Gold
+                item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+                card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+                item['image_URL'] = image_URL_base(card_id, 2)
+
+                yield item
+
+            try:
+                driver.implicitly_wait(3)
+                driver.find_element_by_css_selector('i.fa-caret-right')
+            except Exception:
+                return
+
+        for page in range(1, 5):
+            driver.get(f'https://gu.cards/?marketplace=with_listings&page={page}&quality_diamond=on')
+            if not driver.find_elements_by_css_selector('div.js-card-with-trading-buttons'):
+                break
+            response_pages = response.replace(body=driver.page_source)
+
+            for res in response_pages.css(all_cards):
+                item['name'] = res.css(name_base).xpath('string()').get()
+                item['price'] = res.css(price_base).xpath('string()').get()
+                item['currency'] = ETH
+                item['quality'] = Diamond
+                item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+                card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+                item['image_URL'] = image_URL_base(card_id, 1)
+
+                # yield item
 
             try:
                 driver.implicitly_wait(3)
