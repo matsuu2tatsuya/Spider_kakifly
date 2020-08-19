@@ -63,18 +63,18 @@ class miimeSpider(scrapy.Spider):
 
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {
-            'GodsMiime.middlewares.miimeSelenium_Middleware': 520,
+            'gaudiyMiime.middlewares.miimeSelenium_Middleware': 520,
         },
-        'BOT_NAME': 'GodsMiime',
+        'BOT_NAME': 'gaudiyMiime',
         'CONCURRENT_REQUESTS': 8,
         'DOWNLOAD_DELAY': 2,
         'CLOSESPIDER_PAGECOUNT': 10,
         'FEED_EXPORT_ENCODING': 'utf-8',
         # 'HTTPCACHE_ENABLED': True,
         # 'HTTPCACHE_EXPIRATION_SECS': 60000,
-        'NEWSPIDER_MODULE': 'GodsMiime.spiders',
+        'NEWSPIDER_MODULE': 'gaudiyMiime.spiders',
         # 'ROBOTSTXT_OBEY': True,
-        'SPIDER_MODULES': ['GodsMiime.spiders'],
+        'SPIDER_MODULES': ['gaudiyMiime.spiders'],
         'FEED_FORMAT': 'json',
         'FEED_URI': 'miime.json',
     }
@@ -83,26 +83,32 @@ class miimeSpider(scrapy.Spider):
         for res in response.css('a.assetCard'):
             if 'miime' in res.css('div.assetCard__priceBox__wrapper__icon > img::attr("src")').get():
                 item = GaudiymiimeItem()
-                base_url = 'https://miime.io/assets/2/0x67cbbb366a51fff9ad869d027e496ba49f5f6d55/'
-
-                name = res.css('div.assetCard__nameBox').xpath('string()').get()
-                name2 = re.sub(r'\n *', "\'", name)
-                item['name'] = re.sub(r',', ' ', name2)
-                price = res.css('div.assetCard__salePrice').xpath('string()').get()
-                price2 = re.sub(r'¥', '', price)
-                item['price'] = re.sub(r',', '', price2)
-                item['currency'] = res.css('div.assetCard__currency').xpath('string()').get()
-                if not item['currency']:
-                    item['currency'] = 'JPY'
-                item['image_URL'] = res.css('div.assetImageWrapper > div > div > img::attr("src")').get()
-                purchase = res.css('div.assetCard__tokenId').xpath('string()').get()
                 try:
-                    purchase2 = re.sub(r'\n \D*', '', purchase)
-                except TypeError:
-                    pass
-                item['purchase_URL'] = base_url + str(purchase2)
+                    name = res.css('div.assetCard__tokenId').xpath('string()').get()
+                    name2 = re.sub(r'\n.*#.', "", name)
+                    item['name'] = name2[:4]
+                    price = res.css('div.assetCard__salePrice').xpath('string()').get()
+                    price2 = re.sub(r'¥', '', price)
+                    item['price'] = re.sub(r',', '', price2)
+                    item['currency'] = res.css('div.assetCard__currency').xpath('string()').get()
+                    if not item['currency']:
+                        item['currency'] = 'JPY'
+                    item['image_URL'] = res.css('div.assetImageWrapper > div > div > img::attr("src")').get()
+                    purchase = res.css('p.tokenId').xpath('string()').get()
+                    purchase2 = re.sub(r'\D*', '', purchase)
 
-                yield item
+                    if item['name'] in ['1001', '1002', '1003', '1004', '1005', '2001', '2002', '2003',
+                                '2004', '2005', '3001', '3002', '3003', '3004', '3005']:
+                        item['name'] = '2' + name2[:4]
+                        base_url = 'https://miime.io/ja/assets/2/0xa8abf045fe1a9ef0583e436393a6e4e0b483f717/'
+                        item['purchase_URL'] = base_url + str(purchase2)
+                    else:
+                        base_url = 'https://miime.io/ja/assets/2/0x67cbbb366a51fff9ad869d027e496ba49f5f6d55/'
+                        item['purchase_URL'] = base_url + str(purchase2)
+                    yield item
+                except Exception:
+                    yield
+
 
 
 def handler():

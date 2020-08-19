@@ -10,6 +10,7 @@ import scrapy
 
 class GodscardidItem(scrapy.Item):
     id = scrapy.Field()
+    image_url = scrapy.Field()
     name_en = scrapy.Field()
     effect = scrapy.Field()
     cost = scrapy.Field()

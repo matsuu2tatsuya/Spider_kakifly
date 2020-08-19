@@ -10,6 +10,8 @@ from selenium.webdriver import Chrome, ChromeOptions
 from scrapy.http import HtmlResponse
 import time
 
+from selenium.webdriver.common.keys import Keys
+
 
 class godsOfficial_Selenium_Middleware(object):
 
@@ -19,19 +21,23 @@ class godsOfficial_Selenium_Middleware(object):
         driver = Chrome(options=options)
         driver.implicitly_wait(30)
 
-        driver.get('https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=1800')
-        # ID/PASSを入力
-        id = driver.find_elements_by_css_selector("input.form-input")[0]
-        id.send_keys("ryoba666@sofia.re")
-        password = driver.find_elements_by_css_selector("input.form-input")[1]
-        password.send_keys("password")
+        driver.get('https://godsunchained.com/marketplace')
 
-        time.sleep(1)
+        driver.find_elements_by_css_selector("gu-login-form")
 
-        # ログインボタンをクリック
-        login_button = driver.find_elements_by_css_selector("gu-primary-hex-button")[0]
+        search_button = driver.execute_script(
+            'return document.querySelector("gu-login-form").shadowRoot.querySelector('
+            '"gu-form").shadowRoot.querySelector("input.inputArea__input")')
+        search_button.send_keys("ryoba666@sofia.re")
+        search_button.send_keys(Keys.TAB, "password")
+
+        login_button = driver.execute_script(
+            'return document.querySelector("gu-login-form").shadowRoot.querySelector('
+            '"gu-form").shadowRoot.querySelector("gu-primary-hex-button")')
         login_button.click()
-        driver.find_elements_by_css_selector("gu-icon.closeButton")[0].click()
+
+        welcome_button = driver.find_element_by_css_selector(".closeButton")
+        welcome_button.click()
 
         # サイト内で他の画面に遷移させたければ
         driver.get('https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=100')

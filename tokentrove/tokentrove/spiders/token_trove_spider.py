@@ -64,7 +64,12 @@ class TokenTrove_1_Spider(scrapy.Spider):
             response_pages = response.replace(body=driver.page_source)
 
             for res in response_pages.css('div.listing-wrapper'):
-                item['name'] = res.css('div.listing-name').xpath('string()').get()
+                name = res.css('div.listing-name').xpath('string()').get()
+                name2 = re.sub(r',', ' ', name)
+                name3 = re.sub(r' $', '', name2)
+                name4 = re.sub(r'^ ', '', name3)
+                name5 = re.sub(r'  ', ' ', name4)
+                item['name'] = re.sub(r"'", "\\'", name5)
                 base_price = res.css('div.listing-price').xpath('string()').get()
                 item['price'] = re.sub(r'\D*', '', base_price)
                 item['currency'] = 'ETH'

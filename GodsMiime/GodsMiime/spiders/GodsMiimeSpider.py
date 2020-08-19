@@ -28,14 +28,21 @@ class GodsMiimeSpider(scrapy.Spider):
     }
 
     def parse(self, response):
+        asset_ID = 108000000
         for res in response.css('a.assetCard'):
             if 'miime' in res.css('div.assetCard__priceBox__wrapper__icon > img::attr("src")').get():
                 item = GodsMiimeItem()
                 base_url = 'https://miime.io/ja/assets/3/0x0e3a2a1f2146d86a604adc220b4967a898d7fe07/'
 
-                name = res.css('div.assetCard__nameBox').xpath('string()').get()
-                name2 = re.sub(r'\n *', "\'", name)
-                item['name'] = re.sub(r',', ' ', name2)
+                name0 = res.css('div.assetCard__nameBox').xpath('string()').get()
+                name = re.sub(r'\n *', "", name0)
+                name2 = re.sub(r',', ' ', name)
+                name3 = re.sub(r' $', '', name2)
+                name4 = re.sub(r'^ ', '', name3)
+                name5 = re.sub(r'  ', ' ', name4)
+                name6 = re.sub(r'\"', '', name5)
+                item['name'] = re.sub(r"'", "\\'", name6)
+
                 price = res.css('div.assetCard__salePrice').xpath('string()').get()
                 price2 = re.sub(r'¥', '', price)
                 item['price'] = re.sub(r',', '', price2)
@@ -60,6 +67,8 @@ class GodsMiimeSpider(scrapy.Spider):
                 except TypeError:
                     pass
                 item['purchase_URL'] = base_url + str(purchase2)
+                item['asset_ID'] = asset_ID
+                asset_ID += 1
 
                 yield item
 

@@ -33,12 +33,14 @@ class GodscardSpider(scrapy.Spider):
         response = requests.get(f'https://api.godsunchained.com/v0/proto?page=0').json()
         for result in response['records']:
             cardID['id'] = result['id']
+            cardID['image_url'] = f'https://card.godsunchained.com/?id={result["id"]}'
             name_en = result['name']
             name_en2 = re.sub(r',', '', name_en)
             cardID['name_en'] = re.sub(r"'", "\\'", name_en2)
 
             effect = re.sub(r',', ' ', result['effect'])
-            cardID['effect'] = re.sub(r'\u003cbr\u003e', ' ', effect)
+            effect2 = re.sub(r'\u003cbr\u003e', ' ', effect)
+            cardID['effect'] = re.sub(r"'", "\\'", effect2)
 
             cardID['cost'] = result['mana']
             cardID['AP'] = result['attack']['Int64']
@@ -102,6 +104,8 @@ class GodscardSpider(scrapy.Spider):
                 cardID['tribe_id'] = 12
             if result['tribe']['String'] == 'wild':
                 cardID['tribe_id'] = 13
+            if result['tribe']['String'] == '':
+                cardID['tribe_id'] = 14
 
             # TYPE: 1/creature, 2/hero, 3/spell, 4/weapon, 5/god power, 6/advancement
             if result['type'] == 'creature':

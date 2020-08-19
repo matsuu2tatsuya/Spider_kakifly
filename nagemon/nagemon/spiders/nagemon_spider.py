@@ -23,8 +23,8 @@ class NagemonSpiderSpider(scrapy.Spider):
         'NEWSPIDER_MODULE': 'nagemon.spiders',
         # 'ROBOTSTXT_OBEY': True,
         'SPIDER_MODULES': ['nagemon.spiders'],
-        'FEED_FORMAT': 'xml',
-        'FEED_URI': 'nagemon.xml',
+        'FEED_FORMAT': 'json',
+        'FEED_URI': 'nagemon.json',
     }
 
     def parse(self, response):
@@ -33,7 +33,12 @@ class NagemonSpiderSpider(scrapy.Spider):
             base_url = 'https://www.nagemon.com'
 
             base_name = res.css('p.name-ai-game').xpath('string()').get()
-            item['name'] = re.sub(r'\s\D{2,12}$', '', base_name)
+            name = re.sub(r'\s\D{2,12}$', '', base_name)
+            name2 = re.sub(r',', ' ', name)
+            name3 = re.sub(r' $', '', name2)
+            name4 = re.sub(r'^ ', '', name3)
+            name5 = re.sub(r'  ', ' ', name4)
+            item['name'] = re.sub(r"'", "\\'", name5)
 
             base_price = res.css('p.ethFavTxt').get()
             base_price2 = re.sub(r'^<\D*>', '', base_price)

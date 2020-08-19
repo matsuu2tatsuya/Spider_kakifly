@@ -67,13 +67,14 @@ class miimeSelenium_Middleware(object):
         all_item.click()
         time.sleep(0.5)
         driver.execute_script('scroll(0, document.body.scrollHeight)')
-        more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
-                                                           'div.loadMoreButton__Container > div > '
-                                                           'button.loadMoreButton')
+        more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > div.loadMoreButton__Container > div > button.loadMoreButton')
         while more_element:
-            more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
+            try:
+                more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
                                                                'div.loadMoreButton__Container > div > '
                                                                'button.loadMoreButton')
+            except Exception:
+                break
             time.sleep(0.5)
             if more_element:
                 try:

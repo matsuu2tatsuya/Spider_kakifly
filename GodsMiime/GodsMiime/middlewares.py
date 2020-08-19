@@ -14,7 +14,7 @@ class GodsMiimeSelenium_Middleware(object):
 
     def process_request(self, request, spider):
         options = ChromeOptions()
-        options.headless = True
+        # options.headless = True
         driver = Chrome(options=options)
         driver.implicitly_wait(20)
 
@@ -28,17 +28,16 @@ class GodsMiimeSelenium_Middleware(object):
         more_element = driver.find_element_by_css_selector('#__layout > div > main > div.assetCardList > '
                                                            'div.loadMoreButton__Container > div > '
                                                            'button.loadMoreButton')
-        scrollnum = 0
         while more_element:
-            scrollnum += 1
-            if scrollnum == 20:
-                break
-            time.sleep(0.5)
-            try:
-                print(more_element.get_attribute("textContent"))
-                more_element.click()
-            except Exception:
-                break
+            time.sleep(1)
+            if more_element:
+                try:
+                    print(more_element.get_attribute("textContent"))
+                    more_element.click()
+                except Exception:
+                    return
+            else:
+                return
 
         # print('全て表示されているはず。')
         return HtmlResponse(

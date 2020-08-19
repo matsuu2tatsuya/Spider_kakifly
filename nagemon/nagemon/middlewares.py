@@ -15,12 +15,12 @@ class nagemonSelenium_Middleware(object):
 
     def process_request(self, request, spider):
         options = ChromeOptions()
-        options.headless = True
+        # options.headless = True
         driver = Chrome(options=options)
         driver.implicitly_wait(20)
 
         driver.get('https://www.nagemon.com/assets/sell')
-        input_element = driver.find_elements_by_css_selector('li > div.item')[14]
+        input_element = driver.find_elements_by_css_selector('li > div.item')[13]
         input_element.click()
         for _ in range(10):
             driver.execute_script('scroll(0, document.body.scrollHeight)')

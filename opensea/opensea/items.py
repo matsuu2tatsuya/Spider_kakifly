@@ -8,11 +8,10 @@
 import scrapy
 
 
-class GodsMiimeItem(scrapy.Item):
+class OpenseaItem(scrapy.Item):
     name = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
-    quality = scrapy.Field()
     purchase_URL = scrapy.Field()
     image_URL = scrapy.Field()
     asset_ID = scrapy.Field()
