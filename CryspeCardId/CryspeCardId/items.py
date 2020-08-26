@@ -17,6 +17,8 @@ class CryspecardidItem(scrapy.Item):
     HP = scrapy.Field()
     effect = scrapy.Field()
     image_url = scrapy.Field()
+    effect_en = scrapy.Field()
+    image_url_en = scrapy.Field()
     card_type_id = scrapy.Field()
     color_id = scrapy.Field()
     rarelity_id = scrapy.Field()
