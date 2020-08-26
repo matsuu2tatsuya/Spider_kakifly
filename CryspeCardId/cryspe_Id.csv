@@ -1,0 +1,3 @@
+AP,HP,card_type_id,color_id,cost,effect,id,image_url,name_en,name_ja,rarelity_id,tribe_id
+1,1,1,4,2,召喚されたターンの終了時自身のコピーを１体出す,3135,https://d3n9a7g7xguuos.cloudfront.net/uploads/card/image/1687/3135.png,Crab Thief(Subspecies),クラブシーフ（亜種）,2,3
+3,1,1,4,3,召喚されたターンの終了時自身のコピーを１体出す,3130,https://d3n9a7g7xguuos.cloudfront.net/uploads/card/image/1685/3130.png,Greedy Crab Thief(Subspecies),強欲なクラブシーフ（亜種）,3,3
