@@ -19,7 +19,7 @@ class Cryspecardid_selenium_Middleware(object):
         driver = Chrome(options=options)
         driver.implicitly_wait(30)
 
-        driver.get('https://cryptospells.jp/cryptospells')
+        driver.get('https://cryptospells.jp/cards')
         driver.find_elements_by_xpath("//span[@class='card__info--card-number']")
         driver.execute_script('scroll(0, document.body.scrollHeight)')
 

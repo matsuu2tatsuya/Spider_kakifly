@@ -35,9 +35,12 @@ class GodsMiimeSelenium_Middleware(object):
                     print(more_element.get_attribute("textContent"))
                     more_element.click()
                 except Exception:
-                    return
+                    break
             else:
-                return
+                break
+
+        time.sleep(0.5)
+        # driver.quit()
 
         # print('全て表示されているはず。')
         return HtmlResponse(
@@ -47,8 +50,6 @@ class GodsMiimeSelenium_Middleware(object):
             request=request,
         )
 
-        time.sleep(0.5)
-        driver.quit()
 
 
 
