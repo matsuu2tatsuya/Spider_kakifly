@@ -1,0 +1,82 @@
+from ..items import GuCardsItem
+import re
+from selenium.webdriver import Chrome, ChromeOptions
+import scrapy
+from scrapy.crawler import CrawlerProcess
+
+
+# 下記の変数は保守性を考えた上です。
+all_cards = 'div.js-card-with-trading-buttons'
+name_base = 'div.card-name-cell > span'
+price_base = 'button.js-buy-button > span'
+ETH = 'ETH'
+Meteorite = 'Meteorite'  # quality_id = 4
+base_url = 'https://gu.cards/'
+purchase_URL_base = 'a.js-card-link::attr("href")'
+
+def image_URL_base(card_id, quality_id):
+    return f'https://card.godsunchained.com/?id={card_id}&q={quality_id}&w=256&png=true'
+
+# ここまでが変数ゾーンです。
+
+
+class guCardsMeteorite_Spider(scrapy.Spider):
+    name = 'guCardsMeteorite_spider'
+    allowed_domains = ['gu.cards']
+    start_urls = ['http://example.com/']
+    custom_settings = {
+        'BOT_NAME': 'gu_cards_meteorite',
+        'NEWSPIDER_MODULE': 'gu_cards_meteorite.spiders',
+        # 'ROBOTSTXT_OBEY': True,
+        'SPIDER_MODULES': ['gu_cards_meteorite.spiders'],
+        'USER_AGENT': 'gu_cards_meteorite (+http://www.yourdomain.com)',
+        'CONCURRENT_REQUESTS': 16,
+        'DOWNLOAD_DELAY': 1,
+        "FEED_EXPORT_ENCODING": 'utf-8',
+        "FEED_FORMAT": 'json',
+        "FEED_URI": 'guCardsMeteorite.json',
+    }
+
+    def parse(self, response):
+        item = GuCardsItem()
+        options = ChromeOptions()
+        options.headless = True
+        driver = Chrome(options=options)
+        driver.implicitly_wait(20)
+
+        for page in range(1, 20):
+            driver.get(f'https://gu.cards/?marketplace=with_listings&page={page}&quality_meteorite=on')
+            driver.find_elements_by_css_selector('div.js-card-with-trading-buttons')
+            response_pages = response.replace(body=driver.page_source)
+
+            for res in response_pages.css(all_cards):
+                name = res.css(name_base).xpath('string()').get()
+                name2 = re.sub(r',', ' ', name)
+                name3 = re.sub(r' $', '', name2)
+                name4 = re.sub(r'^ ', '', name3)
+                name5 = re.sub(r'  ', ' ', name4)
+                item['name'] = re.sub(r"'", "\\'", name5)
+
+                item['price'] = res.css(price_base).xpath('string()').get()
+                item['currency'] = ETH
+                item['quality'] = Meteorite
+                item['purchase_URL'] = base_url + res.css(purchase_URL_base).get()
+                card_id = re.sub('\\D', '', res.css(purchase_URL_base).get())
+                item['image_URL'] = image_URL_base(card_id, 4)
+
+                yield item
+
+            try:
+                driver.implicitly_wait(3)
+                driver.find_element_by_css_selector('i.fa-caret-right')
+            except Exception:
+                return
+
+        driver.quit()
+
+
+def handler():
+    process = CrawlerProcess()
+    process.crawl(guCardsMeteorite_Spider)
+    process.start()
+

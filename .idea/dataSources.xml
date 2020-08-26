@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="scraping@localhost" uuid="1b0f8640-36a4-47e1-841e-ba4a5950ed2e">
+    <data-source source="LOCAL" name="scraping@localhost" uuid="7edfd631-e409-4d93-b7bd-6b3e73610872">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/scraping</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="awssimplified" uuid="8b9692f5-e70a-4269-ac33-becca96e19ee">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://aws-simplified-lambda.czdwfjfqoov2.ap-northeast-1.rds.amazonaws.com :3306</jdbc-url>
     </data-source>
   </component>
 </project>

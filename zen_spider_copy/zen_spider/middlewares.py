@@ -8,7 +8,6 @@
 from scrapy import signals
 from selenium.webdriver import Chrome, ChromeOptions, Remote
 from scrapy.http import HtmlResponse
-
 import time
 
 
@@ -18,30 +17,26 @@ class DEX_SeleniumMiddleware(object):
         options = ChromeOptions()
         options.headless = True
         driver = Chrome(options=options)
+        driver.implicitly_wait(10)
 
         driver.get('https://www.spiderdex.com/assets/5d35228f74ba04002ac53d9c')
-        time.sleep(0.5)
         input_element = driver.find_elements_by_css_selector('div.filterattributevalue > div.item')[5]
         input_element.click()
-        time.sleep(0.5)
 
         for div in driver.find_elements_by_xpath('//div[@class="assetscontentitem"]'):
-            time.sleep(0.5)
             div.find_element_by_css_selector('div.assetimghover').click()
             handle_array = driver.window_handles
             driver.switch_to.window(handle_array[1])
-            time.sleep(0.5)
 
-        time.sleep(0.5)
-        return HtmlResponse(
+        f = HtmlResponse(
             driver.current_url,
             body=driver.page_source,
             encoding='utf-8',
             request=request,
         )
-        time.sleep(0.5)
-
-        driver.quit()
+        if f:
+            return f
+            driver.quit()
 
 
 class cryspe_SeleniumMiddleware(object):
@@ -50,16 +45,31 @@ class cryspe_SeleniumMiddleware(object):
         options = ChromeOptions()
         options.headless = True
         driver = Chrome(options=options)
+        driver.implicitly_wait(30)
 
         driver.get('https://cryptospells.jp/trades')
-        time.sleep(0.5)
         input_element = driver.find_element_by_xpath("//span[@class='checkmark']")
         input_element.click()
-        time.sleep(0.5)
+        h = 0
+        r = []
 
-        for _ in range(40):
+        while h < 200:
             driver.execute_script('scroll(0, document.body.scrollHeight)')
-            time.sleep(1.0)
+            time.sleep(0.3)
+            r.append(len(driver.find_elements_by_css_selector('div.col-card')))
+            time.sleep(0.3)
+            print(r)
+            h = h + 1
+            print(h)
+            if h == 200:
+                # print('BREEK')
+                break
+            if len(r) > 2:
+                if r[-1] - r[-2] != 0 and r[-1] - r[-2] < 20:
+                    break
+            if len(r) > 7:
+                if r[-1] == r[-7]:
+                    break
 
         return HtmlResponse(
             driver.current_url,
