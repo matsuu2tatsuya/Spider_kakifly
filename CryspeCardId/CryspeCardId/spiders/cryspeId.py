@@ -48,7 +48,9 @@ class CryspeidSpider(scrapy.Spider):
             cardID['HP'] = result['life']
             cardID['effect'] = result['ability']['ja']
             cardID['image_url'] = result['image_url']['ja']
-            cardID['effect_en'] = result['ability']['en']
+            effect_en = result['ability']['en']
+            effect_en2 = re.sub(r',', '', effect_en)
+            cardID['effect_en'] = re.sub(r"'", "\\'", effect_en2)
             cardID['image_url_en'] = result['image_url']['en']
 
             if result['card_type'] == 'unit':
