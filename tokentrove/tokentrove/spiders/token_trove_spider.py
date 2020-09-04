@@ -4,6 +4,7 @@ import re
 from selenium.webdriver import Chrome, ChromeOptions
 import scrapy
 from scrapy.crawler import CrawlerProcess
+import requests
 
 # 下記の変数は保守性を考えた上です。
 
@@ -21,67 +22,37 @@ def custom_settings(pages):
         'SPIDER_MODULES': ['tokentrove.spiders'],
         'FEED_FORMAT': 'json',
         'FEED_URI': 'tokenTrove.json',
+        'USER_AGENT': 'Mozilla/5.0'
+
     }
-
-def quality_id(q_id):
-    if q_id == '1':
-        return 'Diamond'
-    elif q_id == '2':
-        return 'Gold'
-    elif q_id == '3':
-        return 'Shadow'
-    elif q_id == '4':
-        return 'Meteorite'
-    else:
-        return 'Plain'
-
-def purchase_URL_base(card_id, quality_id):
-    return f'https://tokentrove.com/GodsUnchainedCards/{card_id}-{quality_id}'
-
-def image_URL_base(card_id, quality_id):
-    return f'https://card.godsunchained.com/?id={card_id}&q={quality_id}&w=256&png=true'
-
-# ここまでが変数ゾーンです。 ここから下は大量のspider作っていきます。
-
-
 
 class TokenTrove_1_Spider(scrapy.Spider):
     name = 'token_trove_spider'
     allowed_domains = ['tokentrove.com']
-    start_urls = ['https://tokentrove.com/GodsUnchainedCards?perPage=120']
     custom_settings = custom_settings(1)
+    start_urls = ['https://tokentrove.com/']
 
     def parse(self, response):
         item = TokentroveItem()
-        options = ChromeOptions()
-        options.headless = True
-        driver = Chrome(options=options)
-        driver.implicitly_wait(20)
+        base_url = 'https://tokentrove.com/GodsUnchainedCards/'
+        request_url = 'https://api.tokentrove.com/cached/all-orders'
+        payload = {'tokenAddress': '0x0e3a2a1f2146d86a604adc220b4967a898d7fe07'}
+        x_api_key = 'Np8BV2d5QR9TSFEr9EvF66FWcJf0wIxy2qBpOH6s'
+        headers = {'x-api-key': x_api_key,
+                   'User-Agent': 'Mozilla/5.0'}
 
-        for page in range(1, 16):
-            driver.get(f'https://tokentrove.com/GodsUnchainedCards?page={page}&perPage=120')
-            driver.find_elements_by_css_selector('div.listing-wrapper')
-            response_pages = response.replace(body=driver.page_source)
+        for res in requests.request("GET", request_url, params=payload, headers=headers).json()[0]:
+            print(res)
+            id = re.sub(r'-.', '', res['token_proto'])
+            quality = re.sub(r'.*-', '', res['token_proto'])
+            item['name'] = id
+            item['price'] = (res['takerAssetAmount'] / 10*18) * 102.5
+            item['currency'] = 'ETH'
+            item['quality'] = quality
+            item['purchase_URL'] = base_url + res['token_proto']
+            item['image_URL'] = f'https://card.godsunchained.com/?id={id}&q={quality}&w=512&png=true'
 
-            for res in response_pages.css('div.listing-wrapper'):
-                name = res.css('div.listing-name').xpath('string()').get()
-                name2 = re.sub(r',', ' ', name)
-                name3 = re.sub(r' $', '', name2)
-                name4 = re.sub(r'^ ', '', name3)
-                name5 = re.sub(r'  ', ' ', name4)
-                item['name'] = re.sub(r"'", "\\'", name5)
-                base_price = res.css('div.listing-price').xpath('string()').get()
-                item['price'] = re.sub(r'\D*', '', base_price)
-                item['currency'] = 'ETH'
-                q_id = res.css('composited-card::attr("quality")').get()
-                item['quality'] = quality_id(q_id)
-                c_id = res.css('composited-card::attr("protoid")').get()
-                item['purchase_URL'] = purchase_URL_base(c_id, q_id)
-                item['image_URL'] = image_URL_base(c_id, q_id)
-
-                yield item
-
-        driver.quit()
+            yield item
 
 def handler():
     process = CrawlerProcess()

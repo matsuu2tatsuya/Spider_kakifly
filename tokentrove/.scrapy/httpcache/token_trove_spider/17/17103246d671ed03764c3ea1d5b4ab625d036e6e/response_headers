@@ -1,0 +1,9 @@
+Content-Type: application/json
+Date: Wed, 02 Sep 2020 07:34:51 GMT
+X-Amzn-Requestid: 566b0d22-856a-4b60-a94f-b11a3c456b6c
+X-Amzn-Errortype: ForbiddenException
+X-Amz-Apigw-Id: SOisYFn7IAMF-NQ=
+X-Cache: Error from cloudfront
+Via: 1.1 9241367160f1c9b64db64d6784665a6f.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: NRT51-C2
+X-Amz-Cf-Id: P0GVstJxpM_BeVpQ7bh0VuoCcepPK-sHGO1dB65_6bLuSLqvX-mkhw==
