@@ -1,31 +1,38 @@
 from selenium.webdriver import Chrome, ChromeOptions
 import time
+import random
 from selenium.webdriver.common.keys import Keys
 
 options = ChromeOptions()
-# options.headless = True
 driver = Chrome(options=options)
-driver.implicitly_wait(30)
-
+driver.implicitly_wait(10)
 driver.get('https://godsunchained.com/marketplace')
 
-driver.find_elements_by_css_selector("gu-login-form")
+def singin():
+    driver.find_elements_by_css_selector("gu-login-form")
+    search_button = driver.execute_script(
+        'return document.querySelector("gu-login-form").shadowRoot.querySelector('
+        '"gu-form").shadowRoot.querySelector("input")')
+    search_button.send_keys(Keys.TAB, "ryoba666@sofia.re")
+    time.sleep(random.randrange(2, 6))
+    search_button.send_keys(Keys.TAB * 2, "password")
+    time.sleep(random.randrange(2, 6))
+    search_button.send_keys(Keys.ENTER)
+    time.sleep(random.randrange(2, 6))
+    welcome_button = driver.find_element_by_css_selector(".closeButton")
+    welcome_button.click()
+    time.sleep(random.randrange(2, 6))
 
-search_button = driver.execute_script(
-    'return document.querySelector("gu-login-form").shadowRoot.querySelector('
-    '"gu-form").shadowRoot.querySelector("input")')
-search_button.send_keys(Keys.TAB, "ryoba666@sofia.re")
-search_button.send_keys(Keys.TAB * 2, "password")
-search_button.send_keys(Keys.ENTER)
+singin()
+sing = driver.execute_script(
+    'return document.querySelector("gu-header-user-area").shadowRoot.querySelector('
+    '"gu-simple-text")')
+sing.click()
+singin()
+driver.get(
+    'https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=300&assettype=card')
 
-# login_button = driver.execute_script(
-#     'return document.querySelector("gu-login-form").shadowRoot.querySelector('
-#     '"gu-form").shadowRoot.querySelector("gu-primary-hex-button")')
-# login_button.click()
-
-welcome_button = driver.find_element_by_css_selector(".closeButton")
-welcome_button.click()
-
+# time.sleep(5)
 # driver.quit()
 
 

@@ -75,6 +75,8 @@ class cryspe_selenium(scrapy.Spider):
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
         "FEED_EXPORT_ENCODING": 'utf-8',
+        'FEED_FORMAT': 'json',
+        'FEED_URI': 'cryspe.json',
     }
 
 
