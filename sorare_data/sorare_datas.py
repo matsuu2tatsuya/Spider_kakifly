@@ -10,6 +10,7 @@ def get_cursor(point):
     url = 'https://api.sorare.com/graphql'
     r = requests.post(url, json={'query': query})
     json_data = json.loads(r.text)
+    print(json.dumps(json_data, indent=2))
     for i in json_data['data']['auctions']['edges']:
         cursor_list.append(i['cursor'])
     return cursor_list
@@ -25,6 +26,7 @@ def get_Sorare_data(cursor):
     url = 'https://api.sorare.com/graphql'
     r = requests.post(url, json={'query': sub_query})
     json_data = json.loads(r.text)
+    print(json.dumps(json_data, indent=2))
     for i in json_data['data']['auctions']['nodes']:
         sorare_list.append(i)
     return sorare_list

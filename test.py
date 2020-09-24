@@ -9,26 +9,18 @@ driver.implicitly_wait(10)
 driver.get('https://godsunchained.com/marketplace')
 
 def singin():
-    driver.find_elements_by_css_selector("gu-login-form")
-    search_button = driver.execute_script(
-        'return document.querySelector("gu-login-form").shadowRoot.querySelector('
-        '"gu-form").shadowRoot.querySelector("input")')
-    search_button.send_keys(Keys.TAB, "ryoba666@sofia.re")
-    time.sleep(random.randrange(2, 6))
-    search_button.send_keys(Keys.TAB * 2, "password")
-    time.sleep(random.randrange(2, 6))
-    search_button.send_keys(Keys.ENTER)
-    time.sleep(random.randrange(2, 6))
-    welcome_button = driver.find_element_by_css_selector(".closeButton")
-    welcome_button.click()
-    time.sleep(random.randrange(2, 6))
+    time.sleep(random.randrange(2, 4))
+    email = driver.find_elements_by_css_selector("input.ng-untouched")[0]
+    email.send_keys("ryoba666@sofia.re")
+    time.sleep(random.randrange(2, 4))
+    keypass = driver.find_elements_by_css_selector("input.ng-untouched")[1]
+    keypass.send_keys("password")
+    time.sleep(random.randrange(2, 4))
+    Gologin = driver.find_element_by_css_selector("gu-primary-hex-button")
+    Gologin.click()
 
 singin()
-sing = driver.execute_script(
-    'return document.querySelector("gu-header-user-area").shadowRoot.querySelector('
-    '"gu-simple-text")')
-sing.click()
-singin()
+time.sleep(random.randrange(2, 4))
 driver.get(
     'https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=300&assettype=card')
 
