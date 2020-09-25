@@ -6,21 +6,32 @@ from selenium.webdriver.common.keys import Keys
 options = ChromeOptions()
 driver = Chrome(options=options)
 driver.implicitly_wait(10)
-driver.get('https://godsunchained.com/marketplace')
+driver.get('https://godsunchained.com/account/login')
 
 def singin():
     time.sleep(random.randrange(2, 4))
     email = driver.find_elements_by_css_selector("input.ng-untouched")[0]
-    email.send_keys("ryoba666@sofia.re")
+    email.send_keys("testgastodingtalkbot@gmail.com")
     time.sleep(random.randrange(2, 4))
     keypass = driver.find_elements_by_css_selector("input.ng-untouched")[1]
-    keypass.send_keys("password")
+    keypass.send_keys("kebabman")
+    driver.find_element_by_css_selector("cerberus-checkbox").click()
     time.sleep(random.randrange(2, 4))
     Gologin = driver.find_element_by_css_selector("gu-primary-hex-button")
     Gologin.click()
 
 singin()
 time.sleep(random.randrange(2, 4))
+try:
+    driver.find_element_by_css_selector("div.captchaContainer").click()
+    driver.get(
+        'https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=300&assettype=card')
+    driver.get('https://godsunchained.com/account/login')
+    singin()
+    time.sleep(random.randrange(2, 4))
+except Exception as e:
+    print(e)
+    pass
 driver.get(
     'https://godsunchained.com/marketplace/search?groupby=name&sortby=timestamp&orderby=desc&currentpage=1&perpage=300&assettype=card')
 
