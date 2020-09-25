@@ -9,7 +9,10 @@ import scrapy
 
 
 class SoraremiimeItem(scrapy.Item):
-    name = scrapy.Field()
+    player_name = scrapy.Field()
+    season = scrapy.Field()
+    rarity = scrapy.Field()
+    serial_number = scrapy.Field()
     price = scrapy.Field()
     currency = scrapy.Field()
     purchase_URL = scrapy.Field()

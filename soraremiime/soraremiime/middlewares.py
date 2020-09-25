@@ -15,7 +15,7 @@ class soraremiimeSelenium_Middleware(object):
 
     def process_request(self, request, spider):
         options = ChromeOptions()
-        # options.headless = True
+        options.headless = True
         driver = Chrome(options=options)
         driver.implicitly_wait(20)
 

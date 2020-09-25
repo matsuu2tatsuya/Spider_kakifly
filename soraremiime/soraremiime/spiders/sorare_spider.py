@@ -28,7 +28,7 @@ class SorareSpider(scrapy.Spider):
     }
 
     def parse(self, response):
-        asset_ID = 108000000
+        asset_ID = 301000000
         for res in response.css('a.assetCard'):
             if 'miime' in res.css('div.assetCard__priceBox__wrapper__icon > img::attr("src")').get():
                 item = SoraremiimeItem()
@@ -41,7 +41,15 @@ class SorareSpider(scrapy.Spider):
                 name4 = re.sub(r'^ ', '', name3)
                 name5 = re.sub(r'  ', ' ', name4)
                 name6 = re.sub(r'\"', '', name5)
-                item['name'] = re.sub(r"'", "\\'", name6)
+                name7 = re.sub(r"'", "\\'", name6)
+                item['player_name'] = re.sub(r" 20.*", "", name7)
+
+                name77 = re.sub(r'.* 2', '', name7)
+                item['season'] = '2' + re.sub(r' .*', '', name77)
+                name8 = re.sub(r'.*• ', '', name7)
+                item['rarity'] = re.sub(r' \d.*', '', name8)
+                name10 = re.sub(r'.*Rare ', '', name7)
+                item['serial_number'] = re.sub(r'/.*', '', name10)
 
                 price = res.css('div.assetCard__salePrice').xpath('string()').get()
                 price2 = re.sub(r'¥', '', price)
@@ -72,7 +80,15 @@ class SorareSpider(scrapy.Spider):
                 name4 = re.sub(r'^ ', '', name3)
                 name5 = re.sub(r'  ', ' ', name4)
                 name6 = re.sub(r'\"', '', name5)
-                item['name'] = re.sub(r"'", "\\'", name6)
+                name7 = re.sub(r"'", "\\'", name6)
+                item['player_name'] = re.sub(r" 20.*", "", name7)
+
+                name77 = re.sub(r'.* 2', '', name7)
+                item['season'] = '2' + re.sub(r' .*', '', name77)
+                name8 = re.sub(r'.*• ', '', name7)
+                item['rarity'] = re.sub(r' \d.*', '', name8)
+                name10 = re.sub(r'.*Rare ', '', name7)
+                item['serial_number'] = re.sub(r'/.*', '', name10)
 
                 price = res.css('div.assetCard__salePrice').xpath('string()').get()
                 price2 = re.sub(r'¥', '', price)
