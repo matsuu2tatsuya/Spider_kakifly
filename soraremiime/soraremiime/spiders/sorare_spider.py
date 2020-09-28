@@ -44,8 +44,8 @@ class SorareSpider(scrapy.Spider):
                 name7 = re.sub(r"'", "\\'", name6)
                 item['player_name'] = re.sub(r" 20.*", "", name7)
 
-                name77 = re.sub(r'.* 2', '', name7)
-                item['season'] = '2' + re.sub(r' .*', '', name77)
+                name77 = re.sub(r'.* 20', '', name7)
+                item['season'] = '20' + re.sub(r' .*', '', name77)
                 name8 = re.sub(r'.*• ', '', name7)
                 item['rarity'] = re.sub(r' \d.*', '', name8)
                 name10 = re.sub(r'.*Rare ', '', name7)
@@ -83,8 +83,8 @@ class SorareSpider(scrapy.Spider):
                 name7 = re.sub(r"'", "\\'", name6)
                 item['player_name'] = re.sub(r" 20.*", "", name7)
 
-                name77 = re.sub(r'.* 2', '', name7)
-                item['season'] = '2' + re.sub(r' .*', '', name77)
+                name77 = re.sub(r'.* 20', '', name7)
+                item['season'] = '20' + re.sub(r' .*', '', name77)
                 name8 = re.sub(r'.*• ', '', name7)
                 item['rarity'] = re.sub(r' \d.*', '', name8)
                 name10 = re.sub(r'.*Rare ', '', name7)
