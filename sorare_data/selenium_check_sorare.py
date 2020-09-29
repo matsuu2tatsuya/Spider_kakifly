@@ -34,7 +34,7 @@ while cursor != False:
     try:
         real_query = re.sub(r'OreNoCursor', cursor, query)
     except Exception as e:
-        br
+        break
     response = requests.post(request_url, json={'query': real_query})
     json_data = json.loads(response.text)
     curs = json_data['data']['singleSaleOffers']['pageInfo']
