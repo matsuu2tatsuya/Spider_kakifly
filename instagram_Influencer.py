@@ -73,7 +73,7 @@ def get_influencer_data_by_selenium(url):
         follower = re.sub(r'k', '000', follower)
         if '.' in follower:
             follower = re.sub(r'[.]', '', follower)
-            follower = re.sub(r'0', '00', follower)
+            follower = re.sub(r'000', '00', follower)
     except Exception:
         follower = 'Sorry'
     try:
@@ -127,11 +127,3 @@ if __name__ == '__main__':
         get_influencer_data_by_selenium(i)
 
     driver.quit()
-
-    df = pd.DataFrame(
-        data={'influencer_name': influencer_name, 'influencer_List': influencer_List,
-              'influencer_follower': influencer_follower, 'influencer_sumPost': influencer_sumPost},
-        columns=['ユーザー名', 'permalink', 'フォロワー', '総投稿数']
-    )
-    df.to_csv(f'IG_influencer_{hashtag}.csv')
-    print(df)
