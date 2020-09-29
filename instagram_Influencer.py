@@ -3,6 +3,7 @@
 
 import requests
 import json
+import re
 import csv
 import pandas as pd
 from selenium.webdriver import Chrome, ChromeOptions
@@ -64,15 +65,30 @@ def get_influencer_by_selenium(url):
 def get_influencer_data_by_selenium(url):
     driver.get(url)
 
-    follower = driver.find_elements_by_css_selector(
-        '#react-root > section > main > div > header > section > ul > li:nth-child(2) > a > span')[
-        0].get_attribute("textContent")
-    name = driver.find_elements_by_css_selector(
-        '#react-root > section > main > div > header > section > div.-vDIg > h1')[
-        0].get_attribute("textContent")
-    sumPost = driver.find_elements_by_css_selector(
-        '#react-root > section > main > div > header > section > ul > li:nth-child(1) > a > span')[
-        0].get_attribute("textContent")
+    try:
+        follower = driver.find_elements_by_css_selector(
+            '#react-root > section > main > div > header > section > ul > li:nth-child(2) > a > span')[
+            0].get_attribute("textContent")
+        follower = re.sub(r',', '', follower)
+        follower = re.sub(r'k', '000', follower)
+        if '.' in follower:
+            follower = re.sub(r'[.]', '', follower)
+            follower = re.sub(r'0', '00', follower)
+    except Exception:
+        follower = 'Sorry'
+    try:
+        name = driver.find_elements_by_css_selector(
+            '#react-root > section > main > div > header > section > div.-vDIg > h1')[
+            0].get_attribute("textContent")
+    except Exception:
+        name = 'Sorry'
+
+    try:
+        sumPost = driver.find_elements_by_css_selector(
+            '#react-root > section > main > div > header > section > ul > li:nth-child(1) > a > span')[
+            0].get_attribute("textContent")
+    except Exception:
+        sumPost = 'Sorry'
 
     with open(f'{hashtag}.csv', 'a') as f:
         writer = csv.writer(f)
