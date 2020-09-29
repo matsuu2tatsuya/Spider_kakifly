@@ -5,6 +5,7 @@ import requests
 import json
 import re
 import csv
+import time
 import pandas as pd
 from selenium.webdriver import Chrome, ChromeOptions
 
@@ -59,10 +60,11 @@ def get_influencer_by_selenium(url):
     userLink = f'https://www.instagram.com/{username}/'
     # print(userLink)
     influencer_List.append(userLink)
-    print('thanks')
+    print(username)
     return
 
 def get_influencer_data_by_selenium(url):
+    print(url)
     driver.get(url)
 
     try:
@@ -85,17 +87,17 @@ def get_influencer_data_by_selenium(url):
 
     try:
         sumPost = driver.find_elements_by_css_selector(
-            '#react-root > section > main > div > header > section > ul > li:nth-child(1) > a > span')[
+            '#react-root > section > main > div > header > section > ul > li:nth-child(1) > span > span')[
             0].get_attribute("textContent")
     except Exception:
         sumPost = 'Sorry'
 
-    with open(f'{hashtag}.csv', 'a') as f:
+    with open(f'mono_cosme/{hashtag}.csv', 'a') as f:
         writer = csv.writer(f)
         writer.writerow(
             [f'{name}', f'{follower}', f'{sumPost}', f'{influencer_List.count(url)}', f'{url}'])
 
-    print('okdesu')
+    print(name, follower, sumPost)
     return
 
 
@@ -115,7 +117,7 @@ if __name__ == '__main__':
     get_next_by_hashtag(nextUrl)
     print(topMedia_List)
     options = ChromeOptions()
-    options.headless = True
+    # options.headless = True
     driver = Chrome(options=options)
     print('しばらくお待ちください。')
     print(len(topMedia_List))
@@ -123,6 +125,17 @@ if __name__ == '__main__':
         get_influencer_by_selenium(i)
 
     List = list(set(influencer_List))
+    driver.get('https://www.instagram.com/')
+    time.sleep(2)
+    email = driver.find_elements_by_css_selector('#loginForm > div > div:nth-child(1) > div > label > input')[0]
+    time.sleep(2)
+    email.send_keys('testgastodingtalkbot@gmail.com')
+    password = driver.find_elements_by_css_selector('#loginForm > div > div:nth-child(2) > div > label > input')[0]
+    time.sleep(2)
+    password.send_keys('kebabman')
+    driver.find_elements_by_css_selector('#loginForm > div > div:nth-child(3) > button > div')[0].click()
+    time.sleep(5)
+
     for i in List:
         get_influencer_data_by_selenium(i)
 

@@ -1,7 +1,2 @@
-import csv
-import operator
-
-b = 666.5000
-
-a = "5,589"
-print(int(a))
+with open(f'mono_cosme/ss.csv', 'a') as f:
+    print(f)
