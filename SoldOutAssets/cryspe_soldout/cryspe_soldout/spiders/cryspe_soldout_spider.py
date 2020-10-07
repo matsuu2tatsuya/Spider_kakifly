@@ -1,37 +1,27 @@
 # -*- coding: utf-8 -*-
-from ..items import MagiItem, Cryptospells_Item
+from ..items import CryspeSoldoutItem
 import re
 import scrapy
 from scrapy.crawler import CrawlerProcess
 
-"""
-spider crawl 引数 -o {name}.json
-実行時の引数。:ethmarket_spider, :magi_spider, :cryspe_splash, :DEX_spider
-"""
 
-class MagiSpider(scrapy.Spider):
-    name = 'magi_spider'
+class MagiSoldoutSpider(scrapy.Spider):
+    name = 'magi_soldout__spider'
     allowed_domains = ['magi.camp']
-    start_urls = ['https://magi.camp/items/search?utf8=%E2%9C%93&forms_search_items%5Bcategory_id%5D=100009&forms_search_items%5Bstatus%5D=presented&forms_search_items%5Bpage%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B']
-
+    start_urls = ['https://magi.camp/items/search?utf8=%E2%9C%93&forms_search_items%5Bkeyword%5D=&forms_search_items%5Bcategory_id%5D=100009&forms_search_items%5Btag_id%5D=&forms_search_items%5Bfrom_price%5D=&forms_search_items%5Bto_price%5D=&forms_search_items%5Bquality%5D=&forms_search_items%5Bstatus%5D=sold_out&forms_search_items%5Bsort%5D=&forms_search_items%5Bpage%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B']
     custom_settings = {
-        "ITEM_PIPELINES": {
-            'zen_spider.pipelines.MySQL_magi_Pipeline': 800,
-        },
         "DOWNLOAD_DELAY": 1.0,
         "CONCURRENT_REQUESTS": 32,
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
         "FEED_EXPORT_ENCODING": 'utf-8',
         'FEED_FORMAT': 'json',
-        'FEED_URI': 'magi.json',
+        'FEED_URI': 'magi_soldout.json',
     }
 
     def parse(self, response):
-
         for res in response.xpath('//div[@class="item-list__box"]'):
-
-            magi_items = MagiItem()
+            magi_items = CryspeSoldoutItem()
             base_url = 'https://magi.camp/'
 
             card_name = res.css('[class=item-list__item-name]').xpath('string()').get()      # →名前
@@ -56,57 +46,52 @@ class MagiSpider(scrapy.Spider):
             yield scrapy.Request(url, callback=self.parse)
 
 
-class cryspe_selenium(scrapy.Spider):
-    name = 'cryspe_Selenium'
+class CryspeSoldoutSpider(scrapy.Spider):
+    name = 'cryspe_soldout_spider'
     allowed_domains = ['cryptospells.jp/trades']
     start_urls = ['https://cryptospells.jp/trades/']
 
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {
-            'zen_spider.middlewares.cryspe_SeleniumMiddleware': 543,
+            'cryspe_soldout.middlewares.cryspe_SeleniumMiddleware': 543,
         },
-        # "ITEM_PIPELINES": {
-        #     'zen_spider.pipelines.MySQL_cryspe_Pipeline': 800,
-        # },
         "DOWNLOAD_DELAY": 1.0,
         "CONCURRENT_REQUESTS": 32,
         "MYSQL_USER": 'scraper',
         "MYSQL_PASSWORD": 'password',
         "FEED_EXPORT_ENCODING": 'utf-8',
         'FEED_FORMAT': 'json',
-        'FEED_URI': 'cryspe.json',
+        'FEED_URI': 'cryspe_soldout.json',
     }
 
 
     def parse(self, response):
         for res in response.xpath('//div[@class="col-4 col-sm-2 col-sm-2--half col-card"]'):
-            cryspe_items = Cryptospells_Item()
-            base_URL = 'https://cryptospells.jp'
+            if res.css('.card-image-black-filter'):
+                cryspe_items = CryspeSoldoutItem()
+                base_URL = 'https://cryptospells.jp'
 
-            ID_path = res.css('[class="serial-number serial-number-user-img-wrapper"]').xpath('string()').get()
-            ID_path2 = re.sub(r'# .', '', ID_path)
-            cryspe_items['name'] = re.sub(r' .*', '', ID_path2)
+                ID_path = res.css('[class="serial-number serial-number-user-img-wrapper"]').xpath('string()').get()
+                ID_path2 = re.sub(r'# .', '', ID_path)
+                cryspe_items['name'] = re.sub(r' .*', '', ID_path2)
 
-            SPL_path = res.css('[class="price"]').xpath('string()').get()
-            SPL_path2 = re.sub(r' SPL', '', SPL_path)
-            cryspe_items['price'] = re.sub(r',', '', SPL_path2)
+                SPL_path = res.css('[class="price"]').xpath('string()').get()
+                SPL_path2 = re.sub(r' SPL', '', SPL_path)
+                cryspe_items['price'] = re.sub(r',', '', SPL_path2)
 
-            cryspe_items['currency'] = 'SPL'
+                cryspe_items['currency'] = 'SPL'
 
-            cryspe_items['purchase_URL'] = base_URL + res.css('a::attr("href")').re_first(r'/trades/\d+$')
+                cryspe_items['purchase_URL'] = base_URL + res.css('a::attr("href")').re_first(r'/trades/\d+$')
 
-            cryspe_items['image_URL'] = res.css('img[src$="png"]::attr("src")').get()
+                cryspe_items['image_URL'] = res.css('img[src$="png"]::attr("src")').get()
 
-            yield cryspe_items
+                yield cryspe_items
+            else:
+                pass
 
 
 process = CrawlerProcess()
-# process.crawl(MagiSpider)
-process.crawl(cryspe_selenium)
+process.crawl(MagiSoldoutSpider)
+# process.crawl(CryspeSoldoutSpider)
 
 process.start()
-
-
-
-
-
