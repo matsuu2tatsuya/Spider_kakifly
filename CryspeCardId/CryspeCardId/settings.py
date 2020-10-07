@@ -46,16 +46,16 @@ DOWNLOAD_DELAY = 3
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-SPIDER_MIDDLEWARES = {
-   'CryspeCardId.middlewares.CryspecardidSpiderMiddleware': 543,
-}
+# SPIDER_MIDDLEWARES = {
+#    'CryspeCardId.middlewares.CryspecardidSpiderMiddleware': 543,
+# }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-   'CryspeCardId.middlewares.Cryspecardid_selenium_Middleware': 540,
-   'CryspeCardId.middlewares.CryspecardidDownloaderMiddleware': 543,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#    'CryspeCardId.middlewares.Cryspecardid_selenium_Middleware': 540,
+#    'CryspeCardId.middlewares.CryspecardidDownloaderMiddleware': 543,
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html

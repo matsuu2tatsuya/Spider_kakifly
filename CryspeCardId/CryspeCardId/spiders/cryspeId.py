@@ -10,6 +10,8 @@ class CryspeidSpider(scrapy.Spider):
     name = 'cryspeId'
     allowed_domains = ['cryptospells.jp/cards']
     start_urls = ['http://cryptospells.jp/cards/']
+    # allowed_domains = ['cryptospells.jp/cryptospells']
+    # start_urls = ['http://cryptospells.jp/cryptospells/']
 
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {
@@ -26,7 +28,7 @@ class CryspeidSpider(scrapy.Spider):
         # 'ROBOTSTXT_OBEY': True,
         'SPIDER_MODULES': ['CryspeCardId.spiders'],
         'FEED_FORMAT': 'csv',
-        'FEED_URI': 'cryspe_Id.csv',
+        'FEED_URI': 'cryspe_spl_Id.csv',
     }
 
     def parse(self, response):
