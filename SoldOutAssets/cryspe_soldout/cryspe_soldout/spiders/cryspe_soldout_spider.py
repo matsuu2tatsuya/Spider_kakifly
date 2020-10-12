@@ -91,7 +91,7 @@ class CryspeSoldoutSpider(scrapy.Spider):
 
 
 process = CrawlerProcess()
-process.crawl(MagiSoldoutSpider)
-# process.crawl(CryspeSoldoutSpider)
+# process.crawl(MagiSoldoutSpider)
+process.crawl(CryspeSoldoutSpider)
 
 process.start()
