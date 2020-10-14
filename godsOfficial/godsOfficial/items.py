@@ -16,3 +16,5 @@ class GodsofficialItem(scrapy.Item):
     quality = scrapy.Field()
     purchase_URL = scrapy.Field()
     image_URL = scrapy.Field()
+    asset_ID = scrapy.Field()
+

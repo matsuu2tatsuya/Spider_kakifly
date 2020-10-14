@@ -23,28 +23,39 @@ class GodsofficialSpider(scrapy.Spider):
         'NEWSPIDER_MODULE': 'godsOfficial.spiders',
         # 'ROBOTSTXT_OBEY': True,
         'SPIDER_MODULES': ['godsOfficial.spiders'],
-        'FEED_FORMAT': 'json',
-        'FEED_URI': 'godsOfficial.json',
+        'FEED_FORMAT': 'csv',
+        'FEED_URI': '07.csv',
     }
 
     def parse(self, response):
+        asset_ID = 201000000
         for res in response.css('div.assets__cardItem'):
             item = GodsofficialItem()
             base_url = str(res.css('img.assetImagery__img::attr("srcset")').get())
 
             def base_purchase_url(asset_id, quality, contract):
-                return f'https://godsunchained.com/marketplace/search/(asset:details/{asset_id}/{quality}/{contract})'
+                return f'https://godsunchained.com/marketplace/search/(asset:details/{asset_id}/{quality}/{contract}/card)'
 
             base_name = re.sub(r'^.*id=', '', base_url)
             name_id = re.sub(r'&.*$', '', base_name)
             # gods_api_url = f'https://api.godsunchained.com/v0/proto/{name_id}'
             # api_response = requests.get(gods_api_url)
             # jsonData = api_response.json()
-            item['name'] = res.css('gu-simple-text.cardItemFooter__fromText').xpath('string()').get()
+            name = res.css('gu-simple-text.cardItemFooter__fromText').xpath('string()').get()
+            name2 = re.sub(r',', ' ', name)
+            name3 = re.sub(r' $', '', name2)
+            name4 = re.sub(r'^ ', '', name3)
+            name5 = re.sub(r'  ', ' ', name4)
+            item['name'] = re.sub(r"'", "\\'", name5)
 
             # base_price = res.css('p.ethFavTxt').get()
             # base_price2 = re.sub(r'^<\D*>', '', base_price)
-            item['price'] = res.css('gu-heading-text.cardItemFooter__price').xpath('string()').get()
+            get_price = res.css('gu-heading-text.cardItemFooter__price').xpath('string()').get()
+            if get_price == ' ':
+                item['price'] = 0
+            else:
+                item['price'] = get_price
+
             item['currency'] = 'ETH'
 
             base_quality = re.sub(r'^.*q=', '', base_url)
@@ -61,9 +72,12 @@ class GodsofficialSpider(scrapy.Spider):
                 item['quality'] = 'Plain'
 
             item['purchase_URL'] = base_purchase_url(name_id, quality_id, 'your_contract_number')
-            item['image_URL'] = base_url
+            item['image_URL'] = re.sub(r'w=128', 'w=512', base_url)
+            item['asset_ID'] = asset_ID
+            asset_ID += 1
 
             yield item
+
 
 
 
